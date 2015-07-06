@@ -1,0 +1,2 @@
+module DaraHelper
+end

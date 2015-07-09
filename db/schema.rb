@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706043145) do
+ActiveRecord::Schema.define(version: 20150709192416) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -45,5 +45,58 @@ ActiveRecord::Schema.define(version: 20150706043145) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "catagories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.boolean  "publish",    limit: 1
+    t.datetime "updated_at"
+    t.datetime "created_at"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.boolean  "publish",    limit: 1
+    t.datetime "updated_at"
+    t.datetime "created_at"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string   "alt",               limit: 255
+    t.string   "hint",              limit: 255
+    t.string   "file",              limit: 255
+    t.datetime "updated_at"
+    t.datetime "created_at"
+    t.string   "file_file_name",    limit: 255
+    t.string   "file_content_type", limit: 255
+    t.integer  "file_file_size",    limit: 4
+    t.datetime "file_updated_at"
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string   "cover",       limit: 255
+    t.string   "title",       limit: 255
+    t.text     "content",     limit: 65535
+    t.boolean  "publish",     limit: 1
+    t.datetime "updated_at"
+    t.datetime "created_at"
+    t.integer  "category_id", limit: 4
+    t.string   "post_by",     limit: 255
+    t.date     "post_date"
+  end
+
+  add_index "news", ["category_id"], name: "index_news_on_category_id", using: :btree
+
+  create_table "rich_rich_files", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "rich_file_file_name",    limit: 255
+    t.string   "rich_file_content_type", limit: 255
+    t.integer  "rich_file_file_size",    limit: 4
+    t.datetime "rich_file_updated_at"
+    t.string   "owner_type",             limit: 255
+    t.integer  "owner_id",               limit: 4
+    t.text     "uri_cache",              limit: 65535
+    t.string   "simplified_type",        limit: 255,   default: "file"
+  end
 
 end

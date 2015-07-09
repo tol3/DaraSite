@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 95b4a71e8ec4536cf292d67071560acdf4160419
+  revision: e812e07c9a1b244250fb9b6875a71acee1212f98
   specs:
     activeadmin (1.0.0.pre1)
       arbre (~> 1.0, >= 1.0.2)
@@ -78,6 +78,10 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.7)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -134,6 +138,7 @@ GEM
       rails (>= 3.0.0)
       term-ansicolor
     mime-types (2.6.1)
+    mimemagic (0.3.0)
     mini_magick (4.2.7)
     mini_portile (0.6.2)
     minitest (5.7.0)
@@ -142,6 +147,12 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
+    paperclip (4.3.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     puma (2.11.3)
@@ -206,6 +217,11 @@ GEM
     thread_safe (0.3.5)
     tilt (1.4.1)
     tins (1.5.4)
+    tinymce-rails (4.1.6)
+      railties (>= 3.1.1)
+    tinymce-rails-imageupload (4.0.16.beta)
+      railties (>= 3.2, < 5)
+      tinymce-rails (~> 4.0)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -237,11 +253,14 @@ DEPENDENCIES
   migrant
   mini_magick
   mysql2
+  paperclip
   puma
   rails (= 4.2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
+  tinymce-rails
+  tinymce-rails-imageupload (~> 4.0.0.beta)
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

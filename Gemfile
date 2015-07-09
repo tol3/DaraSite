@@ -29,6 +29,11 @@ gem 'devise'
 gem "migrant"
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
+
+gem 'paperclip'
+gem 'tinymce-rails'
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+
 # gem "meta_search"
 gem "carrierwave"
 gem 'mini_magick'

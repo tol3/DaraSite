@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  post '/tinymce_assets' => 'tinymce_assets#create'
+
+  get 'tinymce_assets/create'
+
   get 'dara/index'
 
   get 'dara/contact'

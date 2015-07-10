@@ -13,6 +13,31 @@ permit_params :cover, :title, :content, :post_by, :post_date, :publish, :categor
 #   permitted
 # end
 
+  index do
+    selectable_column
+    column "ID", :id
+
+    column "Cover", :cover do |p|
+      if p.cover.url == nil
+        "No Picture"
+      else
+        link_to image_tag(p.cover.url(:thumb)), admin_news_path(p)
+      end
+    end
+
+    column "Title", :title do |p|
+      link_to p.title, admin_news_path(p)
+    end
+
+    column "Post By", :post_by
+
+    column "Publish", :publish do |p|
+      status_tag (p.publish ? "Publish" : "Not Publish"), (p.publish ? :ok : :error)
+    end
+
+    actions
+  end
+
 	form do |f|
     f.inputs 'Cover' do
       f.input :cover, :as => :file

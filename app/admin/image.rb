@@ -14,4 +14,8 @@ ActiveAdmin.register Image do
 # end
 
 
+	index as: :grid, columns: 5 do |images|
+	  link_to image_tag(images.file.url(:thumb)), admin_image_path(images)
+	end
+
 end

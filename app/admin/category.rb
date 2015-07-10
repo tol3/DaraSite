@@ -3,7 +3,7 @@ ActiveAdmin.register Category do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :name, :publish
+	permit_params :name, :publish
 #
 # or
 #
@@ -12,6 +12,14 @@ permit_params :name, :publish
 #   permitted << :other if resource.something?
 #   permitted
 # end
+
+	index do
+	  column :name
+	  column :publish
+	  column :updated_at
+	  column :created_at
+	  actions
+	end
 
 
 end

@@ -9,11 +9,175 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
  * require_tree .
- * stub active_admin
+ *= stub active_admin
  *= require_self
+ *= require nav
  */
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+.dummy-1 {
+  height          : 200px;
+  background-color: #9ce200;
+}
+
+
+.dummy-2 {
+  height          : 200px;
+  background-color: #763638;
+}
+
+
+.dummy-3 {
+  height          : 200px;
+  background-color: #cf85e2;
+}
+
+
+.dummy-4 {
+  height          : 200px;
+  background-color: #24e2e1;
+}
+
+
+.dummy-5 {
+  height          : 400px;
+  background-color: #ff7f00;
+}
+
+
+.dummy-6 {
+  height          : 150px;
+  background-color: #ff7f00;
+}
+
+
+.dummy-7 {
+  height          : 150px;
+  background-color: #7f007f;
+}
+
+
+.dummy-8 {
+  height          : 150px;
+  background-color: #963;
+}
+
+
+.dummy-9 {
+  height          : 505px;
+  background-color: #f03;
+}
+
+
+.dummy-10 {
+  height          : 300px;
+  background-color: #9ff;
+}
+
+
+.dummy-11 {
+  height          : 300px;
+  background-color: #309;
+}
+
+
+.dummy-12 {
+  height          : 600px;
+  background-color: #096;
+}
+
+
+.dummy-13 {
+  height          : 600px;
+  background-color: #cf3;
+}
+
+
+.dummy-14 {
+  height          : 700px;
+  background-color: #960;
+}
+
+
+.dummy-15 {
+  height          : 320px;
+  background-color: #f9c;
+}
+
+
+.dummy-16 {
+  height          : 320px;
+  background-color: #00f;
+}
+
+
+.dummy-17 {
+  height          : 175px;
+  background-color: #c33;
+}
+
+
+.dummy-18 {
+  height          : 175px;
+  background-color: #990;
+}
+
+
+.dummy-19 {
+  height          : 175px;
+  background-color: #96f;
+}
+
+
+.dummy-20 {
+  height          : 175px;
+  background-color: #fcf;
+}
+
+
+.dummy-21 {
+  height          : 175px;
+  background-color: #fc3;
+}
+
+
+.dummy-22 {
+  height          : 175px;
+  background-color: #c6c;
+}
+
+
+.dummy-23 {
+  height          : 175px;
+  background-color: #060;
+}
+
+
+.dummy-24 {
+  height          : 175px;
+  background-color: #036;
+}
+
+
+.footer {
+  padding-top     : 20px;
+  padding-bottom  : 20px;
+  background-color: #4e1367;
+  color           : #efefef;
+  font-size       : 1.7em;
+}
+
+
+.row {
+  margin-top  : 10px;
+  margin-left : 15px;
+  margin-right: 15px;
+}
+
+
+.line {
+  border: 1px solid #333;
+}

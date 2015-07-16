@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'event/index'
+
+  get 'event/show'
+
+  get 'party/index'
+
+  get 'party/show'
+
+  get 'news/index'
+
+  get 'news/show'
+
   post '/tinymce_assets' => 'tinymce_assets#create'
 
   get 'tinymce_assets/create'

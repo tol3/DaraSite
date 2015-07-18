@@ -46,13 +46,6 @@ ActiveRecord::Schema.define(version: 20150709192416) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "catagories", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.boolean  "publish",    limit: 1
-    t.datetime "updated_at"
-    t.datetime "created_at"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.boolean  "publish",    limit: 1

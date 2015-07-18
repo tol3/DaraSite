@@ -13,10 +13,22 @@
  *= stub active_admin
  *= require_self
  *= require nav
+ *= require dara
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+body{
+  background: url('background.jpg');
+  p{
+    font-size: 18px;
+  }
+}
+
+.no-pad{
+  padding: 0 !important;
+}
 
 .dummy-1 {
   height          : 200px;

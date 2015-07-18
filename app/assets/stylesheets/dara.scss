@@ -52,10 +52,16 @@ $base-color: #62178A;
 	}
 
 	.sub-title{
+		display: inline;
 		.by{
 			color: #62178A;
 		}
 	}
+	.ssk-group{
+		display: inline;
+		float: right;
+	}
+
 	.social{
 		float: right;
 		margin-top: -2px;

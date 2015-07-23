@@ -18,6 +18,26 @@
 @import "bootstrap";
 @import "font-awesome";
 
+$baseColor: #4c1467;
+$subColor: #333;
+
+.nav-dara{
+  border-radius: 0px !important;
+  background-color: $subColor;
+  border: 0px;
+  ul.navbar-nav{
+    li{
+      a{
+        color: red;
+      }
+    }
+  }
+  .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #333;
+    color: #333;
+  }
+}
+
 .dummy-1 {
   height          : 200px;
   background-color: #9ce200;

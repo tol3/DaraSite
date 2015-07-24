@@ -24,34 +24,37 @@
 
 @font-face {
   font-family: 'KittithadaLight45P';
-  font-size: 18px;
-  src: url('KittithadaLight45P.eot?') format('eot'),
-       url('KittithadaLight45P.woff') format('woff'),
-       url('KittithadaLight45P.ttf')  format('truetype'),
-       url('KittithadaLight45P.svg#KittithadaLight45P') format('svg');
+  font-size  : 18px;
+  src        : url("KittithadaLight45P.eot?") format('eot'), url("KittithadaLight45P.woff") format('woff'), url("KittithadaLight45P.ttf") format('truetype'), url("KittithadaLight45P.svg#KittithadaLight45P") format('svg');
 }
 
+
 body {
-  background: url("background.jpg");
+  background : url("background.jpg");
   font-family: 'KittithadaLight45P';
   p {
-    font-size: 18px;
+    font-size: 1.6em;
   }
 }
+
 
 .container {
   width: 1100px !important;
 }
 
+
 .no-pad {
   padding: 0 !important;
 }
+
 
 .h2 {
   background-color: #691783;
   color           : #efefef;
   text-align      : center;
+  font-size       : 2.3em;
 }
+
 
 .footerbot {
   margin-top      : 20px;
@@ -63,18 +66,19 @@ body {
     color           : #efefef;
     text-align      : center;
     margin          : 0 0 10px;
-    padding-top     : 15px;
-    padding-bottom  : 15px;
+    padding-top     : 10px;
+    padding-bottom  : 10px;
+    font-size       : 2em;
   }
-
+  
 
   p {
-    font-size    : 0.9em;
     padding-left : 15px;
     padding-right: 15px;
     margin-bottom: 15px;
+    font-size    : 1.5em;
   }
-
+  
 
   .center {
     text-align: center;

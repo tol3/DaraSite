@@ -33,6 +33,7 @@
     -webkit-box-shadow: 0 -1px 5px 0 rgba(50, 50, 50, 1);
     -moz-box-shadow   : 0 -1px 5px 0 rgba(50, 50, 50, 1);
     box-shadow        : 0 -1px 5px 0 rgba(50, 50, 50, 1);
+    font-size         : 1.8em;
   }
 }
 
@@ -50,6 +51,7 @@
   .party-card {
     padding-left : 5px;
     padding-right: 5px;
+    margin-bottom: 15px;
     .box-shadow {
       border-radius             : 15px;
       border-bottom-right-radius: 20px;
@@ -68,24 +70,67 @@
       .title {
         color        : white;
         margin-bottom: 0;
+        font-size    : 2.5em;
       }
       
 
       p.sub-title {
         color        : yellow;
-        font-size    : 0.8em;
+        font-size    : 1.3em;
         margin-bottom: 5px;
       }
       
 
       p.content-p {
-        font-size: 0.8em;
+        font-size: 1.3em;
         color    : white;
       }
     }
     
 
     img.party-card-img {
+      display: block;
+      width  : 100%;
+    }
+  }
+}
+
+
+.gallery-wrap {
+  padding         : 20px 10px;
+  background-color: white;
+  .gallery-card {
+    padding-left : 5px;
+    padding-right: 5px;
+    
+    .content {
+      background-color: white;
+    }
+    
+
+    .gallery-card-bot {
+      .title {
+        color        : $cardBG;
+        margin-bottom: 0;
+        font-size    : 2.5em;
+      }
+      
+
+      p.sub-title {
+        color        : #fe2b5e;
+        font-size    : 1.3em;
+        margin-bottom: 5px;
+      }
+      
+
+      p.content-p {
+        font-size: 1.3em;
+        color    : black;
+      }
+    }
+    
+
+    img.gallery-card-img {
       display: block;
       width  : 100%;
     }

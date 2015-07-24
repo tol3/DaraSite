@@ -23,16 +23,18 @@
 
       <div class="col-md-12 party-foot">
         Share it : &nbsp;
-        <i class="fa fa-envelope-o fa-2x">&nbsp;</i>
-        <i class="fa fa-facebook fa-2x">&nbsp;</i>
-        <i class="fa fa-twitter fa-2x">&nbsp;</i>
-        <i class="fa fa-rss fa-2x">&nbsp;</i>
+        <i class="fa fa-envelope-o fa-1x">&nbsp;</i>
+        <i class="fa fa-facebook fa-1x">&nbsp;</i>
+        <i class="fa fa-twitter fa-1x">&nbsp;</i>
+        <i class="fa fa-rss fa-1x">&nbsp;</i>
       </div>
     </div>
 
     <div class="row">
+
       <div class="col-md-12 party-wrap">
 
+        <% 8.times do |x| %>
         <div class="col-md-3 party-card">
           <div class="col-md-12 box-shadow">
             <div class="row">
@@ -47,8 +49,10 @@
             </div>
           </div>
         </div>
+        <% end %>
 
       </div>
+
     </div>
 
     <div class="row">
@@ -60,20 +64,24 @@
     </div>
 
     <div class="row">
-      <div class="col-md-4 box-shadow">
-        <div class="row">
-          img
-        </div>
-        <div class="row">
-          <h4>Techno Dance Party</h4>
-          <p>
-            Lorem ipsum dolor
-          </p>
-          <p>
-            Lorem ipsum dolor sit
-          </p>
+
+      <div class="col-md-12 gallery-wrap">
+        <div class="col-md-4 gallery-card">
+          <div class="col-md-12 box-shadow">
+            <div class="row">
+              <%= image_tag("squre.jpeg" ,:class => "gallery-card-img") %>
+            </div>
+            <div class="row content">
+              <div class="col-md-12 gallery-card-bot">
+                <h4 class="title">title</h4>
+                <p class="sub-title">xxxxxxxxxxxx</p>
+                <p class="content-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
 
   </div>

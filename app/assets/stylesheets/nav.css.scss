@@ -1,13 +1,13 @@
 @import "var";
-
 $dropDown: true;
 .navbar-default {
   background-color: $bgDefault;
   border-color    : $bgHighlight;
   border-style    : none;
   border-radius   : 0;
+  font-size       : 1.5em;
   .navbar-logo {
-
+    
     img {
       position: absolute;
       top     : -45px;
@@ -15,19 +15,19 @@ $dropDown: true;
       width   : 130px;
       height  : 130px;
     }
-
+    
 color: $colDefault;
     &:hover,
     &:focus {
       color: $colHighlight;
     }
   }
-
+  
 
   .navbar-text {
     color: $colDefault;
   }
-
+  
 
   .navbar-nav {
     > li {
@@ -39,7 +39,7 @@ color: $colDefault;
           background-color: $colHover;
         }
       }
-
+      
 
       @if $dropDown {
         > .dropdown-menu {
@@ -52,7 +52,7 @@ color: $colDefault;
               background-color: $colHover;
             }
           }
-
+          
 
           .divider {
             background-color: $bgHighlight;
@@ -60,7 +60,7 @@ color: $colDefault;
         }
       }
     }
-
+    
 
     > .active {
       > a,
@@ -70,7 +70,7 @@ color: $colDefault;
         background-color: $bgHighlight;
       }
     }
-
+    
 
     > .open {
       > a,
@@ -81,7 +81,7 @@ color: $colDefault;
       }
     }
   }
-
+  
 
   .navbar-toggle {
     border-color: $bgHighlight;
@@ -89,19 +89,19 @@ color: $colDefault;
     &:focus {
       background-color: $colHover;
     }
-
+    
 
     .icon-bar {
       background-color: $colDefault;
     }
   }
-
+  
 
   .navbar-collapse,
   .navbar-form {
     border-color: $colDefault;
   }
-
+  
 
   .navbar-link {
     color: $colDefault;
@@ -121,7 +121,7 @@ color: $colDefault;
         color: $colHighlight;
       }
     }
-
+    
 
     > .active {
       > a,

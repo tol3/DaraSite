@@ -31,7 +31,7 @@ $base-color: #62178A;
 
 
 .news-card{
-	margin-top: 15px;
+	margin-top: 20px;
 	background-color: #fefefe;
 	img{
 		display: block;
@@ -118,6 +118,7 @@ $base-color: #62178A;
 
 
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 .content-head{
 	width: 100%;
 	color: #fff;
@@ -140,12 +141,11 @@ $base-color: #62178A;
 
 .contents{
 	background-color: #FFFFFF;
-	-webkit-box-shadow: -1px 1px 11px -1px rgba(94,94,94,1);
-	-moz-box-shadow: -1px 1px 11px -1px rgba(94,94,94,1);
-	box-shadow: -1px 1px 11px -1px rgba(94,94,94,1);
 	padding-bottom: 15px;
+	margin-top: 20px;
 	.content-title{
-
+		font-size: 2.5em;
+		margin-bottom: 15px;
 	}
 
 	.sub-title{
@@ -176,7 +176,7 @@ $base-color: #62178A;
 	.content{
 		margin-top: 20px;
 		margin-bottom: 20px;
-		font-size: 1.1em;
+		// font-size: 1.1em;
 		p{
 			text-indent: 20px;
 		}
@@ -186,19 +186,21 @@ $base-color: #62178A;
 
 .other-card{
 	margin-bottom: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 0px;
 	-webkit-box-shadow: 1px 1px 11px -1px rgba(94,94,94,1);
 	-moz-box-shadow: 1px 1px 11px -1px rgba(94,94,94,1);
 	box-shadow: 1px 1px 11px -1px rgba(94,94,94,1);
 	.head{
 		margin-top: 0;
+		padding-left: 10px;
+		padding-right: 10px;
 		.title{
 			color: #C300CB;
-			font-size: 1.2em;
+			// font-size: 1.2em;
 			margin: 0;
 		}
 		.sub-title{
-			font-size: .9em;
+			// font-size: 1em;
 			margin-bottom: 0;
 		}
 	}
@@ -214,8 +216,9 @@ $base-color: #62178A;
 		}
 		.day{
 			position: absolute;
-		  top: 10px;
-		  left: 10px;
+		  top: 20%;
+  		left: 6%;
+  		right: 75%;
 		  background-color: rgba(141, 144, 152, .9);
 		  color: #fff;
 		  padding: 10px;
@@ -223,7 +226,7 @@ $base-color: #62178A;
 		  p{
 		  	text-align: center;
 		  	margin: 0;
-		  	font-size: 14px;
+		  	font-size: 1.2em;
 		  	font-weight: bolder;
 		  	color: $base-color;
 		  }
@@ -231,12 +234,15 @@ $base-color: #62178A;
 	}
 
 	.content-col{
-		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		padding-left: 5px;
+		padding-right: 5px;
 
 		p.content-text{
+			margin: 0;
 			text-indent: 20px;
-			font-size: .9em;
+			// font-size: .9em;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			display: -webkit-box;
@@ -248,12 +254,13 @@ $base-color: #62178A;
 	}
 
 	.foot{
-		padding-top: 5px;
-		padding-bottom: 5px;
+		padding: 5px;
+		padding-right: 10px;
 		background-color: #62178A;
 		color: #ffffff;
-		font-size: 1em;
+		// font-size: 1em;
 		.watch{
+			font-size: 1.2em;
 			line-height: 2;
 			float: right;
 		}
@@ -286,7 +293,45 @@ $base-color: #62178A;
 
 .tags{
 	color: $base-color;
+	font-size: 1.3em;
 	i{
 		font-size: 1.6em;
+		margin-right: 15px;
+	}
+	a{
+		color: #333;
+		font-size: 1.3em;
+		&:hover{
+			color: $base-color;
+			text-decoration: none;
+			font-weight: bold;
+		}
+	}
+}
+
+.link-title{
+	margin-top: 20px;
+	width: 100%;
+	a{
+		display: block;
+		color: #fefefe;
+		padding: 10px 15px;
+		font-size: 2em;
+		text-shadow: 1px 1px 1px #000;
+		opacity: 1;
+		&:hover{
+			text-decoration: none;
+			opacity: .9;
+		}
+	}
+
+	a.all{
+		background-color: $base-color;
+		float: left;
+	}
+
+	a.back{
+		float: right;
+		background-color: #333;
 	}
 }

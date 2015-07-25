@@ -107,7 +107,8 @@ $dropDown: true;
   
 
   .navbar-collapse {
-    border-top: 0 none transparent;
+    border-top: 0;
+    box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.1);
   }
   
 

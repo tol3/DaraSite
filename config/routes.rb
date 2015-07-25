@@ -1,5 +1,45 @@
 Rails.application.routes.draw do
 
+  get 'travel_by_sense/index'
+
+  get 'travel_by_sense/show'
+
+  get 'life_style/index'
+
+  get 'life_style/show'
+
+  get 'beauty_by_stunning/index'
+
+  get 'beauty_by_stunning/show'
+
+  get 'my_idol/index'
+
+  get 'my_idol/show'
+
+  get 'society/index'
+
+  get 'society/show'
+
+  get 'music/index'
+
+  get 'music/show'
+
+  get 'lakorn/index'
+
+  get 'lakorn/show'
+
+  get 'movie/index'
+
+  get 'movie/show'
+
+  get 'hot_clip/index'
+
+  get 'hot_clip/show'
+
+  get 'gossip/index'
+
+  get 'gossip/show'
+
   get 'event/index'
 
   get 'event/show'

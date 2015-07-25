@@ -40,18 +40,18 @@ permit_params :cover, :title, :content, :post_by, :post_date, :publish, :categor
 
 	form do |f|
     f.inputs 'Cover' do
-      f.input :cover, :as => :file
+      f.input :cover, :as => :file, :required => true
     end
     f.inputs 'Details' do
-      f.input :category
-      f.input :title
-      f.input :post_date, label: 'Publish Post At', as: :datepicker, datepicker_options: { min_date: 3.days.ago.to_date, max_date: "+1M" }
+      f.input :category, :required => true
+      f.input :title, :required => true
+      f.input :post_date, label: 'Publish Post At', as: :datepicker, datepicker_options: { min_date: 3.days.ago.to_date, max_date: "+1M" }, :required => true
     end
     f.inputs 'Content' do
     	f.input :content, :input_html => { :class => "tinymce", :rows => 40, :cols => 120 }
     end
     f.inputs 'Publish' do
-      f.input :post_by
+      f.input :post_by, :required => true
       f.input :publish
     end
     para "Press cancel to return to the list without saving."

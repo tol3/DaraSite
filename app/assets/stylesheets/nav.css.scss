@@ -8,20 +8,20 @@ $dropDown: true;
   border-style    : none;
   border-radius   : 0;
   font-size       : 1.5em;
-
+  
   img.visible-xs {
     max-width: 160px;
     position : absolute;
     top      : -27px;
   }
-
+  
 
   img.hidden-xs {
     max-width: 160px;
     position : absolute;
     top      : -27px;
   }
-
+  
 
   .navbar-logo {
     color: $colDefault;
@@ -30,12 +30,12 @@ $dropDown: true;
       color: $colHighlight;
     }
   }
-
+  
 
   .navbar-text {
     color: $colDefault;
   }
-
+  
 
   .navbar-nav {
     > li {
@@ -47,7 +47,7 @@ $dropDown: true;
           background-color: $colHover;
         }
       }
-
+      
 
       @if $dropDown {
         > .dropdown-menu {
@@ -61,7 +61,7 @@ $dropDown: true;
               background-color: $colHover;
             }
           }
-
+          
 
           .divider {
             background-color: $bgHighlight;
@@ -69,7 +69,7 @@ $dropDown: true;
         }
       }
     }
-
+    
 
     > .active {
       > a,
@@ -79,7 +79,7 @@ $dropDown: true;
         background-color: $bgHighlight;
       }
     }
-
+    
 
     > .open {
       > a,
@@ -90,7 +90,7 @@ $dropDown: true;
       }
     }
   }
-
+  
 
   .navbar-toggle {
     border-color: $bgHighlight;
@@ -98,19 +98,24 @@ $dropDown: true;
     &:focus {
       background-color: $colHover;
     }
-
+    
 
     .icon-bar {
       background-color: $colDefault;
     }
   }
+  
 
+  .navbar-collapse {
+    border-top: 0 none transparent;
+  }
+  
 
   .navbar-collapse,
   .navbar-form {
     border-color: $colDefault;
   }
-
+  
 
   .navbar-link {
     color: $colDefault;
@@ -130,7 +135,7 @@ $dropDown: true;
         color: $colHighlight;
       }
     }
-
+    
 
     > .active {
       > a,

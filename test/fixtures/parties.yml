@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  poster: MyString
+  title: MyString
+  description: MyString
+  day: 2015-07-26 01:32:22
+  location: MyString
+  party_type: MyString
+  content: MyText
+  party_style: MyText
+  publish: false
+
+two:
+  poster: MyString
+  title: MyString
+  description: MyString
+  day: 2015-07-26 01:32:22
+  location: MyString
+  party_type: MyString
+  content: MyText
+  party_style: MyText
+  publish: false

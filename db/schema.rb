@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709192416) do
+ActiveRecord::Schema.define(version: 20150725183236) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 20150709192416) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "catagories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.boolean  "publish",    limit: 1
+    t.datetime "updated_at"
+    t.datetime "created_at"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.boolean  "publish",    limit: 1
@@ -78,6 +85,20 @@ ActiveRecord::Schema.define(version: 20150709192416) do
   end
 
   add_index "news", ["category_id"], name: "index_news_on_category_id", using: :btree
+
+  create_table "parties", force: :cascade do |t|
+    t.string   "poster",      limit: 255
+    t.string   "title",       limit: 255
+    t.string   "description", limit: 255
+    t.datetime "day"
+    t.string   "location",    limit: 255
+    t.string   "party_type",  limit: 255
+    t.text     "content",     limit: 65535
+    t.text     "party_style", limit: 65535
+    t.boolean  "publish",     limit: 1
+    t.datetime "updated_at"
+    t.datetime "created_at"
+  end
 
   create_table "rich_rich_files", force: :cascade do |t|
     t.datetime "created_at"

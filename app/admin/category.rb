@@ -14,8 +14,12 @@ ActiveAdmin.register Category do
 # end
 
 	index do
-	  column :name
-	  column :publish
+	  column :name, sortable: :name do |p|
+    	link_to p.name, admin_category_path(p)
+  	end
+	  column "Publish", :publish do |p|
+      status_tag (p.publish ? "Publish" : "Not Publish"), (p.publish ? :ok : :error)
+    end
 	  column :updated_at
 	  column :created_at
 	  actions

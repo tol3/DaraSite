@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-9">
 
     <div class="row">
       <div class="content-head">
@@ -14,7 +14,7 @@
         <%= image_tag "content-cover.jpeg" %>
       </div>
       <div class="col-md-5 party-title">
-        <h2>Lorem ipsum dolor sit amet</h2>
+        <h2>Night Fashion Music Party</h2>
         <p class="day">31, dec 2015</p>
         <p class="content">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row box-shadow">
 
       <div class="col-md-12 party-wrap">
 
@@ -38,6 +38,11 @@
         <div class="col-md-3 party-card">
           <div class="col-md-12 box-shadow">
             <div class="row">
+              <div class="day">
+                <p>13</p>
+                <p>june</p>
+              </div>
+
               <%= image_tag("partycard.jpeg", :class => "party-card-img") %>
             </div>
             <div class="row content">
@@ -55,7 +60,7 @@
 
     </div>
 
-    <div class="row">
+    <div class="row box-shadow">
       <div class="content-head">
         <span class="content gallery">
           Previous Party Gallery
@@ -65,7 +70,10 @@
 
     <div class="row">
 
-      <div class="col-md-12 gallery-wrap">
+      <div class="col-md-12 box-shadow gallery-wrap">
+
+        <% 6.times do |x| %>
+
         <div class="col-md-4 gallery-card">
           <div class="col-md-12 box-shadow">
             <div class="row">
@@ -73,19 +81,38 @@
             </div>
             <div class="row content">
               <div class="col-md-12 gallery-card-bot">
-                <h4 class="title">title</h4>
-                <p class="sub-title">xxxxxxxxxxxx</p>
-                <p class="content-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                <h4 class="title">Cocktail Super Party</h4>
+                <p class="sub-title">Liptan Hotel Bangkok</p>
+                <p class="content-p">19 December 2015</p>
               </div>
             </div>
           </div>
         </div>
+
+        <%end%>
+
       </div>
 
     </div>
 
   </div>
 
-  <div class="col-md-4">ADS</div>
+  <div class="col-md-3">
+    <div class="col-md-12">
+      <div class="row">
+        <%= image_tag "450.png", :class => "ads" %>
+      </div>
+      <div class="row">
+        <%= image_tag "450_l.png", :class => "ads" %>
+      </div>
+      <div class="row">
+        <%= image_tag "450.png", :class => "ads" %>
+      </div>
+    </div>
+  </div>
 
+</div>
+
+<div class="row">
+  <%= image_tag "1500_s.png", :class => "ads" %>
 </div>

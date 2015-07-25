@@ -1,26 +1,27 @@
 @import "var";
-
 $dropDown: true;
-
 .navbar-default {
-  margin-top: 25px;
-  margin-bottom: 35px;
+  margin-top      : 25px;
+  margin-bottom   : 35px;
   background-color: $bgDefault;
   border-color    : $bgHighlight;
   border-style    : none;
   border-radius   : 0;
   font-size       : 1.5em;
 
-  img.visible-xs{
+  img.visible-xs {
     max-width: 160px;
-    position: absolute;
-    top: -27px;
+    position : absolute;
+    top      : -27px;
   }
-  img.hidden-xs{
+
+
+  img.hidden-xs {
     max-width: 160px;
-    position: absolute;
-    top: -27px;
+    position : absolute;
+    top      : -27px;
   }
+
 
   .navbar-logo {
     color: $colDefault;
@@ -30,9 +31,11 @@ $dropDown: true;
     }
   }
 
+
   .navbar-text {
     color: $colDefault;
   }
+
 
   .navbar-nav {
     > li {
@@ -118,7 +121,7 @@ $dropDown: true;
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .navbar-default .navbar-nav .open .dropdown-menu {
     > li > a {
       color: $colDefault;

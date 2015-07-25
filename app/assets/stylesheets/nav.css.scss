@@ -45,7 +45,8 @@ color: $colDefault;
         > .dropdown-menu {
           background-color: $bgDefault;
           > li > a {
-            color: $colDefault;
+            font-size: 1.5em;
+            color    : $colDefault;
             &:hover,
             &:focus {
               color           : $colHighlight;

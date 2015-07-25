@@ -1,7 +1,12 @@
 //= require active_admin/base
 //= require tinymce
+//= require bootstrap-tagsinput
+//= require jquery
+//= require jquery_ujs
 
 $(document).ready(function() {
+  $('.tags').tagsinput();
+
   tinyMCE.init({
   	theme : 'modern',
     mode: 'textareas',

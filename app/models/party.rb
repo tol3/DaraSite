@@ -4,6 +4,8 @@ class Party < ActiveRecord::Base
 
     mount_uploader :cover, PosterUploader
 
+    acts_as_taggable
+
   structure do
     poster  :string
     category  :string

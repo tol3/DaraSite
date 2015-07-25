@@ -3,7 +3,7 @@ ActiveAdmin.register Party do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :poster, :title, :description, :day, :location, :party_type, :content, :party_style, :publish, :category
+permit_params :poster, :title, :description, :day, :location, :party_type, :content, :party_style, :publish, :category, :tag_list
 #
 # or
 #
@@ -18,7 +18,7 @@ permit_params :poster, :title, :description, :day, :location, :party_type, :cont
 
     f.inputs 'Poster' do
       f.input :poster, :as => :file, :required => true
-    	f.input :category, :as => :radio, :collection => {"Party" => "party", "Event" => "event"}, :required => true
+    	f.input :category, :as => :select, :collection => {"Party" => "party", "Event" => "event"}, :required => true
     end
 
     f.inputs 'Details' do
@@ -34,7 +34,11 @@ permit_params :poster, :title, :description, :day, :location, :party_type, :cont
     end
 
     f.inputs 'Party Style' do
-    	f.input :party_style, :input_html => { :class => "tinymce", :rows => 10, :cols => 120 }
+      f.input :party_style, :input_html => { :class => "tinymce", :rows => 10, :cols => 120 }
+    end
+
+    f.inputs 'Party Style' do
+    	f.input :tag_list, :input_html => { "data-role" => "tagsinput", "class" => "tags" }, :placeholder => "Add Tags", :label => "Tags"
     end
 
     f.inputs 'Publish' do

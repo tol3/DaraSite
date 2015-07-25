@@ -10,8 +10,27 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 @import "active_skin";
+@import "bootstrap-tagsinput";
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+.bootstrap-tagsinput {
+	width: 75%;
+	.tag {
+		margin-right: 2px;
+		color: white;
+	}
+}
+
+.label-info, .badge-info {
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 2px 4px;
+}
+

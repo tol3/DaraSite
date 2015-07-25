@@ -3,7 +3,7 @@ ActiveAdmin.register News do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :cover, :title, :content, :post_by, :post_date, :publish, :category_id
+permit_params :cover, :title, :content, :post_by, :post_date, :publish, :category_id, :tag_list
 #
 # or
 #
@@ -49,6 +49,9 @@ permit_params :cover, :title, :content, :post_by, :post_date, :publish, :categor
     end
     f.inputs 'Content' do
     	f.input :content, :input_html => { :class => "tinymce", :rows => 40, :cols => 120 }
+    end
+    f.inputs 'Publish' do
+      f.input :tag_list, :input_html => { "data-role" => "tagsinput", "class" => "tags" }, :placeholder => "Add Tags", :label => "Tags"
     end
     f.inputs 'Publish' do
       f.input :post_by, :required => true

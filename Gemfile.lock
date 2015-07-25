@@ -55,6 +55,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.5.0)
+      activerecord (>= 3.2, < 5)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.0)
@@ -245,6 +247,7 @@ PLATFORMS
 DEPENDENCIES
   active_skin
   activeadmin!
+  acts-as-taggable-on (~> 3.4)
   bootstrap-sass (~> 3.3.5)
   byebug
   carrierwave

@@ -6,6 +6,8 @@ class News < ActiveRecord::Base
 
     mount_uploader :cover, ImageUploader
 
+    acts_as_taggable
+
   structure do
     cover   :string
     title   :string

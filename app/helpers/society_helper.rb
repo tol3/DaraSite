@@ -1,0 +1,2 @@
+module SocietyHelper
+end

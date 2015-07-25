@@ -67,7 +67,8 @@
     }
   }
   
-.party-card {
+
+  .party-card {
     padding-left : 5px;
     padding-right: 5px;
     margin-bottom: 15px;
@@ -157,4 +158,84 @@
       width  : 100%;
     }
   }
+}
+
+
+.party-poster {
+  
+  p {
+    line-height: 2px;
+    text-align : center;
+  }
+  
+
+  h5 {
+    background-color: $colHover;
+    color           : white;
+    text-align      : center;
+  }
+  
+
+  img {
+    width: 100%;
+  }
+}
+
+
+.party-show-header {
+  h2 {
+    color        : $colHover;
+    margin-top   : 0;
+    margin-bottom: 0;
+    font-size    : 2.5em;
+  }
+  
+
+  h3 {
+    margin-top   : 0;
+    margin-bottom: 0;
+  }
+}
+
+
+.pm {
+  h1.content-title {
+    margin-left: 13px;
+    font-size  : 4em;
+    line-height: 1;
+  }
+  
+
+  p.sub-title {
+    margin-left: 14px;
+  }
+}
+
+
+.party-show-top {
+  margin-bottom: 20px;
+  a {
+    margin-bottom: 20px;
+  }
+}
+
+
+.party-show-bot {
+  margin-top   : 20px;
+  margin-bottom: 20px;
+}
+
+
+.party-wrap-show {
+  padding: 10px;
+}
+
+
+.rm {
+  margin-bottom: 20px;
+}
+
+
+.party-show {
+  margin-bottom: 0;
 }

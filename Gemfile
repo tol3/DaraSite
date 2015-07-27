@@ -41,6 +41,11 @@ gem 'mini_magick'
 gem 'puma'
 gem "font-awesome-rails"
 
+gem 'ahoy_matey'
+gem 'activeuuid', '>= 0.5.0'
+gem "chartkick"
+gem 'groupdate'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

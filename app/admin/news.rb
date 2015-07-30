@@ -1,9 +1,10 @@
 ActiveAdmin.register News do
 
+  menu :priority => 3, :label => "News"
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :cover, :title, :content, :post_by, :post_date, :publish, :category_id, :tag_list
+  permit_params :cover, :title, :content, :post_by, :post_date, :publish, :category_id, :tag_list
 #
 # or
 #
@@ -12,6 +13,12 @@ permit_params :cover, :title, :content, :post_by, :post_date, :publish, :categor
 #   permitted << :other if resource.something?
 #   permitted
 # end
+  scope :all, default: true
+  scope :Publish do |task| task.where(publish: true) end
+  scope :Not_Publish do |task| task.where(publish: false) end
+  # scope :Other_Product do |task|
+  #   task.where('product_type = ?', "Other Product")
+  # end
 
   index do
     selectable_column
@@ -43,7 +50,7 @@ permit_params :cover, :title, :content, :post_by, :post_date, :publish, :categor
       f.input :cover, :as => :file, :required => true
     end
     f.inputs 'Details' do
-      f.input :category, :required => true
+      f.input :category_id, :as => :select, :collection => Category.where(publish: true).order(:id), :required => true
       f.input :title, :required => true
       f.input :post_date, label: 'Publish Post At', as: :datepicker, datepicker_options: { min_date: 3.days.ago.to_date, max_date: "+1M" }, :required => true
     end
@@ -59,6 +66,33 @@ permit_params :cover, :title, :content, :post_by, :post_date, :publish, :categor
     end
     para "Press cancel to return to the list without saving."
     actions
+  end
+
+  show do
+    panel "Details" do
+      attributes_table_for resource do
+        row("Cover") { image_tag(resource.cover.url) }
+        row("Category") { resource.category }
+        row("Date") { resource.post_date }
+      end
+    end
+
+    panel "Content" do
+      attributes_table_for resource do
+        row("title") { resource.title }
+        row(" ") { raw resource.content }
+        row("Post By") { resource.post_by }
+      end
+    end
+
+    panel "Other" do
+      attributes_table_for resource do
+        row("Tag") { resource.tag_list.to_s.gsub(' ', ', ') }
+        row("Publish") { resource.publish }
+        row("Created"){ resource.created_at }
+        row("Updated"){ resource.updated_at }
+      end
+    end
   end
 
   controller do

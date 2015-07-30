@@ -2,7 +2,7 @@ class Party < ActiveRecord::Base
 
     validates :poster, :category, :title, :day, :presence => true
 
-    mount_uploader :cover, PosterUploader
+    mount_uploader :poster, PosterUploader
 
     acts_as_taggable
 

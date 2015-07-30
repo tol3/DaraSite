@@ -1,8 +1,8 @@
 class News < ActiveRecord::Base
 
-	belongs_to :category
-
     validates :cover, :category, :title, :post_by, :post_date, :presence => true
+
+    belongs_to :category
 
     mount_uploader :cover, ImageUploader
 

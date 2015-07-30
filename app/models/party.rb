@@ -6,6 +6,8 @@ class Party < ActiveRecord::Base
 
     acts_as_taggable
 
+    is_impressionable
+
   structure do
     poster  :string
     category  :string

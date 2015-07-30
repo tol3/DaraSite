@@ -1,4 +1,5 @@
 class NewsController < ApplicationController
+	impressionist
   def index
   end
 

@@ -8,6 +8,8 @@ class News < ActiveRecord::Base
 
     acts_as_taggable
 
+    is_impressionable
+
   structure do
     cover   :string
     title   :string

@@ -1,66 +1,53 @@
 Rails.application.routes.draw do
 
-  get 'travel_by_sense/index'
+  get 'travel' => 'travel_by_sense#index'
+  get 'travel/:id' => 'travel_by_sense#show'
 
-  get 'travel_by_sense/show'
+  get 'gossip' => 'gossip#index'
+  get 'gossip/:id' => 'gossip#show'
 
-  get 'life_style/index'
+  get 'lifestyle' => 'life_style#index'
+  get 'lifestyle/:id' => 'life_style#show'
 
-  get 'life_style/show'
+  get 'beauty' => 'beauty_by_stunning#index'
+  get 'beauty/:id' => 'beauty_by_stunning#show'
 
-  get 'beauty_by_stunning/index'
+  get 'myidol' => 'my_idol#index'
+  get 'myidol/:id' => 'my_idol#show'
 
-  get 'beauty_by_stunning/show'
+  get 'society' => 'society#index'
+  get 'society/:id' => 'society#show'
 
-  get 'my_idol/index'
+  get 'music' => 'music#index'
+  get 'music/:id' => 'music#show'
 
-  get 'my_idol/show'
+  get 'lakorn' => 'lakorn#index'
+  get 'lakorn/:id' => 'lakorn#show'
 
-  get 'society/index'
+  get 'movie' => 'movie#index'
+  get 'movie/:id' => 'movie#show'
 
-  get 'society/show'
+  get 'hotclip' => 'hot_clip#index'
+  get 'hotclip/:id' => 'hot_clip#show'
 
-  get 'music/index'
+  get 'event' => 'event#index'
+  get 'event/:id' => 'event#show'
 
-  get 'music/show'
+scope '/party' do
+  get 'party' => 'party#index'
+  get 'party/:id' => 'party#show'
+end
 
-  get 'lakorn/index'
-
-  get 'lakorn/show'
-
-  get 'movie/index'
-
-  get 'movie/show'
-
-  get 'hot_clip/index'
-
-  get 'hot_clip/show'
-
-  get 'gossip/index'
-
-  get 'gossip/show'
-
-  get 'event/index'
-
-  get 'event/show'
-
-  get 'party/index'
-
-  get 'party/show'
-
-  get 'news/index'
-
-  get 'news/show'
+  get 'news' => 'news#index'
+  get 'news/:id' => 'news#show'
 
   post '/tinymce_assets' => 'tinymce_assets#create'
 
   get 'tinymce_assets/create'
 
-  get 'dara/index'
-
-  get 'dara/contact'
-
-  get 'dara/about'
+  get 'home' => 'dara#index'
+  get 'contact' => 'dara#contact'
+  get 'about' => 'dara#about'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -69,6 +56,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'dara#index'
+  #
+  # match "home" => "dara#index"
+  # match "contact" => "dara#contact"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -77,7 +67,6 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
 
   # Example resource route with options:
   #   resources :products do

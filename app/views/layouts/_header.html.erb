@@ -22,7 +22,9 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-1">
       <ul class="nav navbar-nav">
-        <li class="dropdown">
+
+        <li class="dropdown <%= 'current' if current_page?(gossip_path) || current_page?(hotclip_path) || current_page?(movie_path) || current_page?(lakorn_path) || current_page?(music_path) %>">
+
           <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
             ข่าวบันเทิง
             <span class="caret"></span>
@@ -31,67 +33,55 @@
             <%= nav_link("ซุบซิบ", gossip_path) %>
 
             <li class="divider" role="separator"></li>
-            <li>
-              <a href="#">คลิปเด่น</a>
-            </li>
+            <%= nav_link("คลิปเด่น", hotclip_path) %>
+
             <li class="divider" role="separator"></li>
-            <li>
-              <a href="#">ภาพยนตร์</a>
-            </li>
+            <%= nav_link("ภาพยนตร์", movie_path) %>
+
             <li class="divider" role="separator"></li>
-            <li>
-              <a href="#">ละคร</a>
-            </li>
+            <%= nav_link("ละคร", lakorn_path) %>
+
             <li class="divider" role="separator"></li>
-            <li>
-              <a href="#">เพลง</a>
-            </li>
+            <%= nav_link("เพลง", music_path) %>
+
           </ul>
         </li>
-        <li class="dropdown">
+        <li class="dropdown <%= 'current' if current_page?(calendar_path) || current_page?(chill_path) || current_page?(after_party_path) %>">
+
           <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
             ปาร์ตี้
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li>
-              <a href="#">ปฎิทินปาร์ตี้</a>
-            </li>
+
+            <%= nav_link("ปฏิทินปาร์ตี้", calendar_path) %>
+
             <li class="divider" role="separator"></li>
-            <li>
-              <a href="#">สบายๆยามค่ำคืน</a>
-            </li>
+            <%= nav_link("สบายๆยามค่ำคืน", chill_path) %>
+
             <li class="divider" role="separator"></li>
-            <li>
-              <a href="#">After Party</a>
-            </li>
+            <%= nav_link("After Party", after_party_path) %>
+
           </ul>
         </li>
-        <li>
-          <a href="#">Society</a>
-        </li>
-        <li>
-          <a href="#">My idol</a>
-        </li>
-        <li>
-          <a href="#">Beauty by Stunning</a>
-        </li>
+        <%= nav_link("Society", society_path) %>
+
+        <%= nav_link("My Idol", myidol_path) %>
+
+        <%= nav_link("Beauty By Stunning", beauty_path) %>
 
         <%= nav_link("Life Style", lifestyle_path) %>
 
-        <li>
-          <a href="#">Event</a>
-        </li>
-        <li>
-          <a href="#">Travel by Sense&Scene</a>
-        </li>
+        <%= nav_link("Event", event_path) %>
+
+        <%= nav_link("Travel By Sense & Scene", travel_path) %>
       </ul>
       <ul class="nav navbar-nav navbar-right visible-md visible-lg" style="width: 17%;">
-        <div id="sb-search" class="sb-search">
+        <div class="sb-search" id="sb-search">
           <%= form_tag("/search", method: "post") do %>
-              <input class="sb-search-input" placeholder="Search" type="text" value="" name="search" id="search">
-              <input class="sb-search-submit" type="submit" value="">
-              <span class="sb-icon-search"></span>
+          <input class="sb-search-input" id="search" name="search" placeholder="Search" type="text" value="">
+          <input class="sb-search-submit" type="submit" value="">
+          <span class="sb-icon-search"></span>
           <% end %>
         </div>
       </ul>
@@ -102,5 +92,5 @@
 </nav>
 
 <script>
-  new UISearch( document.getElementById( 'sb-search' ) );
+new UISearch(document.getElementById('sb-search'));
 </script>

@@ -1,85 +1,87 @@
+<% title @head || "News & Entertainment" %>
+
 <div class="row pages">
-	<div class="col-md-9 col-sm-9">
+  <div class="col-md-9 col-sm-9">
 
-		<div class="row">
-			<div class="content-head">
-				<span class="content"> News </span>
-			</div>
-		</div>
+    <div class="row">
+      <div class="content-head">
+        <span class="content">
+          <%= @head %>
+        </span>
+      </div>
+    </div>
 
-		<div class="row box-shadow news-card">
-			<div class="col-md-6 no-pad">
-				<%= image_tag "card-cover.jpeg" %>
-			</div>
+    <div class="row box-shadow news-card">
+      <div class="col-md-6 no-pad">
+        <%= image_tag "card-cover.jpeg" %>
+      </div>
 
-			<div class="col-md-6">
-				<div class="row title">
-					<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-					<p>xxxxxxxxxxxxxxxxxxxxxxx</p>
-				</div>
-				<div class="row content">
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quis, obcaecati est quae. Tempore quae amet assumenda accusamus magni omnis qui vel molestiae placeat, repudiandae nisi quasi cumque tempora quia!
-					</p>
-				</div>
-				<div class="row foot">
-					<p>Watch: 12K</p>
-				</div>
-			</div>
-		</div>
+      <div class="col-md-6">
+        <div class="row title">
+          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+          <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div class="row content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quis, obcaecati est quae. Tempore quae amet assumenda accusamus magni omnis qui vel molestiae placeat, repudiandae nisi quasi cumque tempora quia!
+          </p>
+        </div>
+        <div class="row foot">
+          <p>Watch: 12K</p>
+        </div>
+      </div>
+    </div>
 
-		<div class="row">
+    <div class="row">
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-		<% 15.times do |x| %>
+      <% 15.times do |x| %>
 
-			<div class="col-md-4 col-sm-4 sm-pad">
-				<div class="col-md-12 box-shadow news-card news-small no-pad">
-					<div class="col-md-12">
-						<div class="row title">
-							<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-							<p>xxxxxxxxxxxxxxxxxxxxxxx</p>
-						</div>
+      <div class="col-md-4 col-sm-4 sm-pad">
+        <div class="col-md-12 box-shadow news-card news-small no-pad">
+          <div class="col-md-12">
+            <div class="row title">
+              <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+              <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+            </div>
 
-						<div class="row">
-							<%= image_tag "card-cover.jpeg" %>
-						</div>
-						<div class="row content">
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quis, obcaecati est quae. Tempore quae amet assumenda accusamus magni omnis qui vel molestiae placeat, repudiandae nisi quasi cumque tempora quia!
-							</p>
-						</div>
-						<div class="row foot">
-							<p>Watch: 12K</p>
-						</div>
-					</div>
-				</div>
-			</div>
+            <div class="row">
+              <%= image_tag "card-cover.jpeg" %>
+            </div>
+            <div class="row content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quis, obcaecati est quae. Tempore quae amet assumenda accusamus magni omnis qui vel molestiae placeat, repudiandae nisi quasi cumque tempora quia!
+              </p>
+            </div>
+            <div class="row foot">
+              <p>Watch: 12K</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		<% end %>
+      <% end %>
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-		</div>
+    </div>
 
-	</div>
-
+  </div>
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-	<div class="col-md-3 col-sm-3">
-		<div class="col-md-12">
-			<div class="row">
-				<%= image_tag "450.png", :class => "ads" %>
-			</div>
-			<div class="row">
-				<%= image_tag "450_l.png", :class => "ads" %>
-			</div>
-			<div class="row">
-				<%= image_tag "450.png", :class => "ads" %>
-			</div>
-		</div>
-	</div>
+  <div class="col-md-3 col-sm-3">
+    <div class="col-md-12">
+      <div class="row">
+        <%= image_tag "450.png", :class => "ads" %>
+      </div>
+      <div class="row">
+        <%= image_tag "450_l.png", :class => "ads" %>
+      </div>
+      <div class="row">
+        <%= image_tag "450.png", :class => "ads" %>
+      </div>
+    </div>
+  </div>
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 </div>
 
 <div class="row">
-	<%= image_tag "1500_s.png", :class => "ads" %>
+  <%= image_tag "1500_s.png", :class => "ads" %>
 </div>
-

@@ -1,11 +1,16 @@
 class DaraController < ApplicationController
+  # impressionist :actions=>[:index]
   def index
   end
 
   def contact
+    @head = "Contact"
+
   end
 
   def about
+    @head = "About"
+
   end
 
   def search

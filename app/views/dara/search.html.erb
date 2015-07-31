@@ -1,9 +1,13 @@
-Search<br><%= @search %> <br>
+<% title @search %>
+
+Search<br><%= @search %>
+<br>
 
 <% @news.each do |x| %>
 <%= link_to("News - #{x.title}", news_path(x)) %>
 <% end %>
 
 <% @party.each do |x| %>
-<p>Party - <%= x.id %></p>
+<p>Party -
+  <%= x.id %></p>
 <% end %>

@@ -4,22 +4,27 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-*.rbc
+.DS_Store
 capybara-*.html
 .rspec
 /log
 /tmp
+
 /db/*.sqlite3
+/db/schema.rb
+
 /public/system
 /public/upload
 /public/uploads
+/public/assets/**
+
+*.rbc
+**.orig
+
 /coverage/
 /spec/tmp
-**.orig
-rerun.txt
-pickle-email-*.html
 
-/db/schema.rb
+rerun.txt
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb

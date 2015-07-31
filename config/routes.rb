@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     get 'calendar' => 'party#index'
     get 'chill' => 'party#chill_2_night'
     get 'after_party' => 'party#after_party'
-    get 'party/:id' => 'party#show'
+    get '/:id' => 'party#show'
   end
 
   get 'news' => 'news#index'

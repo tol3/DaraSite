@@ -10,9 +10,12 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= stub active_admin
+//= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery
 //= require bootstrap-sprockets
-//= require_tree .
+//= require social-share-kit.min.js
+//= require scripts
+//= require tinymce_assets
+//= require classie
+//= require uisearch

@@ -28,9 +28,8 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li>
-              <a href="#">ซุบซิบ</a>
-            </li>
+            <%= nav_link("ซุบซิบ", gossip_path) %>
+
             <li class="divider" role="separator"></li>
             <li>
               <a href="#">คลิปเด่น</a>
@@ -77,9 +76,9 @@
         <li>
           <a href="#">Beauty by Stunning</a>
         </li>
-        <li>
-          <a href="#">Life Style</a>
-        </li>
+
+        <%= nav_link("Life Style", lifestyle_path) %>
+
         <li>
           <a href="#">Event</a>
         </li>

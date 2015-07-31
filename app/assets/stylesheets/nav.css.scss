@@ -89,6 +89,12 @@ $dropDown: true;
         background-color: $colHover;
       }
     }
+    
+
+    li.current {
+      color           : $colHighlight;
+      background-color: $colHover;
+    }
   }
 
 

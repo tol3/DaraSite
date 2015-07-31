@@ -1,9 +1,9 @@
 class News < ActiveRecord::Base
 
     belongs_to :category
-    validates :cover, :category, :title, :post_by, :post_date, :presence => true
+    validates :cover, :category, :title, :post_by, :post_date, :teaser, :presence => true
     mount_uploader :cover, ImageUploader
-    is_impressionable :counter_cache => true
+    is_impressionable
     acts_as_taggable
     searchkick
 
@@ -24,6 +24,7 @@ class News < ActiveRecord::Base
   structure do
     cover   :string
     title   :string
+    teaser  :string
     content :text
     post_by :string
     post_date :date

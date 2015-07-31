@@ -13,47 +13,45 @@
 
     <div class="row box-shadow news-card">
       <div class="col-md-6 no-pad">
-        <%= image_tag "card-cover.jpeg" %>
+        <%= link_to image_tag(@first.cover.url), "/gossip/#{@first.id}" %>
       </div>
 
       <div class="col-md-6">
         <div class="row title">
-          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-          <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+          <h2><%= link_to @first.title, "/gossip/#{@first.id}" %></h2>
+          <p><%= @first.post_by %></p>
         </div>
         <div class="row content">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quis, obcaecati est quae. Tempore quae amet assumenda accusamus magni omnis qui vel molestiae placeat, repudiandae nisi quasi cumque tempora quia!
+            <%= @first.teaser %>
           </p>
         </div>
         <div class="row foot">
-          <p>Watch: 12K</p>
+          <p>Watch: <%= @first.impressionist_count %></p>
         </div>
       </div>
     </div>
 
     <div class="row">
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-      <% 15.times do |x| %>
+      <% @news.each do |x| %>
 
       <div class="col-md-4 col-sm-4 sm-pad">
         <div class="col-md-12 box-shadow news-card news-small no-pad">
           <div class="col-md-12">
             <div class="row title">
-              <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-              <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+              <h2><%= link_to x.title, "/gossip/#{x.id}" %></h2>
+              <p><%= x.post_by %></p>
             </div>
 
-            <div class="row">
-              <%= image_tag "card-cover.jpeg" %>
+            <div class="row card-index-img">
+              <%= link_to image_tag(x.cover.url), "/gossip/#{x.id}" %>
             </div>
             <div class="row content">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quis, obcaecati est quae. Tempore quae amet assumenda accusamus magni omnis qui vel molestiae placeat, repudiandae nisi quasi cumque tempora quia!
-              </p>
+              <%= x.teaser %>
             </div>
             <div class="row foot">
-              <p>Watch: 12K</p>
+              <p>Watch: <%= x.impressionist_count %></p>
             </div>
           </div>
         </div>
@@ -61,6 +59,12 @@
 
       <% end %>
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= paginate @news %>
+      </div>
     </div>
 
   </div>

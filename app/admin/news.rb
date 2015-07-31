@@ -55,6 +55,7 @@ ActiveAdmin.register News do
       f.input :post_date, label: 'Publish Post At', as: :datepicker, datepicker_options: { min_date: 3.days.ago.to_date, max_date: "+1M" }, :required => true
     end
     f.inputs 'Content' do
+      f.input :teaser, :required => true
     	f.input :content, :input_html => { :class => "tinymce", :rows => 40, :cols => 120 }
     end
     f.inputs 'Publish' do

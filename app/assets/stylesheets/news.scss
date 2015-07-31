@@ -94,7 +94,6 @@ $base-color: #62178A;
 	img{
 		display: block;
 		width: 100%;
-		border-bottom: 3px solid $base-color;
 	}
 
 	.content{
@@ -165,11 +164,13 @@ $base-color: #62178A;
 	}
 
 	.cover{
+		max-height: 400px;
+		overflow: hidden;
 		img{
 			margin-top: 20px;
 			display: block;
 			width: 100%;
-			max-height: 400px;
+
 		}
 	}
 
@@ -198,9 +199,16 @@ $base-color: #62178A;
 			color: #C300CB;
 			// font-size: 1.2em;
 			margin: 0;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 1; /* number of lines to show */
+			line-height: 1;        /* fallback */
+			max-height: 1*1;
 		}
 		.sub-title{
-			// font-size: 1em;
+			font-size: 1.2em;
 			margin-bottom: 0;
 		}
 	}
@@ -208,11 +216,12 @@ $base-color: #62178A;
 	.cover{
 		border-top: 4px solid $base-color;
 		border-bottom: 4px solid $base-color;
+		height: 150px;
+		overflow: hidden;
 		img.card-img{
 			margin-top: 0;
 			display: block;
 			width: 100%;
-			max-height: 220px;
 		}
 		.day{
 			position: absolute;
@@ -334,4 +343,10 @@ $base-color: #62178A;
 		float: right;
 		background-color: #333;
 	}
+}
+
+.card-index-img{
+	height: 170px;
+	overflow: hidden;
+	border-bottom: 3px solid $base-color;
 }

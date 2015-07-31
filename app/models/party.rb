@@ -6,7 +6,9 @@ class Party < ActiveRecord::Base
 
     acts_as_taggable
 
-    is_impressionable
+    is_impressionable :counter_cache => true
+
+    searchkick
 
   structure do
     poster  :string

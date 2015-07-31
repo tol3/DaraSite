@@ -33,10 +33,12 @@ Rails.application.routes.draw do
   get 'event' => 'event#index'
   get 'event/:id' => 'event#show'
 
-scope '/party' do
-  get 'party' => 'party#index'
-  get 'party/:id' => 'party#show'
-end
+  scope '/party' do
+    get 'calendar' => 'party#index'
+    get 'chill' => 'party#chill_2_night'
+    get 'after_party' => 'party#after_party'
+    get 'party/:id' => 'party#show'
+  end
 
   get 'news' => 'news#index'
   get 'news/:id' => 'news#show'
@@ -48,6 +50,7 @@ end
   get 'home' => 'dara#index'
   get 'contact' => 'dara#contact'
   get 'about' => 'dara#about'
+  post 'search' => 'dara#search'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

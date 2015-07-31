@@ -1,67 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>Ohh 404 !!!</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    body{
+      width: 100%;
+      overflow: hidden;
+      color: #ffffff;
+    }
+    .warp{
+      position: absolute;
+      top: 0;
+      bottom: 20%;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      background-color: #61A4A2;
+    }
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    .logo{
+      position: relative;
+      margin-top: 2%;
+    }
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .dialog{
+      position: relative;
+      text-align: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+    }
 
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    img{
+      display: block;
+      width: 15%;
+      margin: auto;
+    }
 
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
+    .warp-bot{
+      position: absolute;
+      top: 80%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      background-color: #FFFFFF;
+    }
+
+    .warp-bot p{
+      position: absolute;
+      color: #333;
+      text-align: center;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      margin: 0;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .warp-bot p a{
+      text-decoration: none;
+      color: #661687;
+      font-weight: bolder;
+    }
+
+    div.social{
+      padding-top: 20px;
+      position: relative;
+      display: block;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    div.social a{
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    div.social a:hover{
+      color: #efefef;
+    }
+
+ </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <div class="warp">
+
+    <div class="logo"><img src="assets/logo.png" alt=""></div>
+
+    <div class="dialog">
+      <div>
+        <h1>The page you were looking for doesn't exist.</h1>
+        <p>You may have mistyped the address or the page may have moved.</p>
+      </div>
+      <p>If you are the application owner check the logs for more information.</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+
+    <div class="social">
+      <a href="#"> <i class="fa fa-facebook-official fa-3x"></i> </a>
+      <a href="#"> <i class="fa fa-twitter-square fa-3x"></i> </a>
+      <a href="#"> <i class="fa fa-youtube-square fa-3x"></i> </a>
+    </div>
+  </div>
+
+  <div class="warp-bot">
+    <p>© 2015 <a href="http://www.wow2mouth.com">Wow2Mouth</a> , ALL RIGHTS RESERVED.</p>
   </div>
 </body>
 </html>

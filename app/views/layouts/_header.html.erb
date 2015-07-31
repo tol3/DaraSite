@@ -87,8 +87,21 @@
           <a href="#">Travel by Sense&Scene</a>
         </li>
       </ul>
+      <ul class="nav navbar-nav navbar-right visible-md visible-lg" style="width: 17%;">
+        <div id="sb-search" class="sb-search">
+          <%= form_tag("/search", method: "post") do %>
+              <input class="sb-search-input" placeholder="Search" type="text" value="" name="search" id="search">
+              <input class="sb-search-submit" type="submit" value="">
+              <span class="sb-icon-search"></span>
+          <% end %>
+        </div>
+      </ul>
     </div>
 <!-- /.navbar-collapse -->
   </div>
 <!-- /.container-fluid -->
 </nav>
+
+<script>
+  new UISearch( document.getElementById( 'sb-search' ) );
+</script>

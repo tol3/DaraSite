@@ -42,6 +42,7 @@ gem 'puma'
 gem "font-awesome-rails"
 gem 'groupdate'
 gem "chartkick"
+gem 'searchkick'
 
 gem 'impressionist'
 

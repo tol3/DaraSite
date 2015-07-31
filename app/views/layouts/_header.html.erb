@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12" style="margin-top: 10px;">
-      <%= image_tag "1500_m.png", :class => "ads" %>
+      <%= link_to image_tag("1500_m.png", :class => "ads") , "#" %>
     </div>
   </div>
 </div>
@@ -16,8 +16,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= image_tag "logo.png", :class => "hidden-xs" %>
-      <%= image_tag "logo.png", :class => "visible-xs" %>
+      <%= link_to image_tag("logo.png", :class => "hidden-xs") , root_path %>
+      <%= link_to image_tag("logo.png", :class => "visible-xs") , root_path %>
     </div>
 <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-1">

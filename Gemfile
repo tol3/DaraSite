@@ -41,6 +41,7 @@ gem 'mini_magick'
 gem 'puma'
 gem "font-awesome-rails"
 gem 'groupdate'
+gem "chartkick"
 
 gem 'impressionist'
 

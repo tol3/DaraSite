@@ -3,6 +3,7 @@
 //= require bootstrap-tagsinput
 //= require jquery
 //= require jquery_ujs
+//= require chartkick
 
 $(document).ready(function() {
   $('.tags').tagsinput();

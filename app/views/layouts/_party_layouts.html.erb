@@ -1,6 +1,7 @@
 <% title @head || "News & Entertainment" %>
 
 <div class="row">
+  <% if @party.count != 0 %>
   <div class="col-md-9">
 
     <div class="row">
@@ -13,10 +14,10 @@
 
     <div class="row box-shadow row-party">
       <div class="col-md-7 party-cover">
-        <%= link_to image_tag(@first.cover.url), "/party/#{@first.id}" %>
+        <%= link_to image_tag(@first.cover.url(:mini)), "/#{@url}/#{@first.id}" %>
       </div>
       <div class="col-md-5 party-title">
-        <h2><%= link_to @first.title, "/party/#{@first.id}" %></h2>
+        <h2><%= link_to @first.title, "/#{@url}/#{@first.id}" %></h2>
         <p class="day"><%= @first.day.strftime("%d, %B %Y") %></p>
         <p class="content">
           <%= @first.description %>
@@ -45,11 +46,11 @@
                 <p><%= x.day.strftime("%b") %></p>
               </div>
 
-              <%= link_to image_tag(x.poster.url, :class => "party-card-img"), "party/#{x.id}" %>
+              <%= link_to image_tag(x.poster.url(:mini), :class => "party-card-img"), "#{x.id}" %>
             </div>
             <div class="row content">
               <div class="col-md-12 party-card-bot">
-                <h4 class="title"><%= link_to x.title, "party/#{x.id}" %></h4>
+                <h4 class="title"><%= link_to x.title, "#{x.id}" %></h4>
                 <p class="sub-title"><%= x.location %></p>
                 <p class="content-p"><%= x.description %></p>
               </div>
@@ -64,7 +65,7 @@
       </div>
 
     </div>
-
+  <% if @last %>
     <div class="row box-shadow">
       <div class="content-head">
         <span class="content gallery">
@@ -82,11 +83,11 @@
         <div class="col-md-4 gallery-card">
           <div class="col-md-12 box-shadow">
             <div class="row">
-              <%= image_tag(x.cover.url ,:class => "gallery-card-img") %>
+              <%= link_to image_tag(x.cover.url(:mini), :class => "gallery-card-img"), "#{x.id}" %>
             </div>
             <div class="row content">
               <div class="col-md-12 gallery-card-bot">
-                <h4 class="title"><%= x.title %></h4>
+                <h4 class="title"><%= link_to x.title, "#{x.id}" %></h4>
                 <p class="sub-title"><%= x.location %></p>
                 <p class="content-p"><%= x.day.strftime("%d %B %Y") %></p>
               </div>
@@ -102,8 +103,10 @@
       </div>
 
     </div>
+    <% end %>
 
   </div>
+  <% end %>
 
   <div class="col-md-3">
     <div class="col-md-12">

@@ -26,11 +26,12 @@ ActiveAdmin.register Party do
   index do
     selectable_column
     column "ID", :id
-    column "Poster", :cover do |p|
-      if p.cover.url == nil
+
+    column "Poster", :poster do |p|
+      if p.poster.url == nil
         "No Picture"
       else
-        link_to image_tag(p.cover.url(:thumb)), admin_party_path(p)
+        link_to image_tag(p.poster.url(:thumb)), admin_party_path(p)
       end
     end
 
@@ -89,8 +90,8 @@ ActiveAdmin.register Party do
   show do |f|
      panel "Party & Event" do
       attributes_table_for resource do
-        row("cover") { image_tag(resource.cover.url) }
-        row("Poster") { image_tag(resource.poster.url) }
+        row("cover") { image_tag(resource.cover.url(:mini)) }
+        row("Poster") { image_tag(resource.poster.url(:mini)) }
         row("Category") { resource.category }
         row("Party Type") { resource.party_type }
         row("Location") { resource.location }

@@ -34,7 +34,7 @@
 
     <div class="row">
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-      <% @news.each do |x| %>
+      <% @news[1..@news.count].each do |x| %>
 
       <div class="col-md-4 col-sm-4 sm-pad">
         <div class="col-md-12 box-shadow news-card news-small no-pad">

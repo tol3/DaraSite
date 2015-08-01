@@ -4,7 +4,7 @@ ActiveAdmin.register Party do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :poster, :title, :description, :day, :location, :party_type, :content, :party_style, :publish, :category, :tag_list
+  permit_params :poster,:cover, :title, :description, :day, :location, :party_type, :content, :party_style, :publish, :category, :tag_list
 #
 # or
 #
@@ -15,6 +15,10 @@ ActiveAdmin.register Party do
 # end
 
   scope :all, default: true
+
+  scope :party do |task| task.where(category: "party") end
+  scope :event do |task| task.where(category: "event") end
+
   scope :Publish do |task| task.where(publish: true) end
   scope :Not_Publish do |task| task.where(publish: false) end
 
@@ -22,18 +26,19 @@ ActiveAdmin.register Party do
   index do
     selectable_column
     column "ID", :id
-
-    column "Poster", :poster do |p|
-      if p.poster.url == nil
+    column "Poster", :cover do |p|
+      if p.cover.url == nil
         "No Picture"
       else
-        link_to image_tag(p.poster.url(:thumb)), admin_party_path(p)
+        link_to image_tag(p.cover.url(:thumb)), admin_party_path(p)
       end
     end
 
     column "Title", :title do |p|
       link_to p.title, admin_party_path(p)
     end
+
+    column "Category", :category
 
     column "Date", :day
 
@@ -49,6 +54,7 @@ ActiveAdmin.register Party do
 
     f.inputs 'Poster' do
       f.input :poster, :as => :file, :required => true
+      f.input :cover, :as => :file, :required => true
     	f.input :category, :as => :select, :collection => {"Party" => "party", "Event" => "event"}, :required => true
     end
 
@@ -83,6 +89,7 @@ ActiveAdmin.register Party do
   show do |f|
      panel "Party & Event" do
       attributes_table_for resource do
+        row("cover") { image_tag(resource.cover.url) }
         row("Poster") { image_tag(resource.poster.url) }
         row("Category") { resource.category }
         row("Party Type") { resource.party_type }
@@ -102,7 +109,7 @@ ActiveAdmin.register Party do
 
     panel "Other" do
       attributes_table_for resource do
-        row("Tag") { resource.tag_list.to_s.gsub(' ', ', ') }
+        row("Tag") { resource.tag_list }
         row("Publish") { resource.publish }
         row("Created"){ resource.created_at }
         row("Updated"){ resource.updated_at }

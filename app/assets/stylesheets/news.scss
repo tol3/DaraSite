@@ -335,13 +335,15 @@ $base-color: #62178A;
 	}
 
 	a.all{
-		background-color: $base-color;
+		background: url(left.png) top right;
+		padding-right: 75px;
 		float: left;
 	}
 
 	a.back{
+		background: url(right.png) top left;
+		padding-left: 85px;
 		float: right;
-		background-color: #333;
 	}
 }
 

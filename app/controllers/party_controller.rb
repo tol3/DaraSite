@@ -1,9 +1,12 @@
 class PartyController < ApplicationController
 
-	# impressionist :actions=>[:index, :chill_2_night , :after_party]
+	impressionist :actions=>[:index, :chill_2_night , :after_party]
 
   def index
 		@head = "Party"
+    @party = Party.party.publish.reverse_order.page(params[:page]).per(9)
+    @first = Party.party.publish.reverse_order.first
+    @last = Party.party.prev.publish.reverse_order.page(params[:page]).per(6)
   end
 
   def chill_2_night
@@ -16,6 +19,11 @@ class PartyController < ApplicationController
 
   def show
 		@head = "Party"
+    @party = Party.find(params[:id])
+    @title = @party.title
+    @like_this = Party.publish.reverse_order.sample(8)
+
+    impressionist(@party, "show page")
 		# impressionist(@news, "show page")
 
   end

@@ -88,7 +88,7 @@ ActiveAdmin.register News do
 
     panel "Other" do
       attributes_table_for resource do
-        row("Tag") { resource.tag_list.to_s.gsub(' ', ', ') }
+        row("Tag") { resource.tag_list }
         row("Publish") { resource.publish }
         row("Created"){ resource.created_at }
         row("Updated"){ resource.updated_at }

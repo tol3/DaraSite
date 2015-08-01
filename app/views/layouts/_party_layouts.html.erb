@@ -13,13 +13,13 @@
 
     <div class="row box-shadow row-party">
       <div class="col-md-7 party-cover">
-        <%= image_tag "content-cover.jpeg" %>
+        <%= link_to image_tag(@first.cover.url), "/party/#{@first.id}" %>
       </div>
       <div class="col-md-5 party-title">
-        <h2>Night Fashion Music Party</h2>
-        <p class="day">31, dec 2015</p>
+        <h2><%= link_to @first.title, "/party/#{@first.id}" %></h2>
+        <p class="day"><%= @first.day.strftime("%d, %B %Y") %></p>
         <p class="content">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          <%= @first.description %>
         </p>
       </div>
 
@@ -36,28 +36,31 @@
 
       <div class="col-md-12 party-wrap">
 
-        <% 8.times do |x| %>
+        <% @party[1..@party.count].each do |x| %>
         <div class="col-md-3 party-card">
           <div class="col-md-12 box-shadow">
             <div class="row">
               <div class="day">
-                <p>13</p>
-                <p>june</p>
+                <p><%= x.day.strftime("%d") %></p>
+                <p><%= x.day.strftime("%b") %></p>
               </div>
 
-              <%= image_tag("partycard.jpeg", :class => "party-card-img") %>
+              <%= link_to image_tag(x.poster.url, :class => "party-card-img"), "party/#{x.id}" %>
             </div>
             <div class="row content">
               <div class="col-md-12 party-card-bot">
-                <h4 class="title">title</h4>
-                <p class="sub-title">xxxxxxxxxxxx</p>
-                <p class="content-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                <h4 class="title"><%= link_to x.title, "party/#{x.id}" %></h4>
+                <p class="sub-title"><%= x.location %></p>
+                <p class="content-p"><%= x.description %></p>
               </div>
             </div>
           </div>
         </div>
         <% end %>
 
+        <div class="col-md-12">
+          <%= paginate @party %>
+        </div>
       </div>
 
     </div>
@@ -74,18 +77,18 @@
 
       <div class="col-md-12 box-shadow gallery-wrap">
 
-        <% 6.times do |x| %>
+        <% @last.each do |x| %>
 
         <div class="col-md-4 gallery-card">
           <div class="col-md-12 box-shadow">
             <div class="row">
-              <%= image_tag("squre.jpeg" ,:class => "gallery-card-img") %>
+              <%= image_tag(x.cover.url ,:class => "gallery-card-img") %>
             </div>
             <div class="row content">
               <div class="col-md-12 gallery-card-bot">
-                <h4 class="title">Cocktail Super Party</h4>
-                <p class="sub-title">Liptan Hotel Bangkok</p>
-                <p class="content-p">19 December 2015</p>
+                <h4 class="title"><%= x.title %></h4>
+                <p class="sub-title"><%= x.location %></p>
+                <p class="content-p"><%= x.day.strftime("%d %B %Y") %></p>
               </div>
             </div>
           </div>
@@ -93,6 +96,9 @@
 
         <%end%>
 
+        <div class="col-md-12">
+          <%= paginate @party %>
+        </div>
       </div>
 
     </div>

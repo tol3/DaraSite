@@ -46,25 +46,6 @@ ActiveRecord::Schema.define(version: 20150801150639) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "ahoy_events", force: :cascade do |t|
-    t.binary   "visit_id",   limit: 16
-    t.integer  "user_id",    limit: 4
-    t.string   "name",       limit: 255
-    t.text     "properties", limit: 65535
-    t.datetime "time"
-  end
-
-  add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time", using: :btree
-  add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
-  add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
-
-  create_table "catagories", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.boolean  "publish",    limit: 1
-    t.datetime "updated_at"
-    t.datetime "created_at"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.boolean  "publish",    limit: 1
@@ -172,35 +153,5 @@ ActiveRecord::Schema.define(version: 20150801150639) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
-
-  create_table "visits", force: :cascade do |t|
-    t.binary   "visitor_id",       limit: 16
-    t.string   "ip",               limit: 255
-    t.text     "user_agent",       limit: 65535
-    t.text     "referrer",         limit: 65535
-    t.text     "landing_page",     limit: 65535
-    t.integer  "user_id",          limit: 4
-    t.string   "referring_domain", limit: 255
-    t.string   "search_keyword",   limit: 255
-    t.string   "browser",          limit: 255
-    t.string   "os",               limit: 255
-    t.string   "device_type",      limit: 255
-    t.integer  "screen_height",    limit: 4
-    t.integer  "screen_width",     limit: 4
-    t.string   "country",          limit: 255
-    t.string   "region",           limit: 255
-    t.string   "city",             limit: 255
-    t.string   "postal_code",      limit: 255
-    t.decimal  "latitude",                       precision: 10
-    t.decimal  "longitude",                      precision: 10
-    t.string   "utm_source",       limit: 255
-    t.string   "utm_medium",       limit: 255
-    t.string   "utm_term",         limit: 255
-    t.string   "utm_content",      limit: 255
-    t.string   "utm_campaign",     limit: 255
-    t.datetime "started_at"
-  end
-
-  add_index "visits", ["user_id"], name: "index_visits_on_user_id", using: :btree
 
 end

@@ -1,12 +1,22 @@
 class EventController < ApplicationController
+
+  impressionist :actions=>[:index]
+
   def index
     @head = "Event"
-    # impressionist :actions=>[:index]
+    @url = "event"
+    @party = Party.event.publish.reverse_order.page(params[:page]).per(9)
+    @first = Party.event.publish.reverse_order.first
+    @last = Party.event.prev.publish.reverse_order.page(params[:page]).per(6)
   end
 
   def show
     @head = "Event"
-    # impressionist(@news, "show page")
+    @url = "event"
+    @party = Party.find(params[:id])
+    @title = @party.title
+    @like_this = Party.event.publish.reverse_order.sample(8)
 
+    impressionist(@party, "show page")
   end
 end

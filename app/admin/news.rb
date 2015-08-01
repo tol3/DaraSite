@@ -24,6 +24,8 @@ ActiveAdmin.register News do
     selectable_column
     column "ID", :id
 
+    column "Category", :category
+
     column "Cover", :cover do |p|
       if p.cover.url == nil
         "No Picture"
@@ -72,7 +74,7 @@ ActiveAdmin.register News do
   show do
     panel "Details" do
       attributes_table_for resource do
-        row("Cover") { image_tag(resource.cover.url) }
+        row("Cover") { image_tag(resource.cover.url(:mini)) }
         row("Category") { resource.category }
         row("Date") { resource.post_date }
       end
@@ -88,7 +90,7 @@ ActiveAdmin.register News do
 
     panel "Other" do
       attributes_table_for resource do
-        row("Tag") { resource.tag_list.to_s.gsub(' ', ', ') }
+        row("Tag") { resource.tag_list }
         row("Publish") { resource.publish }
         row("Created"){ resource.created_at }
         row("Updated"){ resource.updated_at }

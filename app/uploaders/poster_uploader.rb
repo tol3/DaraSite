@@ -26,6 +26,8 @@ class PosterUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
+  process :resize_and_pad => [540, 720]
+
   #
   # def scale(width, height)
   #   # do something
@@ -33,7 +35,11 @@ class PosterUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [50, 50]
+    process :resize_to_fit => [60, 80]
+  end
+
+  version :mini do
+    process :resize_and_pad => [270, 360]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

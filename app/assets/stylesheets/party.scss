@@ -9,7 +9,7 @@
   padding-top            : 20px;
   border-top-right-radius: 45px;
   background-color       : $cardBG;
-  
+
   .party-cover {
     z-index: 100;
     img {
@@ -17,7 +17,7 @@
       width  : 100%;
     }
   }
-  
+
 
   .party-title {
     h2 {
@@ -25,7 +25,7 @@
       margin-top : 0;
     }
   }
-  
+
 
   .party-foot {
     text-align        : right;
@@ -66,7 +66,7 @@
       color      : $baseColor;
     }
   }
-  
+
 
   .party-card {
     padding-left : 5px;
@@ -77,14 +77,14 @@
       border-bottom-right-radius: 10px;
       border-bottom-left-radius : 10px;
     }
-    
+
 
     .content {
       background-color          : $cardBG;
       border-bottom-right-radius: 10px;
       border-bottom-left-radius : 10px;
     }
-    
+
 
     .party-card-bot {
       .title {
@@ -92,27 +92,23 @@
         margin-bottom: 0;
         font-size    : 2.5em;
       }
-      
 
       p.sub-title {
         color        : #f4f75e;
         font-size    : 1.3em;
         margin-bottom: 5px;
       }
-      
 
       p.content-p {
         font-size: 1.3em;
         color    : white;
       }
     }
-    
 
     img.party-card-img {
       display : block;
       width   : 100%;
       overflow: hidden;
-      height  : 180px;
     }
   }
 }
@@ -129,7 +125,7 @@
     .content {
       background-color: white;
     }
-    
+
 
     .gallery-card-bot {
       .title {
@@ -137,21 +133,21 @@
         margin-bottom: 0;
         font-size    : 2em;
       }
-      
+
 
       p.sub-title {
         color        : #fe2b5e;
         font-size    : 1.3em;
         margin-bottom: 5px;
       }
-      
+
 
       p.content-p {
         font-size: 1.3em;
         color    : black;
       }
     }
-    
+
 
     img.gallery-card-img {
       display: block;
@@ -162,19 +158,19 @@
 
 
 .party-poster {
-  
+
   p {
     line-height: 2px;
     text-align : center;
   }
-  
+
 
   h5 {
     background-color: $colHover;
     color           : white;
     text-align      : center;
   }
-  
+
 
   img {
     width: 100%;
@@ -189,7 +185,7 @@
     margin-bottom: 0;
     font-size    : 2.5em;
   }
-  
+
 
   h3 {
     margin-top   : 0;
@@ -204,7 +200,7 @@
     font-size  : 4em;
     line-height: 1;
   }
-  
+
 
   p.sub-title {
     margin-left: 14px;

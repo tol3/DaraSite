@@ -52,11 +52,12 @@
 
     <div class="row">
       <div class="link-title">
-        <a class="all" href="#">View All</a>
-        <a class="back" href="#">BACK TO HOME PAGE</a>
+        <%= link_to "View All", gossip_path, :class => "all" %>
+        <%= link_to "BACK TO HOME PAGE", root_path, :class => "back" %>
       </div>
     </div>
 
+ <% if @like_this.count != 0 %>
     <div class="row contents">
       <div class="col-md-12">
         <h3 class="content-title">
@@ -71,7 +72,7 @@
         <div class="col-md-4">
           <div class="col-md-12 other-card">
             <div class="row head">
-              <p class="title"><%= x.title %></p>
+              <p class="title"><%= link_to x.title, "/#{@url}/#{x.id}" %></p>
               <p class="sub-title"><%= x.post_by %></p>
             </div>
 
@@ -80,7 +81,7 @@
                 <p><%= x.post_date.strftime("%d") %></p>
                 <p><%= x.post_date.strftime("%b") %></p>
               </div>
-              <%= image_tag(x.cover.url, :class => "card-img") %>
+              <%= link_to image_tag(x.cover.url(:mini), :class => "card-img"), "/#{@url}/#{x.id}" %>
             </div>
 
             <div class="row content-col">
@@ -98,9 +99,11 @@
         <% end %>
 <!-- ####################################################################################### -->
       </div>
+
 <!-- </div> -->
 
     </div>
+ <% end %>
   </div>
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->

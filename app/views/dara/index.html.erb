@@ -2,6 +2,7 @@
 
 <div class="row">
 
+<div class="row">
   <div class="col-md-6 sm-pad">
 
     <div class="col-md-12 no-pad">
@@ -96,36 +97,16 @@
       <div class="tab-content">
         <div aria-labelledby="calendar-tab" class="tab-pane fade active in" id="calendar" role="tabpanel">
 
-          <div class="col-md-12 party-tab">
-            <div class="col-md-12 no-pad">
-              <p>Lorem ipsum dolor sit amet,</p>
-            </div>
-            <div class="col-md-12 no-pad">...</div>
-            <div class="col-md-12 no-pad">...</div>
-          </div>
+            <%= render :partial => 'index_party', :locals => { :party => @calendar, :url => "party" } %>
 
         </div>
         <div aria-labelledby="chill-tab" class="tab-pane fade" id="chill" role="tabpanel">
-
-          <div class="col-md-12 party-tab">
-            <div class="col-md-12 no-pad">
-              <p>Lorem ipsum dolor sit amet,</p>
-            </div>
-            <div class="col-md-12 no-pad">...</div>
-            <div class="col-md-12 no-pad">...</div>
-          </div>
+          <%= render :partial => 'index_party', :locals => { :party => @chill, :url => "party" } %>
 
         </div>
         <div aria-labelledby="afterparty-tab" class="tab-pane fade" id="afterparty" role="tabpanel">
 
-          <div class="col-md-12 party-tab">
-            <div class="col-md-12 no-pad">
-              <p>Lorem ipsum dolor sit amet,</p>
-            </div>
-            <div class="col-md-12 no-pad">...</div>
-            <div class="col-md-12 no-pad">...</div>
-          </div>
-
+          <%= render :partial => 'index_party', :locals => { :party => @after_party, :url => "party" } %>
         </div>
 
       </div>
@@ -134,78 +115,56 @@
 
   </div>
 
-  <div class="col-md-2">
+  <div class="col-md-2 sm-pad">
     <%= link_to image_tag("200.png", :class => "ads") , "#" %>
   </div>
+</div>
 
-  <div class="col-md-4">
+<div class="row">
+  <div class="col-md-4 sm-pad">
     <div class="col-md-12 no-pad">
       <div class="content-head">
         <span class="content">
           Society
         </span>
       </div>
-      <ul class="nav nav-tabs dara-tabs" role="tablist">
-        <li class="active" role="presentation">
-          <a aria-controls="thmusic" aria-expanded="true" data-toggle="tab" href="#thmusic" id="thmusic-tab" role="tab">เพลงไทย</a>
-        </li>
-        <li role="presentation">
-          <a aria-controls="intermusic" aria-expanded="false" data-toggle="tab" href="#intermusic" id="intermusic-tab" role="tab">International</a>
-        </li>
-        <li role="presentation">
-          <a aria-controls="chartmusic" aria-expanded="false" data-toggle="tab" href="#chartmusic" id="chartmusic-tab" role="tab">Chart</a>
-        </li>
-      </ul>
-
-      <div class="tab-content">
-        <div aria-labelledby="thmusic-tab" class="tab-pane fade active in" id="thmusic" role="tabpanel">
-
-          <div class="col-md-12 music-tab">
-            <div class="col-md-12 no-pad">
-              <p>Lorem ipsum dolor sit amet,</p>
-            </div>
-            <div class="col-md-12 no-pad">...</div>
-            <div class="col-md-12 no-pad">...</div>
-          </div>
-
-        </div>
-        <div aria-labelledby="intermusic-tab" class="tab-pane fade" id="intermusic" role="tabpanel">
-
-          <div class="col-md-12 music-tab">
-            <div class="col-md-12 no-pad">
-              <p>Lorem ipsum dolor sit amet,</p>
-            </div>
-            <div class="col-md-12 no-pad">...</div>
-            <div class="col-md-12 no-pad">...</div>
-          </div>
-
-        </div>
-        <div aria-labelledby="chartmusic-tab" class="tab-pane fade" id="chartmusic" role="tabpanel">
-
-          <div class="col-md-12 music-tab">
-            <div class="col-md-12 no-pad">
-              <p>Lorem ipsum dolor sit amet,</p>
-            </div>
-            <div class="col-md-12 no-pad">...</div>
-            <div class="col-md-12 no-pad">...</div>
-          </div>
-
-        </div>
-
+    <div class="col-md-12 no-pad music-cards">
+      <div class="col-md-12 no-pad">
+          <%= render :partial => 'index_music', :locals => { :music => @music, :url => "music" } %>
       </div>
+
+      <div class="col-md-12 no-pad">
+          <%= render :partial => 'index_music', :locals => { :music => @music, :url => "music" } %>
+      </div>
+
+      <div class="col-md-12 no-pad">
+          <%= render :partial => 'index_music', :locals => { :music => @music, :url => "music" } %>
+      </div>
+    </div>
 
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 sm-pad">
     <div class="col-md-12 no-pad">
       <div class="content-head">
         <span class="content">
           My Idol
         </span>
       </div>
+
+      <div class="col-md-12 no-pad">
+        ...
+      </div>
+      <div class="col-md-12 no-pad">
+        ...
+      </div>
+      <div class="col-md-12 no-pad">
+        ...
+      </div>
+
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 sm-pad">
     <div class="col-md-12 no-pad">
       <div class="content-head">
         <span class="content">
@@ -214,10 +173,16 @@
       </div>
     </div>
   </div>
-  <div class="col-md-12">
+</div>
+
+
+  <div class="row">
     <%= link_to image_tag("1500_s.png", :class => "ads") , "#" %>
   </div>
-  <div class="col-md-4">
+
+<div class="row">
+
+  <div class="col-md-4 sm-pad">
     <div class="col-md-12 no-pad">
       <div class="content-head">
         <span class="content">
@@ -226,7 +191,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 sm-pad">
     <%= link_to image_tag("450.png", :class => "ads") , "#" %>
 
     <div class="col-md-12 no-pad travel-margin">
@@ -238,7 +203,7 @@
     </div>
 
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 sm-pad">
     <div class="col-md-12 no-pad">
       <div class="content-head">
         <span class="content">
@@ -251,6 +216,7 @@
     </div>
   </div>
 
+  </div>
 </div>
 
 <script type="text/javascript">
@@ -264,5 +230,3 @@
     });
   });
 </script>
-
-

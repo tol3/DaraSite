@@ -34,176 +34,82 @@
       </ul>
       <div class="tab-content">
         <div aria-labelledby="gossip-tab" class="tab-pane fade active in" id="gossip" role="tabpanel">
+          <%= render 'dara/index_news' %>
+        </div>
 
-          <div class="col-md-12 enter-tab">
-            <h2><%= link_to @gossip.first.title  %></h2>
+        <div aria-labelledby="hotclip-tab" class="tab-pane fade" id="hotclip" role="tabpanel"></div>
 
-            <div class="row no-pad index-news-cards">
+        <div aria-labelledby="movie-tab" class="tab-pane fade" id="movie" role="tabpanel"></div>
 
-              <div class="col-md-5 news-cover no-pad">
-                <%= image_tag @gossip.first.cover.url(:mini), :class => "" %>
-              </div>
-              <div class="col-md-7">
+        <div aria-labelledby="lakorn-tab" class="tab-pane fade" id="lakorn" role="tabpanel"></div>
 
-                <p class="content">
-                  <%= @gossip.first.teaser %>
-                </p>
+        <div aria-labelledby="music-tab" class="tab-pane fade" id="music" role="tabpanel"></div>
 
-                <p class="day"><%= @gossip.first.post_date.strftime("%d, %B %Y") %></p>
+        <div aria-labelledby="lakorn-tab" class="tab-pane fade" id="lakorn" role="tabpanel"></div>
 
-              </div>
+      </div>
 
-              <div class="col-md-12 news-foot">
-                Share it : &nbsp;
-                <i class="fa fa-envelope-o fa-1x">&nbsp;</i>
-                <i class="fa fa-facebook fa-1x">&nbsp;</i>
-                <i class="fa fa-twitter fa-1x">&nbsp;</i>
-                <i class="fa fa-rss fa-1x">&nbsp;</i>
-              </div>
+    </div>
 
+  </div>
+
+  <div class="col-md-4 sm-pad">
+
+    <div class="col-md-12 no-pad">
+      <div class="content-head">
+        <span class="content">
+          Party
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-12 no-pad">
+
+      <ul class="nav nav-tabs dara-tabs" role="tablist">
+        <li class="active" role="presentation">
+          <a aria-controls="calendar" aria-expanded="true" data-toggle="tab" href="#calendar" id="calendar-tab" role="tab">Party Calendar</a>
+        </li>
+        <li role="presentation">
+          <a aria-controls="chill" aria-expanded="false" data-toggle="tab" href="#chill" id="chill-tab" role="tab">Chill 2 Night</a>
+        </li>
+        <li role="presentation">
+          <a aria-controls="afterparty" aria-expanded="false" data-toggle="tab" href="#afterparty" id="afterparty-tab" role="tab">After Party</a>
+        </li>
+
+      </ul>
+      <div class="tab-content">
+        <div aria-labelledby="calendar-tab" class="tab-pane fade active in" id="calendar" role="tabpanel">
+
+          <div class="col-md-12 party-tab">
+            <div class="col-md-12 no-pad">
+              <p>Lorem ipsum dolor sit amet,</p>
             </div>
+            <div class="col-md-12 no-pad">...</div>
+            <div class="col-md-12 no-pad">...</div>
+          </div>
 
-            <div class="col-md-4 sm-news-card">
+        </div>
+        <div aria-labelledby="chill-tab" class="tab-pane fade" id="chill" role="tabpanel">
 
-              <div class="col-md-12 no-pad">
-                <%= image_tag @gossip.first.cover.url(:mini), :class => "" %>
-              </div>
-              <div class="col-md-12 content no-pad">
-                <div class="col-md-12 sm-news-card-bot">
-                  <h4 class="title"><%= @gossip.first.title %></h4>
-                  <p class="sub-title">
-                    <%= @gossip.first.teaser %></h4>
-                </p>
-                <p class="content-p"><%= @gossip.first.post_date.strftime("%d, %B %Y") %></p>
-              </div>
-              <div class="col-md-12 sm-news-card-box no-pad">
-                <div class="col-md-6 wl-box">
-                  <i class="fa fa-eye"></i>
-                  25k
-                </div>
-                <div class="col-md-6 wl-box">
-                  <i class="fa fa-thumbs-up"></i>
-                  22k
-                </div>
-              </div>
+          <div class="col-md-12 party-tab">
+            <div class="col-md-12 no-pad">
+              <p>Lorem ipsum dolor sit amet,</p>
             </div>
+            <div class="col-md-12 no-pad">...</div>
+            <div class="col-md-12 no-pad">...</div>
           </div>
+
         </div>
+        <div aria-labelledby="afterparty-tab" class="tab-pane fade" id="afterparty" role="tabpanel">
 
-      </div>
-
-      <div aria-labelledby="hotclip-tab" class="tab-pane fade" id="hotclip" role="tabpanel">
-        <div class="col-md-12 enter-tab">
-          <div class="col-md-12 no-pad">
-            <p>Lorem ipsum dolor sit amet,</p>
+          <div class="col-md-12 party-tab">
+            <div class="col-md-12 no-pad">
+              <p>Lorem ipsum dolor sit amet,</p>
+            </div>
+            <div class="col-md-12 no-pad">...</div>
+            <div class="col-md-12 no-pad">...</div>
           </div>
-          <div class="col-md-4">...</div>
-          <div class="col-md-4">...</div>
-          <div class="col-md-4">...</div>
-        </div>
-      </div>
-      <div aria-labelledby="movie-tab" class="tab-pane fade" id="movie" role="tabpanel">
-        <div class="col-md-12 enter-tab">
-          <div class="col-md-12 no-pad">
-            <p>Lorem ipsum dolor sit amet,</p>
-          </div>
-          <div class="col-md-4">...</div>
-          <div class="col-md-4">...</div>
-          <div class="col-md-4">...</div>
-        </div>
-      </div>
-      <div aria-labelledby="lakorn-tab" class="tab-pane fade" id="lakorn" role="tabpanel">
-        <div class="col-md-12 enter-tab">
-          <div class="col-md-12 no-pad">
-            <p>Lorem ipsum dolor sit amet,</p>
-          </div>
-          <div class="col-md-4">...</div>
-          <div class="col-md-4">...</div>
-          <div class="col-md-4">...</div>
-        </div>
-      </div>
-      <div aria-labelledby="music-tab" class="tab-pane fade" id="music" role="tabpanel">
-        <div class="col-md-12 enter-tab">
-          <div class="col-md-12 no-pad">
-            <p>Lorem ipsum dolor sit amet,</p>
-          </div>
-          <div class="col-md-4">...</div>
-          <div class="col-md-4">...</div>
-          <div class="col-md-4">...</div>
-        </div>
-      </div>
-      <div aria-labelledby="lakorn-tab" class="tab-pane fade" id="lakorn" role="tabpanel">
-        <div class="col-md-12 enter-tab">
-          <div class="col-md-12 no-pad">
-            <p>Lorem ipsum dolor sit amet,</p>
-          </div>
-          <div class="col-md-4">...</div>
-          <div class="col-md-4">...</div>
-          <div class="col-md-4">...</div>
-        </div>
-      </div>
 
-    </div>
-
-  </div>
-
-</div>
-
-<div class="col-md-4 sm-pad">
-
-  <div class="col-md-12 no-pad">
-    <div class="content-head">
-      <span class="content">
-        Party
-      </span>
-    </div>
-  </div>
-
-  <div class="col-md-12 no-pad">
-
-    <ul class="nav nav-tabs dara-tabs" role="tablist">
-      <li class="active" role="presentation">
-        <a aria-controls="calendar" aria-expanded="true" data-toggle="tab" href="#calendar" id="calendar-tab" role="tab">Party Calendar</a>
-      </li>
-      <li role="presentation">
-        <a aria-controls="chill" aria-expanded="false" data-toggle="tab" href="#chill" id="chill-tab" role="tab">Chill 2 Night</a>
-      </li>
-      <li role="presentation">
-        <a aria-controls="afterparty" aria-expanded="false" data-toggle="tab" href="#afterparty" id="afterparty-tab" role="tab">After Party</a>
-      </li>
-
-    </ul>
-    <div class="tab-content">
-      <div aria-labelledby="calendar-tab" class="tab-pane fade active in" id="calendar" role="tabpanel">
-
-        <div class="col-md-12 party-tab">
-          <div class="col-md-12 no-pad">
-            <p>Lorem ipsum dolor sit amet,</p>
-          </div>
-          <div class="col-md-12 no-pad">...</div>
-          <div class="col-md-12 no-pad">...</div>
-        </div>
-
-      </div>
-      <div aria-labelledby="chill-tab" class="tab-pane fade" id="chill" role="tabpanel">
-
-        <div class="col-md-12 party-tab">
-          <div class="col-md-12 no-pad">
-            <p>Lorem ipsum dolor sit amet,</p>
-          </div>
-          <div class="col-md-12 no-pad">...</div>
-          <div class="col-md-12 no-pad">...</div>
-        </div>
-
-      </div>
-      <div aria-labelledby="afterparty-tab" class="tab-pane fade" id="afterparty" role="tabpanel">
-
-        <div class="col-md-12 party-tab">
-          <div class="col-md-12 no-pad">
-            <p>Lorem ipsum dolor sit amet,</p>
-          </div>
-          <div class="col-md-12 no-pad">...</div>
-          <div class="col-md-12 no-pad">...</div>
         </div>
 
       </div>
@@ -212,124 +118,122 @@
 
   </div>
 
-</div>
+  <div class="col-md-2">
+    <%= link_to image_tag("200.png", :class => "ads") , "#" %>
+  </div>
 
-<div class="col-md-2">
-  <%= link_to image_tag("200.png", :class => "ads") , "#" %>
-</div>
+  <div class="col-md-4">
+    <div class="col-md-12 no-pad">
+      <div class="content-head">
+        <span class="content">
+          Society
+        </span>
+      </div>
+      <ul class="nav nav-tabs dara-tabs" role="tablist">
+        <li class="active" role="presentation">
+          <a aria-controls="thmusic" aria-expanded="true" data-toggle="tab" href="#thmusic" id="thmusic-tab" role="tab">เพลงไทย</a>
+        </li>
+        <li role="presentation">
+          <a aria-controls="intermusic" aria-expanded="false" data-toggle="tab" href="#intermusic" id="intermusic-tab" role="tab">International</a>
+        </li>
+        <li role="presentation">
+          <a aria-controls="chartmusic" aria-expanded="false" data-toggle="tab" href="#chartmusic" id="chartmusic-tab" role="tab">Chart</a>
+        </li>
+      </ul>
 
-<div class="col-md-4">
-  <div class="col-md-12 no-pad">
-    <div class="content-head">
-      <span class="content">
-        Society
-      </span>
-    </div>
-    <ul class="nav nav-tabs dara-tabs" role="tablist">
-      <li class="active" role="presentation">
-        <a aria-controls="thmusic" aria-expanded="true" data-toggle="tab" href="#thmusic" id="thmusic-tab" role="tab">เพลงไทย</a>
-      </li>
-      <li role="presentation">
-        <a aria-controls="intermusic" aria-expanded="false" data-toggle="tab" href="#intermusic" id="intermusic-tab" role="tab">International</a>
-      </li>
-      <li role="presentation">
-        <a aria-controls="chartmusic" aria-expanded="false" data-toggle="tab" href="#chartmusic" id="chartmusic-tab" role="tab">Chart</a>
-      </li>
-    </ul>
+      <div class="tab-content">
+        <div aria-labelledby="thmusic-tab" class="tab-pane fade active in" id="thmusic" role="tabpanel">
 
-    <div class="tab-content">
-      <div aria-labelledby="thmusic-tab" class="tab-pane fade active in" id="thmusic" role="tabpanel">
-
-        <div class="col-md-12 music-tab">
-          <div class="col-md-12 no-pad">
-            <p>Lorem ipsum dolor sit amet,</p>
+          <div class="col-md-12 music-tab">
+            <div class="col-md-12 no-pad">
+              <p>Lorem ipsum dolor sit amet,</p>
+            </div>
+            <div class="col-md-12 no-pad">...</div>
+            <div class="col-md-12 no-pad">...</div>
           </div>
-          <div class="col-md-12 no-pad">...</div>
-          <div class="col-md-12 no-pad">...</div>
+
+        </div>
+        <div aria-labelledby="intermusic-tab" class="tab-pane fade" id="intermusic" role="tabpanel">
+
+          <div class="col-md-12 music-tab">
+            <div class="col-md-12 no-pad">
+              <p>Lorem ipsum dolor sit amet,</p>
+            </div>
+            <div class="col-md-12 no-pad">...</div>
+            <div class="col-md-12 no-pad">...</div>
+          </div>
+
+        </div>
+        <div aria-labelledby="chartmusic-tab" class="tab-pane fade" id="chartmusic" role="tabpanel">
+
+          <div class="col-md-12 music-tab">
+            <div class="col-md-12 no-pad">
+              <p>Lorem ipsum dolor sit amet,</p>
+            </div>
+            <div class="col-md-12 no-pad">...</div>
+            <div class="col-md-12 no-pad">...</div>
+          </div>
+
         </div>
 
       </div>
-      <div aria-labelledby="intermusic-tab" class="tab-pane fade" id="intermusic" role="tabpanel">
 
-        <div class="col-md-12 music-tab">
-          <div class="col-md-12 no-pad">
-            <p>Lorem ipsum dolor sit amet,</p>
-          </div>
-          <div class="col-md-12 no-pad">...</div>
-          <div class="col-md-12 no-pad">...</div>
-        </div>
-
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="col-md-12 no-pad">
+      <div class="content-head">
+        <span class="content">
+          My Idol
+        </span>
       </div>
-      <div aria-labelledby="chartmusic-tab" class="tab-pane fade" id="chartmusic" role="tabpanel">
-
-        <div class="col-md-12 music-tab">
-          <div class="col-md-12 no-pad">
-            <p>Lorem ipsum dolor sit amet,</p>
-          </div>
-          <div class="col-md-12 no-pad">...</div>
-          <div class="col-md-12 no-pad">...</div>
-        </div>
-
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="col-md-12 no-pad">
+      <div class="content-head">
+        <span class="content">
+          Beauty By Stunning
+        </span>
       </div>
-
-    </div>
-
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="col-md-12 no-pad">
-    <div class="content-head">
-      <span class="content">
-        My Idol
-      </span>
     </div>
   </div>
-</div>
-<div class="col-md-4">
-  <div class="col-md-12 no-pad">
-    <div class="content-head">
-      <span class="content">
-        Beauty By Stunning
-      </span>
+  <div class="col-md-12">
+    <%= link_to image_tag("1500_s.png", :class => "ads") , "#" %>
+  </div>
+  <div class="col-md-4">
+    <div class="col-md-12 no-pad">
+      <div class="content-head">
+        <span class="content">
+          Life Style
+        </span>
+      </div>
     </div>
   </div>
-</div>
-<div class="col-md-12">
-  <%= link_to image_tag("1500_s.png", :class => "ads") , "#" %>
-</div>
-<div class="col-md-4">
-  <div class="col-md-12 no-pad">
-    <div class="content-head">
-      <span class="content">
-        Life Style
-      </span>
-    </div>
-  </div>
-</div>
-<div class="col-md-4">
-  <%= link_to image_tag("450.png", :class => "ads") , "#" %>
-
-  <div class="col-md-12 no-pad travel-margin">
-    <div class="content-head">
-      <span class="content">
-        Travel By Sense & Scene
-      </span>
-    </div>
-  </div>
-
-</div>
-<div class="col-md-4">
-  <div class="col-md-12 no-pad">
-    <div class="content-head">
-      <span class="content">
-        Event
-      </span>
-    </div>
-  </div>
-  <div class="col-md-12 no-pad">
+  <div class="col-md-4">
     <%= link_to image_tag("450.png", :class => "ads") , "#" %>
+
+    <div class="col-md-12 no-pad travel-margin">
+      <div class="content-head">
+        <span class="content">
+          Travel By Sense & Scene
+        </span>
+      </div>
+    </div>
+
   </div>
-</div>
+  <div class="col-md-4">
+    <div class="col-md-12 no-pad">
+      <div class="content-head">
+        <span class="content">
+          Event
+        </span>
+      </div>
+    </div>
+    <div class="col-md-12 no-pad">
+      <%= link_to image_tag("450.png", :class => "ads") , "#" %>
+    </div>
+  </div>
 
 </div>
 

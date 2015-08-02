@@ -1,0 +1,60 @@
+<div class="col-md-12 enter-tab">
+  <h2><%= link_to @gossip.first.title  %></h2>
+
+  <div class="row no-pad index-news-cards">
+
+    <div class="col-md-5 news-cover no-pad">
+      <%= image_tag @gossip.first.cover.url(:mini), :class => "" %>
+    </div>
+    <div class="col-md-7">
+
+      <p class="content">
+        <%= @gossip.first.teaser %>
+      </p>
+
+      <p class="day"><%= @gossip.first.post_date.strftime("%d, %B %Y") %></p>
+
+    </div>
+
+    <div class="col-md-12 news-foot">
+      Share it : &nbsp;
+      <i class="fa fa-envelope-o fa-1x">&nbsp;</i>
+      <i class="fa fa-facebook fa-1x">&nbsp;</i>
+      <i class="fa fa-twitter fa-1x">&nbsp;</i>
+      <i class="fa fa-rss fa-1x">&nbsp;</i>
+    </div>
+
+  </div>
+
+  <% @gossip[1..@gossip.count].each do |x| %>
+  <div class="col-md-4 sm-news-card">
+
+    <div class="col-md-12 no-pad">
+      <%= image_tag x.cover.url(:mini), :class => "" %>
+    </div>
+
+    <div class="col-md-12 content no-pad">
+      <div class="col-md-12 sm-news-card-bot">
+        <h4 class="title"><%= x.title %></h4>
+        <p class="sub-title">
+          <%= x.teaser %>
+        </p>
+        <p class="content-p">
+          <%= x.post_date.strftime("%d, %B %Y") %>
+        </p>
+      </div>
+      <div class="col-md-12 sm-news-card-box no-pad">
+        <div class="col-md-6 wl-box">
+          <i class="fa fa-eye"></i>
+          25k
+        </div>
+        <div class="col-md-6 wl-box">
+          <i class="fa fa-thumbs-up"></i>
+          22k
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+</div>

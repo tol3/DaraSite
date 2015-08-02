@@ -45,7 +45,18 @@
   
 
   p.content {
-    font-size: 1.6em;
+    margin-top        : 5px;
+    font-size         : 1.6em;
+    text-indent       : 20px;
+    overflow          : hidden;
+    text-overflow     : ellipsis;
+    display           : -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    /* number of lines to show */
+    line-height       : 1;
+    /* fallback */
+    max-height        : 1*4;
   }
   
 
@@ -105,8 +116,8 @@
 .sm-news-card {
   padding-left : 5px;
   padding-right: 5px;
-  margin-bottom: 10px;
-  margin-top   : 10px;
+  margin-bottom: 20px;
+  margin-top   : 20px;
   img {
     display: block;
     width  : 100%;
@@ -127,9 +138,19 @@
     
 
     p.sub-title {
-      color        : white;
-      font-size    : 1.5em;
-      margin-bottom: 5px;
+      color             : white;
+      text-indent       : 20px;
+      font-size         : 1.5em;
+      margin-bottom     : 5px;
+      overflow          : hidden;
+      text-overflow     : ellipsis;
+      display           : -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      /* number of lines to show */
+      line-height       : 1;
+      /* fallback */
+      max-height        : 1*4;
     }
     
 

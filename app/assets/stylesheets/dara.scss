@@ -29,8 +29,71 @@
 }
 
 
+.index-news-cards {
+  color           : white;
+  margin-top      : 15px;
+  padding-top     : 20px;
+  background-color: $cardBG;
+  
+  .news-cover {
+    z-index: 100;
+    img {
+      display: block;
+      width  : 100%;
+    }
+  }
+  
+
+  p.content {
+    margin-top        : 5px;
+    font-size         : 1.6em;
+    text-indent       : 20px;
+    overflow          : hidden;
+    text-overflow     : ellipsis;
+    display           : -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    /* number of lines to show */
+    line-height       : 1;
+    /* fallback */
+    max-height        : 1*4;
+  }
+  
+
+  p.day {
+    font-size: 1.6em;
+  }
+  
+
+  .news-foot {
+    text-align        : right;
+    margin-top        : 0;
+    padding-top       : 5px;
+    padding-bottom    : 5px;
+    -webkit-box-shadow: 0 -1px 5px 0 rgba(50, 50, 50, 1);
+    -moz-box-shadow   : 0 -1px 5px 0 rgba(50, 50, 50, 1);
+    box-shadow        : 0 -1px 5px 0 rgba(50, 50, 50, 1);
+    font-size         : 1.8em;
+  }
+}
+
+
 .enter-tab {
   background-color: white;
+  
+  h2 {
+    margin     : 5px 0;
+    line-height: 0.5;
+    font-size  : 3.0em;
+    
+    a {
+      display: inline-block;
+      color  : $baseColor;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 
@@ -47,4 +110,67 @@
 .travel-margin {
   margin-left: -20px;
   width      : 112%;
+}
+
+
+.sm-news-card {
+  padding-left : 5px;
+  padding-right: 5px;
+  margin-bottom: 20px;
+  margin-top   : 20px;
+  img {
+    display: block;
+    width  : 100%;
+  }
+  
+
+  .content {
+    background-color: $baseColor;
+  }
+  
+
+  .sm-news-card-bot {
+    .title {
+      color        : white;
+      margin-bottom: 0;
+      font-size    : 2em;
+    }
+    
+
+    p.sub-title {
+      color             : white;
+      text-indent       : 20px;
+      font-size         : 1.5em;
+      margin-bottom     : 5px;
+      overflow          : hidden;
+      text-overflow     : ellipsis;
+      display           : -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      /* number of lines to show */
+      line-height       : 1;
+      /* fallback */
+      max-height        : 1*4;
+    }
+    
+
+    p.content-p {
+      font-size: 1.5em;
+      color    : white;
+    }
+  }
+  
+
+  .sm-news-card-box {
+    color             : white;
+    font-size         : 1.2em;
+    -webkit-box-shadow: 0 -1px 5px 0 rgba(50, 50, 50, 1);
+    -moz-box-shadow   : 0 -1px 5px 0 rgba(50, 50, 50, 1);
+    box-shadow        : 0 -1px 5px 0 rgba(50, 50, 50, 1);
+    
+    .wl-box {
+      padding   : 10px;
+      text-align: center;
+    }
+  }
 }

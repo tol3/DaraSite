@@ -9,6 +9,16 @@
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
+
+$skinTextTable: #7f8c8d;
+$skinActiveColor: #87329d;
+
+$skinHeaderBck: #1e2a33;
+$skinHeaderTextColor: #FFFFFF;
+$panelHeaderBck: #87329d;
+$panelHeaderTextColor: #FFFFFF;
+$skinLogo: #fff image-url("active_skin/default_logo.png") no-repeat 30px 0;
+
 @import "active_skin";
 @import "bootstrap-tagsinput";
 
@@ -59,6 +69,37 @@
 .mce-menu-item:hover .mce-text, .mce-menu-item.mce-selected .mce-text { color: #333; }
 
 
+
+#title_bar {
+  background: $skinHeaderBck;
+  text-shadow: none;
+  border: none;
+  padding: 15px 30px;
+  @include no-shadow;
+  border-bottom: 4px solid $skinActiveColor;
+  margin: 0;
+  h2 {
+    color: white;
+  }
+  .action_items {
+    span.action_item > a, span.action_item > .dropdown_menu > a {
+      @include rounded(0);
+      background: $skinActiveColor;
+      color: white;
+      @include no-shadow;
+      text-shadow: none;
+      border: none;
+      padding: 17px;
+      font-size: 14px;
+      &:hover {
+        background: lighten($skinActiveColor, 10%) !important;
+      }
+    }
+  }
+}
+
+#img_prev{ width: 100px; }
+#poster_prev{ width: 100px; }
 
 
 

@@ -54,8 +54,12 @@ ActiveAdmin.register Party do
 	form do |f|
 
     f.inputs 'Poster' do
-      f.input :poster, :as => :file, :required => true
-      f.input :cover, :as => :file, :required => true
+      f.input :cover, :as => :file, :input_html => { :onchange => "readURL(this);" }, :required => true, :hint => f.object.cover.present? \
+                                                  ? image_tag(f.object.cover.url(:thumb),  :id => "img_prev")
+                                                  : image_tag("image.png", :id => "img_prev")
+      f.input :poster, :as => :file, :input_html => { :onchange => "readURLs(this);" }, :required => true,  :hint => f.object.cover.present? \
+                                                  ? image_tag(f.object.cover.url(:thumb),  :id => "poster_prev")
+                                                  : image_tag("poster.png", :id => "poster_prev")
     	f.input :category, :as => :select, :collection => {"Party" => "party", "Event" => "event"}, :required => true
     end
 

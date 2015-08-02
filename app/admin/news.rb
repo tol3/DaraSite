@@ -48,8 +48,10 @@ ActiveAdmin.register News do
   end
 
 	form do |f|
-    f.inputs 'Cover' do
-      f.input :cover, :as => :file, :required => true
+    f.inputs 'Cover', :multipart => true do
+      f.input :cover, :as => :file, :input_html => { :onchange => "readURL(this);" }, :required => true, :hint => f.object.cover.present? \
+                                                  ? image_tag(f.object.cover.url(:thumb),  :id => "img_prev")
+                                                  : image_tag("image.png", :id => "img_prev")
     end
     f.inputs 'Details' do
       f.input :category_id, :as => :select, :collection => Category.where(publish: true).order(:id), :required => true

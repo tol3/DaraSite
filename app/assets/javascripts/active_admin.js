@@ -23,4 +23,33 @@ $(document).ready(function() {
     pagebreak_separator: "<p class='page-separator'>&nbsp;</p>",
     document_base_url: (!window.location.origin ? window.location.protocol + "//" + window.location.host : window.location.origin) + "/"
   });
+
 });
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('#img_prev')
+      .attr('src', e.target.result)
+      .width(100);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function readURLs(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('#poster_prev')
+      .attr('src', e.target.result)
+      .width(100);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}

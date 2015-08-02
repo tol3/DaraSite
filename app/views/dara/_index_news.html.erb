@@ -1,41 +1,48 @@
+<% if news.count != 0 %>
 <div class="col-md-12 enter-tab">
-  <h2><%= link_to @gossip.first.title  %></h2>
+
+  <h2><%= link_to news.first.title, "#{url}/#{news.first.id}" %></h2>
 
   <div class="row no-pad index-news-cards">
 
     <div class="col-md-5 news-cover no-pad">
-      <%= image_tag @gossip.first.cover.url(:mini), :class => "" %>
+      <%= link_to image_tag(news.first.cover.url(:mini)), "#{url}/#{news.first.id}" %>
     </div>
     <div class="col-md-7">
 
       <p class="content">
-        <%= @gossip.first.teaser %>
+        <%= news.first.teaser %>
       </p>
 
-      <p class="day"><%= @gossip.first.post_date.strftime("%d, %B %Y") %></p>
+      <p class="day"><%= news.first.post_date.strftime("%d, %B %Y") %></p>
 
     </div>
 
     <div class="col-md-12 news-foot">
-      Share it : &nbsp;
-      <i class="fa fa-envelope-o fa-1x">&nbsp;</i>
-      <i class="fa fa-facebook fa-1x">&nbsp;</i>
-      <i class="fa fa-twitter fa-1x">&nbsp;</i>
-      <i class="fa fa-rss fa-1x">&nbsp;</i>
+      <span class="social">
+        <div class="ssk-group" data-url="<%= "#{request.original_url}#{url}/#{news.first.id}" %>" data-text="<%= "#{news.first.title}" %>">
+          <p>Share it : </p>
+          <a class="ssk ssk-facebook ssk-xs" href=""></a>
+          <a class="ssk ssk-twitter ssk-xs" href=""></a>
+          <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+          <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+        </div>
+      </span>
     </div>
 
   </div>
 
-  <% @gossip[1..@gossip.count].each do |x| %>
+  <div class="row">
+    <% news[1..news.count].each do |x| %>
   <div class="col-md-4 sm-news-card">
 
     <div class="col-md-12 no-pad">
-      <%= image_tag x.cover.url(:mini), :class => "" %>
+      <%= link_to image_tag(x.cover.url(:mini)), "#{url}/#{x.id}" %>
     </div>
 
     <div class="col-md-12 content no-pad">
       <div class="col-md-12 sm-news-card-bot">
-        <h4 class="title"><%= x.title %></h4>
+        <h4 class="title"><%= link_to x.title, "#{url}/#{x.id}" %></h4>
         <p class="sub-title">
           <%= x.teaser %>
         </p>
@@ -44,17 +51,24 @@
         </p>
       </div>
       <div class="col-md-12 sm-news-card-box no-pad">
-        <div class="col-md-6 wl-box">
-          <i class="fa fa-eye"></i>
-          25k
+        <span class="social">
+        <div class="ssk-group" data-url="<%= "#{request.original_url}#{url}/#{news.first.id}" %>" data-text="<%= "#{news.first.title}" %>">
+          <p>
+            <i class="fa fa-eye"></i>
+            <%= x.impressionist_count %>
+          </p>
+          <a class="ssk ssk-facebook ssk-xs" href=""></a>
+          <a class="ssk ssk-twitter ssk-xs" href=""></a>
+          <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+          <a class="ssk ssk-pinterest ssk-xs" href=""></a>
         </div>
-        <div class="col-md-6 wl-box">
-          <i class="fa fa-thumbs-up"></i>
-          22k
-        </div>
+      </span>
       </div>
     </div>
   </div>
   <% end %>
+  </div>
 
 </div>
+
+<% end %>

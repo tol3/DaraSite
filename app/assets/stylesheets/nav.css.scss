@@ -9,6 +9,10 @@ $dropDown: true;
   border-radius   : 0;
   font-size       : 1.5em;
 
+  a:hover{
+    opacity: 1;
+  }
+
   img.visible-xs {
     max-width: 160px;
     position : absolute;
@@ -89,7 +93,7 @@ $dropDown: true;
         background-color: $colHover;
       }
     }
-    
+
 
     li.current {
       color           : $colHighlight;

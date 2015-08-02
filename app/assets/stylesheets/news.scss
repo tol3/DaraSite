@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+@import "var";
 $base-color: #62178A;
 
 .pages{
@@ -36,6 +36,7 @@ $base-color: #62178A;
 	img{
 		display: block;
 		width: 100%;
+		border-right: 2px solid $baseColor;
 	}
 
 	.title{
@@ -53,6 +54,9 @@ $base-color: #62178A;
 			max-height: 1*2;
 			margin-top: 0;
 			margin-bottom: 0;
+			a{
+				color: $baseColor;
+			}
 		}
 		p{
 			margin-top: -10px;
@@ -70,8 +74,17 @@ $base-color: #62178A;
 	.content{
 		padding: 0 10px;
 		text-indent: 20px;
+		height: 119px;
 		p{
-			margin-bottom: 0;
+			margin-top: 10px;
+			margin-bottom: 15px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 4; /* number of lines to show */
+			line-height: 1;        /* fallback */
+			max-height: 1*4;
 		}
 	}
 
@@ -82,6 +95,9 @@ $base-color: #62178A;
 		p{
 			text-align: right;
 			margin-bottom: 0;
+		}
+		.ssk-group{
+			float: left;
 		}
 	}
 }
@@ -94,17 +110,19 @@ $base-color: #62178A;
 	img{
 		display: block;
 		width: 100%;
+		border: none;
 	}
 
 	.content{
+		height: 110px;
 		p{
 			overflow: hidden;
 			text-overflow: ellipsis;
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 2; /* number of lines to show */
+			-webkit-line-clamp: 3; /* number of lines to show */
 			line-height: 1;        /* fallback */
-			max-height: 1*2;
+			max-height: 1*3;
 		}
 	}
 }
@@ -143,13 +161,17 @@ $base-color: #62178A;
 	padding-bottom: 15px;
 	margin-top: 20px;
 	.content-title{
-		font-size: 2.5em;
-		margin-bottom: 15px;
+		font-size: 3em;
+		// margin-bottom: 15px;
+		font-weight: bolder;
+		color: $baseColor;
 	}
 
 	.sub-title{
 		display: inline;
+		font-size: 1.3em;
 		.by{
+			font-weight: bolder;
 			color: #62178A;
 		}
 	}
@@ -194,7 +216,7 @@ $base-color: #62178A;
 		padding-left: 10px;
 		padding-right: 10px;
 		.title{
-			color: #C300CB;
+			a{color: #C300CB;}
 			// font-size: 1.2em;
 			margin: 0;
 			overflow: hidden;

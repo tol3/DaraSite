@@ -18,12 +18,10 @@
         </h1>
 
         <p class="sub-title">
-          BY
-          <span class="by"><%= @news.post_by %></span>
-          on Date
+          BY <span class="by"><%= @news.post_by %></span> on <span class="by"><%= @news.post_date.strftime("%d %B %Y") %></span>
 
           <span class="social">
-            <div class="ssk-group" data-text="Share text default" data-url="<%= request.fullpath %>">
+            <div class="ssk-group" data-url="<%= "#{request.original_url}" %>">
               <a class="ssk ssk-facebook" href=""></a>
               <a class="ssk ssk-twitter" href=""></a>
               <a class="ssk ssk-google-plus" href=""></a>
@@ -52,7 +50,7 @@
 
     <div class="row">
       <div class="link-title">
-        <%= link_to "View All", gossip_path, :class => "all" %>
+        <%= link_to "View All", "/#{@url}", :class => "all" %>
         <%= link_to "BACK TO HOME PAGE", root_path, :class => "back" %>
       </div>
     </div>
@@ -73,7 +71,7 @@
           <div class="col-md-12 other-card">
             <div class="row head">
               <p class="title"><%= link_to x.title, "/#{@url}/#{x.id}" %></p>
-              <p class="sub-title"><%= x.post_by %></p>
+              <p class="sub-title"> By <%= x.post_by %></p>
             </div>
 
             <div class="row cover no-pad">

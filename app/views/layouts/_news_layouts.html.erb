@@ -20,7 +20,7 @@
       <div class="col-md-6">
         <div class="row title">
           <h2><%= link_to @first.title, "/#{@url}/#{@first.id}" %></h2>
-          <p><%= @first.post_by %></p>
+          <p> by <%= @first.post_by %></p>
         </div>
         <div class="row content">
           <p>
@@ -28,7 +28,15 @@
           </p>
         </div>
         <div class="row foot">
-          <p>Watch: <%= @first.impressionist_count %></p>
+          <span class="social">
+            <div class="ssk-group" data-url="<%= "#{request.original_url}/#{@first.id}" %>" data-text="<%= "#{@first.title}" %>" >
+              <a class="ssk ssk-facebook ssk-xs" href=""></a>
+              <a class="ssk ssk-twitter ssk-xs" href=""></a>
+              <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+              <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+            </div>
+          </span>
+          <p> Watch: <%= @first.impressionist_count %> </p>
         </div>
       </div>
     </div>
@@ -42,17 +50,25 @@
           <div class="col-md-12">
             <div class="row title">
               <h2><%= link_to x.title, "/#{@url}/#{x.id}" %></h2>
-              <p><%= x.post_by %></p>
+              <p> by <%= x.post_by %></p>
             </div>
 
             <div class="row card-index-img">
               <%= link_to image_tag(x.cover.url(:mini)), "/#{@url}/#{x.id}" %>
             </div>
             <div class="row content">
-              <%= x.teaser %>
+              <p><%= x.teaser %></p>
             </div>
             <div class="row foot">
-              <p>Watch: <%= x.impressionist_count %></p>
+              <span class="social">
+                <div class="ssk-group" data-url="<%= "#{request.original_url}/#{x.id}" %>" data-text="<%= "#{x.title}" %>">
+                  <a class="ssk ssk-facebook ssk-xs" href=""></a>
+                  <a class="ssk ssk-twitter ssk-xs" href=""></a>
+                  <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+                  <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+                </div>
+              </span>
+              <p> Watch: <%= x.impressionist_count %></p>
             </div>
           </div>
         </div>
@@ -91,3 +107,12 @@
 <div class="row">
   <%= link_to image_tag("1500_s.png", :class => "ads") , "#" %>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+// Init Social Share Kit
+  SocialShareKit.init();
+
+});
+</script>

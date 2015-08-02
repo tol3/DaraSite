@@ -26,7 +26,7 @@ set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log', 'tmp/pid
 # Optional settings:
   set :user, 'root'    # Username in the server to SSH to.
 #   set :port, '30000'     # SSH port number.
-#   set :forward_agent, true     # SSH forward_agent.
+  set :forward_agent, true     # SSH forward_agent.
 
 # This task is the environment that is loaded for most commands, such as
 # `mina deploy` or `mina rake`.

@@ -10,13 +10,14 @@ $(document).ready(function() {
 
   tinyMCE.init({
   	theme : 'modern',
+    skin: 'light',
     mode: 'textareas',
-    plugins: "fullscreen, image, link, print, charmap, colorpicker, uploadimage",
+    plugins: "fullscreen, image, link, print, charmap, colorpicker, uploadimage, media, code, preview, lists, textcolor",
     toolbar: [
-      "undo redo | styleselect | bold italic | link image | alignleft aligncenter alignright | fullscreen uploadimage"
+      "undo redo | styleselect forecolor backcolor | bold italic bullist numlist | link media image uploadimage | alignleft aligncenter alignright | code preview fullscreen "
     ],
     menubar: false,
-    statusbar: false,
+    statusbar: true,
     relative_urls: false,
     remove_script_host: false,
     pagebreak_separator: "<p class='page-separator'>&nbsp;</p>",

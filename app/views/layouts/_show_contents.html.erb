@@ -35,16 +35,15 @@
         <%= image_tag( @news.cover.url ) %>
       </div>
 
-      <div class="col-md-12 content">
+      <div class="col-md-12 show-content">
         <%== @news.content %>
       </div>
 
       <div class="col-md-12 tags">
         <%= fa_icon 'tags' %>
-        <a href="#">abc</a>
-        <a href="#">def</a>
-        <a href="#">hot</a>
-        <a href="#">xxx</a>
+        <% @news.tags.each do |n| %>
+          <span class="label label-dara"><%= n.name %></span>
+        <% end %>
       </div>
     </div>
 

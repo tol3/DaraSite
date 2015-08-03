@@ -12,6 +12,16 @@ class Party < ActiveRecord::Base
     scope :event, -> { where(category: 'event') }
     scope :prev, -> { where("day < ?", Date.today ) }
 
+    def tag_list
+        tags.map(&:name).join(", ")
+    end
+
+    def tag_list=(names)
+        self.tags = names.split(",").map do |n|
+            ActsAsTaggableOn::Tag.where(name: n.strip).first_or_create!
+        end
+    end
+
   structure do
     poster  :string
     cover  :string

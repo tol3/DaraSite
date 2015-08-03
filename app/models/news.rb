@@ -21,6 +21,16 @@ class News < ActiveRecord::Base
     scope :life_style, -> { where(category_id: 9) }
     scope :travel, -> { where(category_id: 10) }
 
+    def tag_list
+        tags.map(&:name).join(", ")
+    end
+
+    def tag_list=(names)
+        self.tags = names.split(",").map do |n|
+            ActsAsTaggableOn::Tag.where(name: n.strip).first_or_create!
+        end
+    end
+
   structure do
     cover   :string
     title   :string

@@ -25,11 +25,17 @@
       </div>
 
       <div class="col-md-12 party-foot">
-        Share it : &nbsp;
-        <i class="fa fa-envelope-o fa-1x">&nbsp;</i>
-        <i class="fa fa-facebook fa-1x">&nbsp;</i>
-        <i class="fa fa-twitter fa-1x">&nbsp;</i>
-        <i class="fa fa-rss fa-1x">&nbsp;</i>
+
+        <span class="social">
+          <div class="ssk-group" data-url="<%= "#{request.original_url}#{@url}/#{@first.id}" %>" data-text="<%= "#{@first.title}" %>">
+            <p>Share it : </p>
+            <a class="ssk ssk-facebook ssk-xs" href=""></a>
+            <a class="ssk ssk-twitter ssk-xs" href=""></a>
+            <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+            <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+          </div>
+        </span>
+
       </div>
     </div>
 

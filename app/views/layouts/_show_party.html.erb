@@ -22,7 +22,7 @@
           <span class="by"><%= @party.impressionist_count %></span>
 
           <span class="social">
-            <div class="ssk-group" data-text="Share text default" data-url="www.google.com">
+            <div class="ssk-group" data-url="<%= "#{request.original_url}" %>" >
               <a class="ssk ssk-facebook" href=""></a>
               <a class="ssk ssk-twitter" href=""></a>
               <a class="ssk ssk-google-plus" href=""></a>
@@ -32,44 +32,31 @@
         </p>
       </div>
 
-      <div class="col-md-9 party-show-top">
-        <div class="col-md-12">
-          <p>
-            <%= @party.description %>
-          </p>
-        </div>
-        <div class="col-md-12 party-show-header">
-          <h2>Information</h2>
-        </div>
-        <div class="col-md-12">
-          <p>
-            <b>Date:</b>
-              <%= @party.day.strftime("%d %B %Y") %>
-            <br>
-            <b>Time:</b>
-              <%= @party.day.strftime("%I:%M %p") %>
-            <br>
-            <b>Location:</b>
-              <%= @party.location %>
-            <br>
-            <b>Type:</b>
-              <%= @party.party_type %>
-            <br>
-          </p>
-        </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-9 party-show-top">
+            <div class="col-md-12"> <p> <%= @party.description %> </p> </div>
 
-        <div class="col-md-12 party-show-header">
-          <h2>Description</h2>
-        </div>
-        <div class="col-md-12">
-            <%== @party.content %>
-        </div>
-      </div>
+            <div class="col-md-12 party-show-header"> <h2>Information</h2> </div>
+            <div class="col-md-12">
+              <p> <b>Date:</b> <%= @party.day.strftime("%d %B %Y") %> </p>
+              <p> <b>Time:</b> <%= @party.day.strftime("%I:%M %p") %> </p>
+              <p> <b>Location:</b> <%= @party.location %> </p>
+              <p> <b>Type:</b> <%= @party.party_type %> </p>
+            </div>
 
-      <div class="col-md-3 party-poster">
-        <h5><%= @party.title %></h5>
-        <p>Poster</p>
-        <%= image_tag(@party.poster.url) %>
+            <div class="col-md-12 party-show-header"> <h2>Description</h2> </div>
+            <div class="col-md-12 show-content">
+                <%== @party.content %>
+            </div>
+
+          </div>
+
+          <div class="col-md-3 party-poster">
+            <h5><%= @party.title %></h5>
+            <%= image_tag(@party.poster.url) %>
+          </div>
+        </div>
       </div>
 
       <div class="col-md-12 cover no-pad">
@@ -80,17 +67,17 @@
         <div class="col-md-12 party-show-header">
           <h2>Party Style</h2>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 show-content">
           <%== @party.party_style %>
         </div>
       </div>
 
       <div class="col-md-12 tags">
         <%= fa_icon 'tags' %>
-        <a href="#">abc</a>
-        <a href="#">def</a>
-        <a href="#">hot</a>
-        <a href="#">xxx</a>
+
+        <% @party.tags.each do |n| %>
+          <span class="label label-dara"><%= n.name %></span>
+        <% end %>
       </div>
     </div>
 
@@ -104,32 +91,39 @@
     <div class="row box-shadow rm">
 
       <div class="col-md-12 party-wrap party-wrap-show">
-
-        <div class="col-md-12 party-show-header">
-          <h3>You May Also Like This</h3>
-        </div>
-
-        <% @like_this.each do |x| %>
-        <div class="col-md-3 party-card">
-          <div class="col-md-12 box-shadow">
-            <div class="row">
-              <div class="day">
-                <p><%= x.day.strftime("%d") %></p>
-                <p><%= x.day.strftime("%B") %></p>
-              </div>
-
-              <%= link_to image_tag(x.poster.url(:mini), :class => "party-card-img"), "/#{@url}/#{x.id}" %>
-            </div>
-            <div class="row content">
-              <div class="col-md-12 party-card-bot">
-                <h4 class="title"><%= link_to x.title, "/#{@url}/#{x.id}" %></h4>
-                <p class="sub-title"><%= x.location %></p>
-                <p class="content-p"><%= x.description %></p>
-              </div>
-            </div>
+        <div class="row">
+          <div class="col-md-12 party-show-header">
+            <h3>You May Also Like This</h3>
           </div>
         </div>
-        <% end %>
+
+        <div class="col-sm-12">
+          <% @like_this.each do |x| %>
+
+          <div class="col-md-3 party-card">
+            <div class="col-md-12 box-shadow">
+
+              <div class="row">
+                <div class="day">
+                  <p><%= x.day.strftime("%d") %></p>
+                  <p><%= x.day.strftime("%B") %></p>
+                </div>
+                <%= link_to image_tag(x.poster.url(:mini), :class => "party-card-img"), "/#{@url}/#{x.id}" %>
+              </div>
+
+              <div class="row content">
+                <div class="col-md-12 party-card-bot">
+                  <h4 class="title"><%= link_to x.title, "/#{@url}/#{x.id}" %></h4>
+                  <p class="sub-title"><%= x.location %></p>
+                  <p class="content-p"><%= x.description %></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <% end %>
+        </div>
 
       </div>
 
@@ -159,12 +153,3 @@
 </div>
 
 </div>
-
-<script type="text/javascript">
-$(document).ready(function () {
-
-// Init Social Share Kit
-  SocialShareKit.init();
-
-});
-</script>

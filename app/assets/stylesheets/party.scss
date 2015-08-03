@@ -61,6 +61,18 @@
     -moz-box-shadow   : 0 -1px 5px 0 rgba(50, 50, 50, 1);
     box-shadow        : 0 -1px 5px 0 rgba(50, 50, 50, 1);
     font-size         : 1.8em;
+
+    .social{
+      float: right;
+      margin-top: -2px;
+      .ssk-group{
+        display: inline;
+        float: right;
+        p{
+          display: inline;
+        }
+      }
+    }
   }
 }
 
@@ -81,12 +93,12 @@
     left            : 10px;
     background-color: rgba(141, 144, 152, .9);
     color           : #fff;
-    padding         : 10px;
+    padding         : 10px 20px;
     border-radius   : 10px;
     p {
       text-align : center;
       margin     : 0;
-      font-size  : 14px;
+      font-size  : 20px;
       font-weight: bolder;
       color      : $baseColor;
     }
@@ -97,12 +109,11 @@
     padding-left : 5px;
     padding-right: 5px;
     margin-bottom: 15px;
+    min-height: 420px;
     .box-shadow {
-      border-radius             : 15px;
       border-bottom-right-radius: 10px;
       border-bottom-left-radius : 10px;
     }
-
 
     .content {
       background-color          : $cardBG;
@@ -110,23 +121,47 @@
       border-bottom-left-radius : 10px;
     }
 
-
     .party-card-bot {
       .title {
-        color        : white;
-        margin-bottom: 0;
-        font-size    : 2.5em;
+        margin-bottom: 3px;
+        padding-bottom: 3px;
+        font-size    : 1.5em;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        line-height: 1;        /* fallback */
+        max-height: 1*2;
+        border-bottom: 2px #efefef solid;
       }
 
       p.sub-title {
         color        : #f4f75e;
         font-size    : 1.3em;
         margin-bottom: 5px;
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-height: 1;        /* fallback */
+        max-height: 1*1;
       }
 
       p.content-p {
         font-size: 1.3em;
-        color    : white;
+        text-indent: 15px;
+        color: white;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        line-height: 1;        /* fallback */
+        max-height: 1*2;
       }
     }
 
@@ -147,32 +182,47 @@
     padding-left : 5px;
     padding-right: 5px;
     margin-bottom: 15px;
+    min-height: 266px;
     .content {
       background-color: white;
     }
-
-
     .gallery-card-bot {
       .title {
-        color        : $cardBG;
-        margin-bottom: 0;
-        font-size    : 2em;
+        margin-bottom: 3px;
+        padding-bottom: 3px;
+        text-indent: 20px;
+        font-size    : 1.5em;
+        font-weight: bolder;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        line-height: 1;        /* fallback */
+        max-height: 1*2;
+        a{ color: $baseColor; }
+        border-bottom: 2px #333 solid;
       }
-
 
       p.sub-title {
         color        : #fe2b5e;
         font-size    : 1.3em;
         margin-bottom: 5px;
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-height: 1;        /* fallback */
+        max-height: 1*1;
       }
-
 
       p.content-p {
         font-size: 1.3em;
         color    : black;
       }
     }
-
 
     img.gallery-card-img {
       display: block;
@@ -183,22 +233,28 @@
 
 
 .party-poster {
-
+  margin-top: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
   p {
     line-height: 2px;
     text-align : center;
   }
 
-
   h5 {
     background-color: $colHover;
+    padding: 10px;
     color           : white;
     text-align      : center;
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: 0;
   }
 
-
   img {
+    display: block;
     width: 100%;
+    border: 2px $baseColor solid;
   }
 }
 
@@ -213,25 +269,24 @@
 
 
   h3 {
-    margin-top   : 0;
-    margin-bottom: 0;
+    font-size: 3em;
+    font-weight: bolder;
+    color: #87329d;
   }
 }
 
 
 .pm {
+  margin-bottom: 20px;
   h1.content-title {
-    margin-left: 13px;
     font-size  : 4em;
     line-height: 1;
   }
-
 
   p.sub-title {
     margin-left: 14px;
   }
 }
-
 
 .party-show-top {
   margin-bottom: 20px;
@@ -239,7 +294,6 @@
     margin-bottom: 20px;
   }
 }
-
 
 .party-show-bot {
   margin-top   : 20px;

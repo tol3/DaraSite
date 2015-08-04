@@ -14,7 +14,7 @@ $(document).ready(function() {
     mode: 'textareas',
     plugins: "fullscreen, image, link, print, charmap, colorpicker, uploadimage, media, code, preview, lists, textcolor",
     toolbar: [
-      "undo redo | styleselect forecolor backcolor | bold italic bullist numlist | link media image uploadimage | alignleft aligncenter alignright | code preview fullscreen "
+      "undo redo | styleselect fontsizeselect forecolor backcolor | bold italic bullist numlist | link media image uploadimage | alignleft aligncenter alignright | code preview fullscreen "
     ],
     menubar: false,
     statusbar: true,

@@ -153,17 +153,15 @@ ul.pagination {
 }
 
 .show-content {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1, h2, h3, h4, h5, h6 {
         margin: 10px;
     }
+
     p {
         img {
             margin: 10px;
+            max-width: 100%;
+            height: auto !important;
         }
     }
 }

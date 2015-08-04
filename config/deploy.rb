@@ -21,7 +21,8 @@ set :branch, 'master'
 set :keep_releases, 3
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log', 'tmp/pids', 'tmp/sockets']
+set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log', 'tmp/pids', 'tmp/sockets', 'public/system',
+  'public/uploads']
 
 # Optional settings:
   set :user, 'root'    # Username in the server to SSH to.
@@ -59,6 +60,14 @@ task :setup => :environment do
   queue! %(mkdir -p "#{deploy_to}/#{shared_path}/tmp/pids")
   queue! %(chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/tmp/pids")
 
+  # public/sys
+  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/system"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/system"]
+
+  # public/upload
+  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/uploads"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/uploads"]
+
   queue %[
     repo_host=`echo $repo | sed -e 's/.*@//g' -e 's/:.*//g'` &&
     repo_port=`echo $repo | grep -o ':[0-9]*' | sed -e 's/://g'` &&
@@ -85,6 +94,10 @@ task :deploy => :environment do
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
+      queue "rm #{deploy_to}/#{current_path}/public/uploads"
+      queue "rm #{deploy_to}/#{current_path}/public/system"
+      queue "ln -nfs /root/domains/wow2mouth/shared/uploads #{deploy_to}/#{current_path}/public/uploads"
+      queue "ln -nfs /root/domains/wow2mouth/shared/system #{deploy_to}/#{current_path}/public/system"
       # invoke :'puma:phased_restart'
     end
   end

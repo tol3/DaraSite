@@ -12,7 +12,7 @@ require 'mina/puma'
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :domain, '103.13.228.42'
-set :deploy_to, '/root/domains/deploy/wow2mouth'
+set :deploy_to, '/root/domains/wow2mouth'
 set :repository, 'https://github.com/tol3/DaraSite.git'
 set :branch, 'master'
 

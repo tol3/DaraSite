@@ -12,7 +12,7 @@ class GossipController < ApplicationController
   def show
     @title = "Gossip"
     @url = "gossip"
-    @news = News.find(params[:id])
+    @news = News.gossip.find(params[:id])
     @head = @news.title
     @like_this = News.gossip.publish.reverse_order.sample(6)
 

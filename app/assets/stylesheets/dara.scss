@@ -2,27 +2,79 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "var";
-.dara-tabs {
-    margin-top: 5px;
-    background-color: white;
-    li {
-        a,
-        a:hover,
-        a:focus {
-            background-color: white;
-            color: black;
-            border: 1px solid #ddd;
-        }
-    }
-    li.active {
-        a,
-        a:hover,
-        a:focus {
-            background-color: $indexcardBG;
-            color: white;
-        }
-    }
+
+.nav-tabs{
+  margin-top: 10px;
+  background-color:#fff;
+  border-bottom: 3px solid #efefef;
 }
+
+.nav-tabs{
+  margin-top: 10px;
+  background-color:#fff;
+
+  li{
+    display: table-cell !important;
+    border-right: 3px solid #efefef;
+    a{
+      display: block !important;
+      text-align: center;
+      border: medium none;
+      margin: 0;
+      color: $baseColor;
+      opacity: 1;
+      font-size: 1.2em;
+      font-weight: bolder;
+      width: auto;
+
+      &:hover{
+        background-color: $baseColor !important;
+        border: medium none;
+        border-radius: 0;
+        color: #efefef;
+        opacity: 1;
+      }
+    }
+  }
+
+}
+
+.nav-tabs{
+  li.active {
+    a{
+      background-color: $baseColor !important;
+      border: medium none !important;
+      margin: 0 !important;
+      color: #efefef !important;
+      opacity: 1 !important;
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+      -webkit-box-shadow: 0 -1px 5px 0 rgba(50, 50, 50, 1);
+      -moz-box-shadow: 0 -1px 5px 0 rgba(50, 50, 50, 1);
+      box-shadow: 0 -1px 5px 0 rgba(50, 50, 50, 1);
+
+      &:hover{
+        background-color: $baseColor !important;
+        border: medium none !important;
+        border-radius: 0 !important;
+        color: #efefef !important;
+        opacity: 1 !important;
+      }
+    }
+  }
+}
+
+.tabs-one{
+  li{
+    width: 20%;
+  }
+  li:last-child{
+    width: 20%;
+    border-right: 0;
+  }
+}
+
+
 
 .index-news-cards {
     color: white;
@@ -297,3 +349,60 @@
         }
     }
 }
+
+
+.panel-party{
+  border-radius: 0;
+  border: none;
+  .panel-heading{
+    border-radius: 0;
+    color: $baseColor;
+    background-color: #fff;
+    border-color: #fff;
+    padding: 10px;
+    .panel-title{
+      font-size: 1.2em;
+      a{
+        display: block;
+        opacity: 1 !important;
+        color: $baseColor !important;
+        &:hover{
+          color: $baseColor !important;
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+
+  .panel-collapse{
+    background-color: $baseColor;
+    padding-bottom: 30px;
+    .panel-body{
+      background-color: #fff;
+      img{
+        border-top: 3px solid $baseColor;
+        border-bottom: 3px solid $baseColor;
+        margin-bottom: 5px;
+        display: block;
+        width: 100%;
+      }
+      h3{
+        margin: 0;
+        padding: 0 10px;
+        font-size: 1.4em;
+        line-height: .9;
+        text-indent: 15px;
+        color: $baseColor;
+      }
+      p{
+        text-indent: 15px;
+      }
+    }
+  }
+}
+
+
+
+
+
+

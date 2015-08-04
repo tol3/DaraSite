@@ -29,7 +29,7 @@ class PartyController < ApplicationController
   def show
 		@head = "Party"
     @url = "party"
-    @party = Party.find(params[:id])
+    @party = Party.party.find(params[:id])
     @title = @party.title
     @like_this = Party.party.publish.reverse_order.sample(8)
 

@@ -13,7 +13,7 @@ class EventController < ApplicationController
   def show
     @head = "Event"
     @url = "event"
-    @party = Party.find(params[:id])
+    @party = Party.event.find(params[:id])
     @title = @party.title
     @like_this = Party.event.publish.reverse_order.sample(8)
 

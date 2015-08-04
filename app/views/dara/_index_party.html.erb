@@ -1,22 +1,41 @@
 <% if party.count != 0 %>
-<div class="col-md-12 party-tab no-pad">
 
-  <div class="col-md-12 index-party-info box-shadow no-pad">
+  <div class="row">
     <div class="col-md-12">
-      <h3><%= party.first.title %></h3>
-    </div>
-    <div class="col-md-12">
-        <%= party.first.location %>
+
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <% party.each_with_index do |p, index| %>
+          <div class="panel panel-default panel-party box-shadow">
+
+            <div class="panel-heading" role="tab" id="<%= "#{index}-#{p.category}" %>">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= "#{url}-#{index}" %>" aria-expanded="true" aria-controls="<%= "#{url}-#{index}" %>">
+                 <%= p.title %>
+                 <span><%= p.title %></span>
+                </a>
+              </h4>
+            </div>
+
+            <div id="<%= "#{url}-#{index}" %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%= "#{index}-#{p.category}" %>">
+              <div class="panel-body no-pad">
+                <%= link_to image_tag(p.cover.url(:mini)), "/party/#{p.id}" %>
+                <h3><%= p.title %></h3>
+                <p><%= p.party_type %></p>
+              </div>
+            </div>
+
+          </div>
+          <script>
+            $('#<%= "#{url}" %>-0').addClass('in')
+          </script>
+        <% end %>
+
+      </div>
+
     </div>
   </div>
-
-
-  <div class="col-md-12 no-pad index-party-cards">
-      <p>Lorem ipsum dolor sit amet,</p>
-
-  </div>
-  <div class="col-md-12 no-pad">...</div>
-  <div class="col-md-12 no-pad">...</div>
-
-</div>
 <% end %>
+
+
+
+

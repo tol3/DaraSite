@@ -15,9 +15,9 @@ class DaraController < ApplicationController
     @travel = News.travel.publish.reverse_order.limit(4)
 
     # Party
-    @calendar = Party.party.publish.reverse_order.limit(3)
-    @chill = Party.party.publish.reverse_order.limit(3)
-    @after_party = Party.party.prev.publish.reverse_order.limit(3)
+    @calendar = Party.party.publish.reverse_order.limit(4)
+    @chill = Party.chill.publish.reverse_order.limit(4)
+    @after_party = Party.prev.publish.reverse_order.limit(4)
 
     # Event
     @event = Party.event.publish.reverse_order.limit(3)

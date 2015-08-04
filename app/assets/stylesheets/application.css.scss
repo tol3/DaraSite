@@ -37,6 +37,8 @@ body {
     background: url("background.jpg");
     font-family: 'KittithadaLight45P';
     line-height: 1;
+    width: 100%;
+    overflow-x: hidden;
     h1 {
         font-size: 64px;
     }

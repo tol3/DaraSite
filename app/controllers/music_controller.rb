@@ -12,7 +12,7 @@ class MusicController < ApplicationController
   def show
     @title = "Music"
     @url = "music"
-		@news = News.find(params[:id])
+		@news = News.music.find(params[:id])
     @head = @news.title
     @like_this = News.music.publish.reverse_order.sample(6)
 

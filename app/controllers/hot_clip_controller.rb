@@ -12,7 +12,7 @@ class HotClipController < ApplicationController
   def show
     @title = "Hot Clip"
     @url = "hotclip"
-    @news = News.find(params[:id])
+    @news = News.hot_clip.find(params[:id])
     @head = @news.title
     @like_this = News.hot_clip.publish.reverse_order.sample(6)
 

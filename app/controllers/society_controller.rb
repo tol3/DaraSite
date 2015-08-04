@@ -12,7 +12,7 @@ class SocietyController < ApplicationController
   def show
     @title = "Society"
     @url = "society"
-		@news = News.find(params[:id])
+		@news = News.socciety.find(params[:id])
     @head = @news.title
     @like_this = News.socciety.publish.reverse_order.sample(6)
 

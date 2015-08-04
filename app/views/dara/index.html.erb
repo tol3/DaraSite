@@ -3,71 +3,65 @@
 <div class="row">
 
 <div class="row">
+
   <div class="col-md-6 sm-pad">
 
-    <div class="col-md-12 no-pad">
-      <div class="content-head">
-        <span class="content">
-          Entertainment News
-        </span>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="content-head">
+          <span class="content">
+            Entertainment News
+          </span>
+        </div>
       </div>
     </div>
 
-    <div class="col-md-12 no-pad">
+    <div class="row">
+      <div class="col-md-12">
 
-      <ul class="nav nav-tabs dara-tabs" role="tablist">
-        <li class="active" role="presentation">
-          <a aria-controls="gossip" aria-expanded="true" data-toggle="tab" href="#gossip" id="gossip-tab" role="tab">
-            Gossip
-          </a>
-        </li>
-        <li role="presentation">
-          <a aria-controls="hotclip" aria-expanded="false" data-toggle="tab" href="#hotclip" id="hotclip-tab" role="tab">
-            Hot Clip
-          </a>
-        </li>
-        <li role="presentation">
-          <a aria-controls="movie" aria-expanded="false" data-toggle="tab" href="#movie" id="movie-tab" role="tab">
-            Movie
-          </a>
-        </li>
-        <li role="presentation">
-          <a aria-controls="lakorn" aria-expanded="false" data-toggle="tab" href="#lakorn" id="lakorn-tab" role="tab">
-            Lakorn
-          </a>
-        </li>
-        <li role="presentation">
-          <a aria-controls="music" aria-expanded="false" data-toggle="tab" href="#music" id="music-tab" role="tab">
-            Music
-          </a>
-        </li>
+        <ul class="nav nav-tabs tabs-one" role="tablist">
+          <li class="active" role="presentation">
+            <a aria-controls="gossip" aria-expanded="true" data-toggle="tab" href="#gossip" id="gossip-tab" role="tab"> Gossip </a>
+          </li>
+          <li role="presentation">
+            <a aria-controls="hotclip" aria-expanded="false" data-toggle="tab" href="#hotclip" id="hotclip-tab" role="tab"> Hot Clip </a>
+          </li>
+          <li role="presentation">
+            <a aria-controls="movie" aria-expanded="false" data-toggle="tab" href="#movie" id="movie-tab" role="tab"> Movie </a>
+          </li>
+          <li role="presentation">
+            <a aria-controls="lakorn" aria-expanded="false" data-toggle="tab" href="#lakorn" id="lakorn-tab" role="tab"> Lakorn </a>
+          </li>
+          <li role="presentation">
+            <a aria-controls="music" aria-expanded="false" data-toggle="tab" href="#music" id="music-tab" role="tab"> Music </a>
+          </li>
+        </ul>
 
-      </ul>
-      <div class="tab-content">
-        <div aria-labelledby="gossip-tab" class="tab-pane fade active in" id="gossip" role="tabpanel">
-          <%= render :partial => 'index_news', :locals => { :news => @gossip, :url => "gossip" } %>
-        </div>
+        <div class="tab-content">
+          <div aria-labelledby="gossip-tab" class="tab-pane fade active in" id="gossip" role="tabpanel">
+            <%= render :partial => 'index_news', :locals => { :news => @gossip, :url => "gossip" } %>
+          </div>
 
-        <div aria-labelledby="hotclip-tab" class="tab-pane fade" id="hotclip" role="tabpanel">
-          <%= render :partial => 'index_news', :locals => { :news => @hot_clip, :url => "hotclip" } %>
-        </div>
+          <div aria-labelledby="hotclip-tab" class="tab-pane fade" id="hotclip" role="tabpanel">
+            <%= render :partial => 'index_news', :locals => { :news => @hot_clip, :url => "hotclip" } %>
+          </div>
 
-        <div aria-labelledby="movie-tab" class="tab-pane fade" id="movie" role="tabpanel">
-          <%= render :partial => 'index_news', :locals => { :news => @movie, :url => "movie" } %>
-        </div>
+          <div aria-labelledby="movie-tab" class="tab-pane fade" id="movie" role="tabpanel">
+            <%= render :partial => 'index_news', :locals => { :news => @movie, :url => "movie" } %>
+          </div>
 
-        <div aria-labelledby="lakorn-tab" class="tab-pane fade" id="lakorn" role="tabpanel">
-          <%= render :partial => 'index_news', :locals => { :news => @lakorn, :url => "lakorn" } %>
-        </div>
+          <div aria-labelledby="lakorn-tab" class="tab-pane fade" id="lakorn" role="tabpanel">
+            <%= render :partial => 'index_news', :locals => { :news => @lakorn, :url => "lakorn" } %>
+          </div>
 
-        <div aria-labelledby="music-tab" class="tab-pane fade" id="music" role="tabpanel">
-          <%= render :partial => 'index_news', :locals => { :news => @music, :url => "music" } %>
+          <div aria-labelledby="music-tab" class="tab-pane fade" id="music" role="tabpanel">
+            <%= render :partial => 'index_news', :locals => { :news => @music, :url => "music" } %>
+          </div>
+
         </div>
 
       </div>
-
     </div>
-
   </div>
 
   <div class="col-md-4 sm-pad">
@@ -82,7 +76,7 @@
 
     <div class="col-md-12 no-pad">
 
-      <ul class="nav nav-tabs dara-tabs" role="tablist">
+      <ul class="nav nav-tabs" role="tablist">
         <li class="active" role="presentation">
           <a aria-controls="calendar" aria-expanded="true" data-toggle="tab" href="#calendar" id="calendar-tab" role="tab">Party Calendar</a>
         </li>
@@ -101,12 +95,12 @@
 
         </div>
         <div aria-labelledby="chill-tab" class="tab-pane fade" id="chill" role="tabpanel">
-          <%= render :partial => 'index_party', :locals => { :party => @chill, :url => "party" } %>
+          <%= render :partial => 'index_party', :locals => { :party => @chill, :url => "chill" } %>
 
         </div>
         <div aria-labelledby="afterparty-tab" class="tab-pane fade" id="afterparty" role="tabpanel">
 
-          <%= render :partial => 'index_party', :locals => { :party => @after_party, :url => "party" } %>
+          <%= render :partial => 'index_party', :locals => { :party => @after_party, :url => "after" } %>
         </div>
 
       </div>

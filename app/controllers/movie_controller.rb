@@ -12,7 +12,7 @@ class MovieController < ApplicationController
   def show
     @title = "Movie"
     @url = "movie"
-		@news = News.find(params[:id])
+		@news = News.movie.find(params[:id])
     @head = @news.title
     @like_this = News.movie.publish.reverse_order.sample(6)
 

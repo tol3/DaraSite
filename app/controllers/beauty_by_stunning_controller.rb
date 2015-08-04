@@ -12,7 +12,7 @@ class BeautyByStunningController < ApplicationController
   def show
     @title = "Beauty By Stunning"
     @url = "beauty"
-    @news = News.find(params[:id])
+    @news = News.beauty.find(params[:id])
     @head = @news.title
     @like_this = News.beauty.publish.reverse_order.sample(6)
 

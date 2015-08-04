@@ -12,7 +12,7 @@ class MyIdolController < ApplicationController
   def show
     @title = "My Idol"
     @url = "myidol"
-    @news = News.find(params[:id])
+    @news = News.idol.find(params[:id])
     @head = @news.title
     @like_this = News.idol.publish.reverse_order.sample(6)
 

@@ -12,7 +12,7 @@ class TravelBySenseController < ApplicationController
   def show
     @title = "Travel By Sense & Scene"
     @url = "travel"
-		@news = News.find(params[:id])
+		@news = News.travel.find(params[:id])
     @head = @news.title
     @like_this = News.travel.publish.reverse_order.sample(6)
 

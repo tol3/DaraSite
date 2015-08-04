@@ -12,7 +12,7 @@ class LakornController < ApplicationController
   def show
     @title = "Lakorn"
     @url = "lakorn"
-    @news = News.find(params[:id])
+    @news = News.lakorn.find(params[:id])
     @head = @news.title
     @like_this = News.lakorn.publish.reverse_order.sample(6)
 

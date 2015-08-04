@@ -9,6 +9,7 @@ class Party < ActiveRecord::Base
 
     scope :publish, -> { where(:publish => true) }
     scope :party, -> { where(category: 'party') }
+    scope :chill, -> { where(category: 'chill') }
     scope :event, -> { where(category: 'event') }
     scope :prev, -> { where("day < ?", Date.today ) }
 

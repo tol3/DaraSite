@@ -26,38 +26,38 @@
         <li class="dropdown <%= 'current' if current_page?(gossip_path) || current_page?(hotclip_path) || current_page?(movie_path) || current_page?(lakorn_path) || current_page?(music_path) %>">
 
           <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-            ข่าวบันเทิง
+            Entertainment
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <%= nav_link("ซุบซิบ", gossip_path) %>
+            <%= nav_link("Gossip", gossip_path) %>
 
             <li class="divider" role="separator"></li>
-            <%= nav_link("คลิปเด่น", hotclip_path) %>
+            <%= nav_link("Hot Clip", hotclip_path) %>
 
             <li class="divider" role="separator"></li>
-            <%= nav_link("ภาพยนตร์", movie_path) %>
+            <%= nav_link("Movie", movie_path) %>
 
             <li class="divider" role="separator"></li>
-            <%= nav_link("ละคร", lakorn_path) %>
+            <%= nav_link("Lakorn", lakorn_path) %>
 
             <li class="divider" role="separator"></li>
-            <%= nav_link("เพลง", music_path) %>
+            <%= nav_link("Music", music_path) %>
 
           </ul>
         </li>
         <li class="dropdown <%= 'current' if current_page?(calendar_path) || current_page?(chill_path) || current_page?(after_party_path) %>">
 
           <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-            ปาร์ตี้
+            Party
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
 
-            <%= nav_link("ปฏิทินปาร์ตี้", calendar_path) %>
+            <%= nav_link("Party Calendar", calendar_path) %>
 
             <li class="divider" role="separator"></li>
-            <%= nav_link("สบายๆยามค่ำคืน", chill_path) %>
+            <%= nav_link("Chill 2 Night", chill_path) %>
 
             <li class="divider" role="separator"></li>
             <%= nav_link("After Party", after_party_path) %>
@@ -76,7 +76,7 @@
 
         <%= nav_link("Travel By Sense & Scene", travel_path) %>
       </ul>
-      <ul class="nav navbar-nav navbar-right visible-md visible-lg" style="width: 17%;">
+      <ul class="nav navbar-nav navbar-right visible-md visible-lg" style="width: 15%;">
         <div class="sb-search" id="sb-search">
           <%= form_tag("/search", method: "post") do %>
           <input class="sb-search-input" id="search" name="search" placeholder="Search" type="text" value="">

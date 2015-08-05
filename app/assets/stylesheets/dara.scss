@@ -65,13 +65,13 @@
 }
 
 .tabs-one{
-  li{
-    width: 20%;
-  }
-  li:last-child{
-    width: 20%;
-    border-right: 0;
-  }
+  li{ width: 20%; }
+  li:last-child{ width: 20%; border-right: 0; }
+}
+
+.tabs-two{
+    li{ width: 33.333%; }
+    li:last-child{ width: 33.333%; border-right: 0; }
 }
 
 
@@ -96,10 +96,8 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 4;
-        /* number of lines to show */
-        line-height: 1;
-        /* fallback */
+        -webkit-line-clamp: 4; /* number of lines to show */
+        line-height: 1; /* fallback */
         max-height: 1*4;
     }
     p.day {
@@ -335,19 +333,52 @@
 }
 
 .beauty-cards {
-    background-color: white;
-    margin-top: 5px;
-    .col-md-6 {
-        padding: 0;
-        a {
-            img {
-                display: block;
-                width: 100%;
-                padding: 5px;
-                overflow: hidden;
-            }
+  background-color: white;
+  margin-top: 10px;
+  height: 535px;
+  overflow-y: scroll;
+  padding-bottom: 15px;
+  .warp {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    overflow: hidden;
+    a {
+      img {
+        display: block;
+        height: 178px;
+        // padding: 5px;
+        overflow: hidden;
+      }
+      span.text-content {
+        background: rgba(160, 55, 187, 0.56);
+        color: white;
+        cursor: pointer;
+        display: table;
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        right: 0;
+        opacity: 0;
+        width: 94%;
+        -webkit-transition: opacity 500ms;
+        -moz-transition: opacity 500ms;
+        -o-transition: opacity 500ms;
+        transition: opacity 500ms;
+        span {
+          display: table-cell;
+          text-align: center;
+          vertical-align: middle;
+          font-size: 1.3em;
+          padding: 10px;
         }
+      }
+      &:hover{
+        span.text-content {
+          opacity: 1;
+        }
+      }
     }
+  }
 }
 
 
@@ -400,6 +431,223 @@
     }
   }
 }
+
+.top-idol{ margin-top: 10px; padding-bottom: 20px;}
+
+.idol-card{
+  background-color: #fff;
+  .cover{
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .content{
+    h3.first{
+      margin-top: 5px;
+      -webkit-line-clamp: 2; /* number of lines to show */
+      line-height: 1; /* fallback */
+      max-height: 1*2;
+    }
+    h3{
+      margin: 0;
+      font-size: 1.5em;
+      color: $baseColor;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1; /* number of lines to show */
+      line-height: 1; /* fallback */
+      max-height: 1*1;
+      a{
+        color: $baseColor;
+      }
+    }
+
+    p{
+      margin: 0;
+      font-size: 1.3em;
+      text-indent: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3; /* number of lines to show */
+      line-height: 1; /* fallback */
+      max-height: 1*3;
+    }
+
+    p.first{
+      -webkit-line-clamp: 4; /* number of lines to show */
+      line-height: 1; /* fallback */
+      max-height: 1*4;
+    }
+
+    p.last{
+      padding-bottom: 20px;
+    }
+  }
+}
+
+
+.lifestyle-cards{
+  margin-top: 10px; padding-bottom: 20px;
+  background-color: #fff;
+  .first-box{
+    margin: 15px 0;
+    .warp-img{ overflow: hidden; height: 160px; }
+    img{
+      display: block;
+      height: 100%;
+    }
+
+    h3{
+      margin: 0;
+      font-size: 2em;
+      color: $baseColor;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2; /* number of lines to show */
+      line-height: 1; /* fallback */
+      max-height: 1*2;
+      a{
+        color: $baseColor;
+      }
+    }
+
+    p{
+      margin: 0;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+      text-indent: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3; /* number of lines to show */
+      line-height: 1; /* fallback */
+      max-height: 1*3;
+    }
+
+    .tri{
+      background: url(tri.png) no-repeat bottom right;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 80%;
+      top: 70%;
+    }
+
+  }
+
+  .warp {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    overflow: hidden;
+    a {
+      img {
+        display: block;
+        height: 178px;
+        // padding: 5px;
+        overflow: hidden;
+      }
+      span.text-content {
+        background: rgba(160, 55, 187, 0.56);
+        color: white;
+        cursor: pointer;
+        display: table;
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        right: 0;
+        opacity: 0;
+        width: 94%;
+        -webkit-transition: opacity 500ms;
+        -moz-transition: opacity 500ms;
+        -o-transition: opacity 500ms;
+        transition: opacity 500ms;
+        span {
+          display: table-cell;
+          text-align: center;
+          vertical-align: middle;
+          font-size: 1.3em;
+          padding: 10px;
+        }
+      }
+      &:hover{
+        span.text-content {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.event-cards{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 5px 0 15px 0;
+
+  background-color: #fff;
+  .card{
+    margin-top: 5px;
+    padding: 5px;
+
+    .poster{
+      img{
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .content{
+      padding: 10px;
+      h3{
+        margin: 0 0 5px 0;
+        font-size: 2.1em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        line-height: 1; /* fallback */
+        max-height: 1*2;
+        a{
+          color: $baseColor;
+        }
+      }
+
+      p{
+        margin: 0;
+        font-size: 1.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-height: 1; /* fallback */
+        max-height: 1*1;
+      }
+    }
+  }
+}
+
+.travel-cards{
+
+}
+
+
+
+
+
+
+
+
+
 
 
 

@@ -5,7 +5,7 @@
 <div class="row">
 
   <div class="col-md-6 sm-pad">
-
+<!-- ======================================== Entertainment ===================================================== -->
     <div class="row">
       <div class="col-md-12">
         <div class="content-head">
@@ -65,7 +65,7 @@
   </div>
 
   <div class="col-md-4 sm-pad">
-
+<!-- ======================================== Party ===================================================== -->
     <div class="col-md-12 no-pad">
       <div class="content-head">
         <span class="content">
@@ -76,7 +76,7 @@
 
     <div class="col-md-12 no-pad">
 
-      <ul class="nav nav-tabs" role="tablist">
+      <ul class="nav nav-tabs tabs-two" role="tablist">
         <li class="active" role="presentation">
           <a aria-controls="calendar" aria-expanded="true" data-toggle="tab" href="#calendar" id="calendar-tab" role="tab">Party Calendar</a>
         </li>
@@ -88,25 +88,20 @@
         </li>
 
       </ul>
+
       <div class="tab-content">
         <div aria-labelledby="calendar-tab" class="tab-pane fade active in" id="calendar" role="tabpanel">
-
-            <%= render :partial => 'index_party', :locals => { :party => @calendar, :url => "party" } %>
-
+          <%= render :partial => 'index_party', :locals => { :party => @calendar, :url => "party" } %>
         </div>
         <div aria-labelledby="chill-tab" class="tab-pane fade" id="chill" role="tabpanel">
           <%= render :partial => 'index_party', :locals => { :party => @chill, :url => "chill" } %>
-
         </div>
         <div aria-labelledby="afterparty-tab" class="tab-pane fade" id="afterparty" role="tabpanel">
-
           <%= render :partial => 'index_party', :locals => { :party => @after_party, :url => "after" } %>
         </div>
-
       </div>
 
     </div>
-
   </div>
 
   <div class="col-md-2 sm-pad">
@@ -116,6 +111,7 @@
 </div>
 
 <div class="row">
+<!-- ======================================== Society ===================================================== -->
   <div class="col-md-4 sm-pad">
     <div class="col-md-12 no-pad">
       <div class="content-head">
@@ -127,50 +123,82 @@
       <div class="col-md-12 no-pad">
           <%= render :partial => 'index_music', :locals => { :music => @music, :url => "music" } %>
       </div>
-
-      <div class="col-md-12 no-pad">
-          <%= render :partial => 'index_music', :locals => { :music => @music, :url => "music" } %>
-      </div>
-
-      <div class="col-md-12 no-pad">
-          <%= render :partial => 'index_music', :locals => { :music => @music, :url => "music" } %>
-      </div>
     </div>
 
     </div>
   </div>
+
+<!-- ======================================== My Idol ===================================================== -->
   <div class="col-md-4 sm-pad">
-    <div class="col-md-12 no-pad">
-      <div class="content-head">
-        <span class="content">
-          My Idol
-        </span>
+    <div class="row">
+
+      <div class="col-md-12 ">
+        <div class="content-head">
+          <span class="content">
+            My Idol
+          </span>
+        </div>
       </div>
 
-      <div class="col-md-12 no-pad">
-        ...
-      </div>
-      <div class="col-md-12 no-pad">
-        ...
-      </div>
-      <div class="col-md-12 no-pad">
-        ...
+      <div class="col-md-12 top-idol">
+        <% if @idol.count != 0 %>
+          <div class="col-md-12 idol-card">
+            <div class="row">
+              <div class="col-md-7 cover no-pad">
+                <%= link_to image_tag(@idol[0].cover.url(:mini)), "/myidol/#{@idol[0].id}" %>
+              </div>
+              <div class="col-md-5 content">
+                <h3 class="first"><%= link_to @idol[0].title, "/myidol/#{@idol[0].id}" %></h3>
+                <p class="first"> <%= @idol[0].teaser %> </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 idol-card">
+            <div class="row">
+              <div class="col-md-7 content">
+                <h3><%= link_to @idol[1].title, "/myidol/#{@idol[1].id}" %></h3>
+                <p> <%= @idol[1].teaser %> </p>
+              </div>
+              <div class="col-md-5 cover no-pad">
+                <%= link_to image_tag(@idol[1].cover.url(:mini)), "/myidol/#{@idol[1].id}" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 idol-card">
+            <div class="row">
+              <div class="col-md-12 cover no-pad">
+                <%= link_to image_tag(@idol[2].cover.url(:mini)), "/myidol/#{@idol[2].id}" %>
+              </div>
+              <div class="col-md-12 content">
+                <h3><%= link_to @idol[2].title, "/myidol/#{@idol[2].id}" %></h3>
+                <p class="last"> <%= @idol[2].teaser %> </p>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
       </div>
 
     </div>
   </div>
+
+<!-- ======================================== Beauty ===================================================== -->
   <div class="col-md-4 sm-pad">
-    <div class="col-md-12 no-pad">
-      <div class="content-head">
-        <span class="content">
-          Beauty By Stunning
-        </span>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="content-head">
+          <span class="content">
+            Beauty By Stunning
+          </span>
+        </div>
+
+        <div class="col-md-12 no-pad beauty-cards">
+          <%= render :partial => 'index_beauty', :locals => { :beauty => @beauty, :url => "beauty" } %>
+        </div>
+
       </div>
-
-    <div class="col-md-12 no-pad beauty-cards">
-      <%= render :partial => 'index_beauty', :locals => { :beauty => @beauty, :url => "beauty" } %>
-    </div>
-
     </div>
   </div>
 </div>
@@ -181,8 +209,9 @@
   </div>
 
 <div class="row">
-
+<!-- ======================================== Life ===================================================== -->
   <div class="col-md-4 sm-pad">
+
     <div class="col-md-12 no-pad">
       <div class="content-head">
         <span class="content">
@@ -190,32 +219,97 @@
         </span>
       </div>
     </div>
-    <div class="col-md-12 no-pad lifestyle-cards">
-      <%= render :partial => 'index_lifestyle', :locals => { :beauty => @life_style, :url => "lifestyle" } %>
-    </div>
-  </div>
-  <div class="col-md-4 sm-pad">
-    <%= link_to image_tag("450.png", :class => "ads") , "#" %>
 
+    <div class="col-md-12 no-pad lifestyle-cards">
+      <%= render :partial => 'index_lifestyle', :locals => { :life => @life_style, :url => "lifestyle" } %>
+    </div>
+
+  </div>
+
+  <div class="col-md-4 sm-pad">
+<!-- ======================================== Ads ===================================================== -->
+    <div>
+      <%= link_to image_tag("450.png", :class => "ads") , "#" %>
+    </div>
+
+<!-- ======================================== Travel ===================================================== -->
     <div class="col-md-12 no-pad travel-margin">
+
       <div class="content-head">
         <span class="content">
           Travel By Sense & Scene
         </span>
       </div>
+
+      <% if @travel.count != 0 %>
+        <div class="col-md-12 travel-cards">
+          <div class="col-md-12 sm-pad">
+
+            <div class="col-md-12">
+              <div class="col-md-5">
+                <%= link_to image_tag(@travel.first.cover.url(:mini)), "/travel/#{@travel.first.id}" %>
+              </div>
+              <div class="col-md-7">
+                <h3><%= @travel.first.title %></h3>
+                <p><%= @travel.first.teaser %></p>
+                <p></p>
+              </div>
+            </div>
+
+            <% @travel[1..@travel.count].each do |t| %>
+              <div class="col-md-4">
+                <div class="col-md-12 no-pad">
+                  <%= link_to image_tag(@travel.first.cover.url(:mini)), "/travel/#{@travel.first.id}" %>
+                </div>
+
+                <div class="col-md-12 no-pad">
+                  <p><%= @travel.first.teaser %></p>
+                </div>
+
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      <% end %>
     </div>
 
   </div>
+
+
   <div class="col-md-4 sm-pad">
-    <div class="col-md-12 no-pad">
-      <div class="content-head">
-        <span class="content">
-          Event
-        </span>
+<!-- ======================================== Event ===================================================== -->
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="content-head">
+          <span class="content">
+            Event
+          </span>
+        </div>
+
+        <div class="col-md-12 event-cards">
+          <div class="col-md-12 sm-pad">
+            <% @event.each do |e| %>
+              <div class="col-md-12 card box-shadow">
+                <div class="col-md-2 no-pad poster">
+                  <%= link_to image_tag(e.poster.url(:mini)), "/event/#{e.id}" %>
+                </div>
+                <div class="col-md-10 content">
+                  <h3> <%= link_to e.title, "/event/#{e.id}" %> </h3>
+                  <p> Location: <%= e.location %> </p>
+                  <p> date: <%= e.day %> </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
       </div>
-    </div>
-    <div class="col-md-12 no-pad">
-      <%= link_to image_tag("450.png", :class => "ads") , "#" %>
+
+      <div class="col-md-12">
+        <%= link_to image_tag("450.png", :class => "ads") , "#" %>
+      </div>
     </div>
   </div>
 

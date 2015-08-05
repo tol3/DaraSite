@@ -1,22 +1,12 @@
 <% if beauty.count != 0 %>
-
-<div class="col-md-6">
-  <%= link_to image_tag(beauty.first.cover.url(:mini)),"#{url}/#{beauty.first.id}" %>
-</div>
-<div class="col-md-6">
-  <%= link_to image_tag(beauty.first.cover.url(:mini)),"#{url}/#{beauty.first.id}" %>
-</div>
-<div class="col-md-6">
-  <%= link_to image_tag(beauty.first.cover.url(:mini)),"#{url}/#{beauty.first.id}" %>
-</div>
-<div class="col-md-6">
-  <%= link_to image_tag(beauty.first.cover.url(:mini)),"#{url}/#{beauty.first.id}" %>
-</div>
-<div class="col-md-6">
-  <%= link_to image_tag(beauty.first.cover.url(:mini)),"#{url}/#{beauty.first.id}" %>
-</div>
-<div class="col-md-6">
-  <%= link_to image_tag(beauty.first.cover.url(:mini)),"#{url}/#{beauty.first.id}" %>
-</div>
-
+	<% beauty.each do |b| %>
+		<div class="col-md-6 sm-pad">
+		  <div class="warp">
+		  	<%= link_to "#{url}/#{b.id}" do %>
+		  		<%= image_tag b.cover.url(:mini) %>
+		  		<span class="text-content"><span><%= b.title %></span></span>
+		  	<% end %>
+		  </div>
+		</div>
+	<% end %>
 <% end %>

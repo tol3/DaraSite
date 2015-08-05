@@ -1,0 +1,36 @@
+
+<% if life.count != 0 %>
+
+	<div class="col-md-12 sm-pad first-box">
+		<div class="col-md-12 no-pad box-shadow">
+			<div class="col-md-5 no-pad warp-img">
+				<%= link_to( image_tag(life.first.cover.url(:mini) ), "#{url}/#{life.first.id}") %>
+			</div>
+
+			<div class="col-md-7 sm-pad">
+				<h3> <%= link_to( life.first.title, "#{url}/#{life.first.id}") %> </h3>
+				<p> <%= life.first.teaser %> </p>
+				<span class="social">
+	        <div class="ssk-group" data-url="<%= "#{request.original_url}/#{life.first.id}" %>" data-text="<%= "#{life.first.title}" %>" >
+	          <a class="ssk ssk-facebook ssk-xs" href=""></a>
+	          <a class="ssk ssk-twitter ssk-xs" href=""></a>
+	          <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+	          <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+	        </div>
+	      </span>
+			</div>
+      <span class="tri"></span>
+		</div>
+	</div>
+
+	<% life[1..life.count].each do |b| %>
+		<div class="col-md-6 sm-pad">
+		  <div class="warp">
+		  	<%= link_to "#{url}/#{b.id}" do %>
+		  		<%= image_tag b.cover.url(:mini) %>
+		  		<span class="text-content"><span><%= b.title %></span></span>
+		  	<% end %>
+		  </div>
+		</div>
+	<% end %>
+<% end %>

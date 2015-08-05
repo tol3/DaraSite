@@ -1,29 +1,41 @@
 <div class="container-fluid footerbot">
   <div class="row">
     <div class="col-md-3 col-sm-3 col-xs-6 no-pad">
-      <h4 class="footertop">Archive</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-      </p>
-    </div>
-    <div class="col-md-3 col-sm-3 col-xs-6 no-pad">
-      <h4 class="footertop">Contribute</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-      </p>
+      <h4 class="footertop">Wow 2 Mouth</h4>
+      <ul>
+        <%= nav_link("Gossip", gossip_path) %>
+        <%= nav_link("Music", music_path) %>
+        <%= nav_link("Party Calendar", calendar_path) %>
+        <%= nav_link("Event", event_path) %>
+      </ul>
     </div>
     <div class="col-md-3 col-sm-3 col-xs-6 no-pad">
       <h4 class="footertop">Contact</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      <p style="text-indent: 20px;">
+        Paramita Publishing Co., Ltd.
+        44 Soi 59 Sukhumvit Rd. Klongton-nua, Bangkok 10110
       </p>
     </div>
     <div class="col-md-3 col-sm-3 col-xs-6 no-pad">
-      <h4 class="footertop">Be Upzaad</h4>
+      <h4 class="footertop">Copyright</h4>
+      <p>
+        © 2015 wow2mouth. ALL RIGHTS RESERVED
+      </p>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 no-pad">
+      <h4 class="footertop">Subscribe</h4>
       <p class="center">
-        <i class="fa fa-facebook-square fa-3x"></i>
-        <i class="fa fa-twitter-square fa-3x"></i>
-        <i class="fa fa-youtube-square fa-3x"></i>
+        <%= link_to "#" do %>
+          <i class="fa fa-facebook-square fa-2x"></i>
+        <% end %>
+
+        <%= link_to "#" do %>
+          <i class="fa fa-twitter-square fa-2x"></i>
+        <% end %>
+
+        <%= link_to "#" do %>
+          <i class="fa fa-youtube-square fa-2x"></i>
+        <% end %>
       </p>
     </div>
   </div>

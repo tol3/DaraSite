@@ -87,6 +87,15 @@ body {
     margin-top: 20px;
     background-color: #751a91;
     color: #efefef;
+    ul{
+        list-style: none;
+        font-size: 1.5em;
+        li{
+            float: left;
+            margin-right: 15px;
+            display: block;
+        }
+    }
     h4 {
         text-align: center;
         background-color: #691783;

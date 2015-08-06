@@ -38,12 +38,25 @@ class DaraController < ApplicationController
   	Party.reindex
   	if params[:search]
   		@search = params[:search]
-  		@news = News.search @search, operator: "or", where: {publish: true}, page: params[:page], per_page: 20
-  		@party = Party.search @search, operator: "or", where: {publish: true}, page: params[:page], per_page: 20
+      @res = []
+  		news = News.search @search, operator: "or", where: {publish: true}
+  		party = Party.search @search, operator: "or", where: {publish: true}
+
+      news.each do |x|
+        @res << x
+      end
+
+      party.each do |x|
+        @res << x
+      end
+
+      @res = Kaminari.paginate_array(@res).page(params[:page]).per(30)
+
   	else
   		@search = ""
 			@news = News.where(publish: true)
   		@party = Party.where(publish: true)
+
   	end
 
   end

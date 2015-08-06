@@ -182,3 +182,17 @@ ul.pagination {
 .margin-bottom {
     margin-bottom: 10px;
 }
+
+
+.last-ads{
+    margin-bottom: 0 !important;
+}
+
+
+#date_time{
+    position: absolute;
+    bottom: -25px;
+    right: 5%;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+}

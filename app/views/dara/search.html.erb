@@ -2,33 +2,36 @@
 
 <div class="row pages">
   <div class="col-md-9 col-sm-9">
-  <% if @news.count != 0 %>
+  <% if @res.count != 0 %>
 
     <div class="row">
       <div class="content-head">
         <span class="content">
-          News
+          <%= @search %>
         </span>
       </div>
     </div>
 
     <div class="row">
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-      <% @news[1..@news.count].each do |x| %>
+      <% @res.each do |x| %>
 
       <div class="col-md-4 col-sm-4 sm-pad">
         <div class="col-md-12 box-shadow news-card news-small no-pad">
           <div class="col-md-12">
             <div class="row title">
               <h2><%= link_to x.title, "/#{@url}/#{x.id}" %></h2>
-              <p> by <%= x.post_by %></p>
             </div>
 
             <div class="row card-index-img">
               <%= link_to image_tag(x.cover.url(:mini)), "/#{@url}/#{x.id}" %>
             </div>
             <div class="row content">
+            <% if x.class.to_s == "News" %>
               <p><%= x.teaser %></p>
+            <% else %>
+              <p><%= x.description %></p>
+            <% end %>
             </div>
             <div class="row foot">
               <span class="social">
@@ -52,69 +55,10 @@
 
     <div class="row margin-bottom">
       <div class="col-md-12">
-        <%= paginate @news %>
+        <%= paginate @res %>
       </div>
     </div>
   <% end %>
-
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-
-
-<% if @party.count != 0 %>
-
-    <div class="row">
-      <div class="content-head">
-        <span class="content">
-          Party
-        </span>
-      </div>
-    </div>
-
-    <div class="row">
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-      <% @party[1..@party.count].each do |x| %>
-
-      <div class="col-md-4 col-sm-4 sm-pad">
-        <div class="col-md-12 box-shadow news-card news-small no-pad">
-          <div class="col-md-12">
-            <div class="row title">
-              <h2><%= link_to x.title, "/#{@url}/#{x.id}" %></h2>
-              <p> by <%= x.post_by %></p>
-            </div>
-
-            <div class="row card-index-img">
-              <%= link_to image_tag(x.poster.url(:mini)), "/#{@url}/#{x.id}" %>
-            </div>
-            <div class="row content">
-              <p><%= x.description %></p>
-            </div>
-            <div class="row foot">
-              <span class="social">
-                <div class="ssk-group" data-url="<%= "#{request.original_url}/#{x.id}" %>" data-text="<%= "#{x.title}" %>">
-                  <a class="ssk ssk-facebook ssk-xs" href=""></a>
-                  <a class="ssk ssk-twitter ssk-xs" href=""></a>
-                  <a class="ssk ssk-google-plus ssk-xs" href=""></a>
-                  <a class="ssk ssk-pinterest ssk-xs" href=""></a>
-                </div>
-              </span>
-              <p> Watch: <%= x.impressionist_count %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <% end %>
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <%= paginate @party %>
-      </div>
-    </div>
-  <% end %>
-
   </div>
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->

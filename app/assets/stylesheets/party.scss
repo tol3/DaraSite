@@ -119,6 +119,18 @@
       background-color          : $cardBG;
       border-bottom-right-radius: 10px;
       border-bottom-left-radius : 10px;
+      .party-card-bot {
+        .title{
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1; /* number of lines to show */
+          line-height: 1;        /* fallback */
+          max-height: 1*1;
+          border-bottom: 2px #efefef solid;
+        }
+      }
     }
 
     .party-card-bot {
@@ -131,9 +143,9 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2; /* number of lines to show */
+        -webkit-line-clamp: 1; /* number of lines to show */
         line-height: 1;        /* fallback */
-        max-height: 1*2;
+        max-height: 1*1;
         border-bottom: 2px #efefef solid;
       }
 

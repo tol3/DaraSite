@@ -52,11 +52,11 @@
                 <p><%= x.day.strftime("%b") %></p>
               </div>
 
-              <%= link_to image_tag(x.poster.url(:mini), :class => "party-card-img"), "#{x.id}" %>
+              <%= link_to image_tag(x.poster.url(:mini), :class => "party-card-img"), "/#{@url}/#{x.id}" %>
             </div>
             <div class="row content">
               <div class="col-md-12 party-card-bot">
-                <h4 class="title"><%= link_to x.title, "#{x.id}" %></h4>
+                <h4 class="title"><%= link_to x.title, "/#{@url}/#{x.id}" %></h4>
                 <p class="sub-title"><%= x.location %></p>
                 <p class="content-p"><%= x.description %></p>
               </div>
@@ -89,11 +89,11 @@
         <div class="col-md-4 gallery-card">
           <div class="col-md-12 box-shadow">
             <div class="row">
-              <%= link_to image_tag(x.cover.url(:mini), :class => "gallery-card-img"), "#{x.id}" %>
+              <%= link_to image_tag(x.cover.url(:mini), :class => "gallery-card-img"), "/#{@url}/#{x.id}" %>
             </div>
             <div class="row content">
               <div class="col-md-12 gallery-card-bot">
-                <h4 class="title"><%= link_to x.title, "#{x.id}" %></h4>
+                <h4 class="title"><%= link_to x.title, "/#{@url}/#{x.id}" %></h4>
                 <p class="sub-title"><%= x.location %></p>
                 <p class="content-p"><%= x.day.strftime("%d %B %Y") %></p>
               </div>
@@ -104,7 +104,7 @@
         <%end%>
 
         <div class="col-md-12">
-          <%= paginate @party %>
+          <%= link_to "More +", after_party_path %>
         </div>
       </div>
 

@@ -1,5 +1,10 @@
 <% title @head || "News & Entertainment" %>
 
+<% @tag_title = @news.title  || 'Wow2Mouth' %>
+<% @tag_url = "#{request.original_url}" %>
+<% @tag_image = "http://www.wow2mouth.com#{@news.cover.url}"  || 'http://www.wow2mouth.com/assets/logo.png' %>
+<% @tag_des = @news.teaser  || 'Update ข่าววงการบันเทิง ไลฟ์สไตล์ดารา อัพเดทเทรนฮิต แหล่งแฮงเอาท์ยามค่ำคืน' %>
+
 <div class="row pages">
 
   <div class="col-md-9 col-sm-9">

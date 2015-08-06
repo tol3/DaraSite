@@ -180,6 +180,10 @@ ul.pagination {
             max-width: 100%;
             margin: 15px 0;
         }
+        a, a:hover{
+            color: $baseColor;
+            opacity: 1;
+        }
     }
 }
 

@@ -36,6 +36,8 @@ gem 'tinymce-rails'
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 
 # gem "meta_search"
+
+gem 'meta-tags'
 gem "carrierwave"
 gem 'mini_magick'
 gem 'puma'

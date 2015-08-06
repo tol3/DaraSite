@@ -1,4 +1,9 @@
-<% title @title || "News & Entertainment" %>
+<%= title @title || "News & Entertainment" %>
+
+<% @tag_title = @party.title  || 'Wow2Mouth' %>
+<% @tag_url = "#{request.original_url}" %>
+<% @tag_image = "http://www.wow2mouth.com#{@party.cover.url}"  || 'http://www.wow2mouth.com/assets/logo.png' %>
+<% @tag_des = @party.description  || 'Update ข่าววงการบันเทิง ไลฟ์สไตล์ดารา อัพเดทเทรนฮิต แหล่งแฮงเอาท์ยามค่ำคืน' %>
 
 <div class="row pages party-show">
 

@@ -7,7 +7,7 @@ class DaraController < ApplicationController
     @hot_clip = News.hot_clip.publish.reverse_order.limit(4)
     @movie = News.movie.publish.reverse_order.limit(4)
     @lakorn = News.lakorn.publish.reverse_order.limit(4)
-    @music = News.music.publish.reverse_order.limit(3)
+    @music = News.music.publish.reverse_order.limit(4)
     @society = News.socciety.publish.reverse_order.limit(3)
     @idol = News.idol.publish.reverse_order.limit(3)
     @beauty = News.beauty.publish.reverse_order.limit(10)

@@ -4,14 +4,9 @@
 @import "var";
 
 .nav-tabs{
-  margin-top: 10px;
+  margin-top: 0px;
   background-color:#fff;
   border-bottom: 3px solid #efefef;
-}
-
-.nav-tabs{
-  margin-top: 10px;
-  background-color:#fff;
 
   li{
     display: table-cell !important;
@@ -175,10 +170,12 @@
 
 .music-cards {
     background-color: white;
-    margin: 5px 0;
+    margin-top: 10px;
+    .music-tab:first-child{
+      margin-top: 0;
+    }
     .music-tab {
         margin-top: 5px;
-        margin-bottom: 5px;
         background-color: white;
         .index-music-cards {
             background-color: white;
@@ -187,9 +184,15 @@
                 background-color: $baseColor;
                 h3 {
                     margin: 5px 0;
-                    line-height: 0.5;
                     font-size: 2.0em;
                     color: white;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1; /* number of lines to show */
+                    line-height: 1; /* fallback */
+                    max-height: 1*1;
                     a {
                         display: inline-block;
                         color: $baseColor;
@@ -214,7 +217,7 @@
                 display: inline-block;
                 text-align: right;
                 font-size: 1.2em;
-                padding-top: 3px;
+                padding-top: 1px;
             }
             .index-music-cards-bot {
                 background-color: white;
@@ -231,25 +234,31 @@
                     text-overflow: ellipsis;
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 1;
-                    /* number of lines to show */
-                    line-height: 1;
-                    /* fallback */
+                    -webkit-line-clamp: 1; /* number of lines to show */
+                    line-height: 1; /* fallback */
                     max-height: 1*1;
                 }
-                p {
-                    font-size: 1.5em;
-                    display: inline-block;
-                    color: black;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 3;
-                    /* number of lines to show */
-                    line-height: 1;
-                    /* fallback */
-                    max-height: 1*3;
+                p{
+                  margin-bottom: 7px;
+                  font-size: 1.5em;
+                  display: inline-block;
+                  color: black;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 3; /* number of lines to show */
+                  line-height: 1; /* fallback */
+                  max-height: 1*3;
+                }
+                .tri{
+                  background: url(tri.png) no-repeat bottom right;
+                  background-size: 100%;
+                  position: absolute;
+                  bottom: 0;
+                  right: 0;
+                  left: 80%;
+                  top: 63%;
                 }
             }
         }
@@ -262,7 +271,7 @@
     padding-left: 5px;
     padding-right: 5px;
     margin-bottom: 25px;
-    margin-top: 20px;
+    margin-top: 17px;
     img {
         display: block;
         width: 100%;
@@ -418,9 +427,9 @@
         width: 100%;
       }
       h3{
-        margin: 0;
+        margin: 15px 0 0 0;
         padding: 0 10px;
-        font-size: 1.4em;
+        font-size: 2em;
         line-height: .9;
         text-indent: 15px;
         color: $baseColor;
@@ -598,6 +607,7 @@
     padding: 5px;
 
     .poster{
+      margin-top: 5%;
       img{
         display: block;
         width: 100%;
@@ -635,8 +645,72 @@
     }
   }
 }
-
 .travel-cards{
+  background-color: #fff;
+  margin-top: 10px;
+  img{
+    display: block;
+    height: 180px;
+    overflow: hidden;
+  }
+  .warp-img{
+    overflow: hidden;
+  }
+  .full-card{
+    margin-bottom: 5px;
+    h3{
+      padding-left: 5px;
+      padding-right: 5px;
+      margin: 0 0 5px 0;
+      font-size: 2.1em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2; /* number of lines to show */
+      line-height: 1; /* fallback */
+      max-height: 1*2;
+      a{
+        color: $baseColor;
+      }
+    }
+    p{
+      margin: 0;
+      padding-left: 5px;
+      text-indent: 15px;
+      font-size: 1.5em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3; /* number of lines to show */
+      line-height: 1; /* fallback */
+      max-height: 1*3;
+    }
+    .ssk-group{
+      float: right;
+      padding-right: 10px;
+    }
+  }
+  .mini-card{
+    img{
+      height: 130px;
+    }
+    p{
+      margin: 0;
+      padding-left: 5px;
+      text-indent: 15px;
+      font-size: 1.5em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3; /* number of lines to show */
+      line-height: 1; /* fallback */
+      max-height: 1*3;
+      margin-bottom: 15px;
+    }
+  }
 
 }
 

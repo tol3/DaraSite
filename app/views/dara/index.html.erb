@@ -1,65 +1,53 @@
 <% title "Home" %>
 
-<div class="row">
 
 <div class="row">
 
   <div class="col-md-6 sm-pad">
 <!-- ======================================== Entertainment ===================================================== -->
-    <div class="row">
-      <div class="col-md-12">
-        <div class="content-head">
-          <span class="content">
-            Entertainment News
-          </span>
-        </div>
+    <div class="col-md-12 no-pad">
+      <div class="content-head">
+        <span class="content">
+          Entertainment News
+        </span>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
+    <div class="col-md-12 no-pad box-shadow" style="margin-top: 10px;">
+      <ul class="nav nav-tabs tabs-one" role="tablist">
+        <li class="active" role="presentation">
+          <a aria-controls="gossip" aria-expanded="true" data-toggle="tab" href="#gossip" id="gossip-tab" role="tab"> Gossip </a>
+        </li>
+        <li role="presentation">
+          <a aria-controls="hotclip" aria-expanded="false" data-toggle="tab" href="#hotclip" id="hotclip-tab" role="tab"> Hot Clip </a>
+        </li>
+        <li role="presentation">
+          <a aria-controls="movie" aria-expanded="false" data-toggle="tab" href="#movie" id="movie-tab" role="tab"> Movie </a>
+        </li>
+        <li role="presentation">
+          <a aria-controls="lakorn" aria-expanded="false" data-toggle="tab" href="#lakorn" id="lakorn-tab" role="tab"> Lakorn </a>
+        </li>
+        <li role="presentation">
+          <a aria-controls="music" aria-expanded="false" data-toggle="tab" href="#music" id="music-tab" role="tab"> Music </a>
+        </li>
+      </ul>
 
-        <ul class="nav nav-tabs tabs-one" role="tablist">
-          <li class="active" role="presentation">
-            <a aria-controls="gossip" aria-expanded="true" data-toggle="tab" href="#gossip" id="gossip-tab" role="tab"> Gossip </a>
-          </li>
-          <li role="presentation">
-            <a aria-controls="hotclip" aria-expanded="false" data-toggle="tab" href="#hotclip" id="hotclip-tab" role="tab"> Hot Clip </a>
-          </li>
-          <li role="presentation">
-            <a aria-controls="movie" aria-expanded="false" data-toggle="tab" href="#movie" id="movie-tab" role="tab"> Movie </a>
-          </li>
-          <li role="presentation">
-            <a aria-controls="lakorn" aria-expanded="false" data-toggle="tab" href="#lakorn" id="lakorn-tab" role="tab"> Lakorn </a>
-          </li>
-          <li role="presentation">
-            <a aria-controls="music" aria-expanded="false" data-toggle="tab" href="#music" id="music-tab" role="tab"> Music </a>
-          </li>
-        </ul>
-
-        <div class="tab-content">
-          <div aria-labelledby="gossip-tab" class="tab-pane fade active in" id="gossip" role="tabpanel">
-            <%= render :partial => 'index_news', :locals => { :news => @gossip, :url => "gossip" } %>
-          </div>
-
-          <div aria-labelledby="hotclip-tab" class="tab-pane fade" id="hotclip" role="tabpanel">
-            <%= render :partial => 'index_news', :locals => { :news => @hot_clip, :url => "hotclip" } %>
-          </div>
-
-          <div aria-labelledby="movie-tab" class="tab-pane fade" id="movie" role="tabpanel">
-            <%= render :partial => 'index_news', :locals => { :news => @movie, :url => "movie" } %>
-          </div>
-
-          <div aria-labelledby="lakorn-tab" class="tab-pane fade" id="lakorn" role="tabpanel">
-            <%= render :partial => 'index_news', :locals => { :news => @lakorn, :url => "lakorn" } %>
-          </div>
-
-          <div aria-labelledby="music-tab" class="tab-pane fade" id="music" role="tabpanel">
-            <%= render :partial => 'index_news', :locals => { :news => @music, :url => "music" } %>
-          </div>
-
+      <div class="tab-content">
+        <div aria-labelledby="gossip-tab" class="tab-pane fade active in" id="gossip" role="tabpanel">
+          <%= render :partial => 'index_news', :locals => { :news => @gossip, :url => "gossip" } %>
         </div>
-
+        <div aria-labelledby="hotclip-tab" class="tab-pane fade" id="hotclip" role="tabpanel">
+          <%= render :partial => 'index_news', :locals => { :news => @hot_clip, :url => "hotclip" } %>
+        </div>
+        <div aria-labelledby="movie-tab" class="tab-pane fade" id="movie" role="tabpanel">
+          <%= render :partial => 'index_news', :locals => { :news => @movie, :url => "movie" } %>
+        </div>
+        <div aria-labelledby="lakorn-tab" class="tab-pane fade" id="lakorn" role="tabpanel">
+          <%= render :partial => 'index_news', :locals => { :news => @lakorn, :url => "lakorn" } %>
+        </div>
+        <div aria-labelledby="music-tab" class="tab-pane fade" id="music" role="tabpanel">
+          <%= render :partial => 'index_news', :locals => { :news => @music, :url => "music" } %>
+        </div>
       </div>
     </div>
   </div>
@@ -74,7 +62,7 @@
       </div>
     </div>
 
-    <div class="col-md-12 no-pad">
+    <div class="col-md-12 no-pad" style="margin-top: 10px;">
 
       <ul class="nav nav-tabs tabs-two" role="tablist">
         <li class="active" role="presentation">
@@ -110,29 +98,28 @@
 
 </div>
 
-<div class="row">
+<div class="row" style="margin-bottom: 10px;">
 <!-- ======================================== Society ===================================================== -->
   <div class="col-md-4 sm-pad">
+
     <div class="col-md-12 no-pad">
       <div class="content-head">
         <span class="content">
           Society
         </span>
       </div>
-    <div class="col-md-12 no-pad music-cards">
-      <div class="col-md-12 no-pad">
-          <%= render :partial => 'index_music', :locals => { :music => @music, :url => "music" } %>
-      </div>
     </div>
 
+    <div class="col-md-12 no-pad music-cards box-shadow">
+      <%= render :partial => 'index_music', :locals => { :music => @society, :url => "music" } %>
     </div>
+
   </div>
 
 <!-- ======================================== My Idol ===================================================== -->
   <div class="col-md-4 sm-pad">
-    <div class="row">
 
-      <div class="col-md-12 ">
+      <div class="col-md-12 no-pad">
         <div class="content-head">
           <span class="content">
             My Idol
@@ -140,7 +127,7 @@
         </div>
       </div>
 
-      <div class="col-md-12 top-idol">
+      <div class="col-md-12 no-pad top-idol box-shadow">
         <% if @idol.count != 0 %>
           <div class="col-md-12 idol-card">
             <div class="row">
@@ -172,7 +159,7 @@
                 <%= link_to image_tag(@idol[2].cover.url(:mini)), "/myidol/#{@idol[2].id}" %>
               </div>
               <div class="col-md-12 content">
-                <h3><%= link_to @idol[2].title, "/myidol/#{@idol[2].id}" %></h3>
+                <h3 style="margin-top: 2px;"><%= link_to @idol[2].title, "/myidol/#{@idol[2].id}" %></h3>
                 <p class="last"> <%= @idol[2].teaser %> </p>
               </div>
             </div>
@@ -181,7 +168,6 @@
         <% end %>
       </div>
 
-    </div>
   </div>
 
 <!-- ======================================== Beauty ===================================================== -->
@@ -194,7 +180,7 @@
           </span>
         </div>
 
-        <div class="col-md-12 no-pad beauty-cards">
+        <div class="col-md-12 no-pad beauty-cards box-shadow">
           <%= render :partial => 'index_beauty', :locals => { :beauty => @beauty, :url => "beauty" } %>
         </div>
 
@@ -220,7 +206,7 @@
       </div>
     </div>
 
-    <div class="col-md-12 no-pad lifestyle-cards">
+    <div class="col-md-12 no-pad lifestyle-cards box-shadow">
       <%= render :partial => 'index_lifestyle', :locals => { :life => @life_style, :url => "lifestyle" } %>
     </div>
 
@@ -234,7 +220,6 @@
 
 <!-- ======================================== Travel ===================================================== -->
     <div class="col-md-12 no-pad travel-margin">
-
       <div class="content-head">
         <span class="content">
           Travel By Sense & Scene
@@ -242,36 +227,41 @@
       </div>
 
       <% if @travel.count != 0 %>
-        <div class="col-md-12 travel-cards">
-          <div class="col-md-12 sm-pad">
-
-            <div class="col-md-12">
-              <div class="col-md-5">
-                <%= link_to image_tag(@travel.first.cover.url(:mini)), "/travel/#{@travel.first.id}" %>
-              </div>
-              <div class="col-md-7">
-                <h3><%= @travel.first.title %></h3>
-                <p><%= @travel.first.teaser %></p>
-                <p></p>
-              </div>
+        <div class="col-md-12 no-pad travel-cards box-shadow">
+          <div class="col-md-12 no-pad full-card box-shadow">
+            <div class="col-md-5 warp-img no-pad">
+              <%= link_to image_tag(@travel.first.cover.url(:mini)), "/travel/#{@travel.first.id}" %>
+            </div>
+            <div class="col-md-7 no-pad">
+              <h3><%= link_to @travel.first.title, "/travel/#{@travel.first.id}" %></h3>
+              <p><%= @travel.first.teaser %></p>
+              <p>
+                <span class="social">
+                  <div class="ssk-group" data-url="<%= "#{request.original_url}/#{@travel.first.id}" %>" data-text="<%= "#{@travel.first.title}" %>" >
+                    <a class="ssk ssk-facebook ssk-xs" href=""></a>
+                    <a class="ssk ssk-twitter ssk-xs" href=""></a>
+                    <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+                    <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+                  </div>
+                </span>
+              </p>
+            </div>
+          </div>
+        <% @travel[1..@travel.count].each do |t| %>
+          <div class="col-md-4 sm-pad mini-card">
+            <div class="col-md-12 no-pad warp-img">
+              <%= link_to image_tag(@travel.first.cover.url(:mini)), "/travel/#{@travel.first.id}" %>
             </div>
 
-            <% @travel[1..@travel.count].each do |t| %>
-              <div class="col-md-4">
-                <div class="col-md-12 no-pad">
-                  <%= link_to image_tag(@travel.first.cover.url(:mini)), "/travel/#{@travel.first.id}" %>
-                </div>
-
-                <div class="col-md-12 no-pad">
-                  <p><%= @travel.first.teaser %></p>
-                </div>
-
-              </div>
-            <% end %>
-
+            <div class="col-md-12 no-pad">
+              <p><%= @travel.first.teaser %></p>
+            </div>
           </div>
+        <% end %>
+
         </div>
       <% end %>
+
     </div>
 
   </div>
@@ -288,7 +278,7 @@
           </span>
         </div>
 
-        <div class="col-md-12 event-cards">
+        <div class="col-md-12 event-cards box-shadow">
           <div class="col-md-12 sm-pad">
             <% @event.each do |e| %>
               <div class="col-md-12 card box-shadow">

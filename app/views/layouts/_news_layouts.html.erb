@@ -24,7 +24,12 @@
         </div>
         <div class="row content">
           <p>
-            <%= @first.teaser %>
+            <%= truncate( @first.teaser,
+                      length: 135,
+                      separator: ' ',
+                      omission: '... ') {
+                        link_to "อ่านต่อ", "/#{@url}/#{@first.id}"
+                    } %>
           </p>
         </div>
         <div class="row foot">
@@ -57,7 +62,13 @@
               <%= link_to image_tag(x.cover.url(:mini)), "/#{@url}/#{x.id}" %>
             </div>
             <div class="row content">
-              <p><%= x.teaser %></p>
+              <p><%= truncate(x.teaser,
+                      length: 80,
+                      separator: ' ',
+                      omission: '... ') {
+                        link_to "อ่านต่อ", "/#{@url}/#{x.id}"
+                    } %>
+              </p>
             </div>
             <div class="row foot">
               <span class="social">

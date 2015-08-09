@@ -136,7 +136,10 @@
               </div>
               <div class="col-md-5 content">
                 <h3 class="first"><%= link_to @idol[0].title, "/myidol/#{@idol[0].id}" %></h3>
-                <p class="first"> <%= @idol[0].teaser %> </p>
+                <p class="first">
+                  <%= truncate( @idol[0].teaser, length: 50, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/myidol/#{@idol[0].id}" } %>
+                </p>
+
               </div>
             </div>
           </div>
@@ -145,7 +148,9 @@
             <div class="row">
               <div class="col-md-7 content">
                 <h3><%= link_to @idol[1].title, "/myidol/#{@idol[1].id}" %></h3>
-                <p> <%= @idol[1].teaser %> </p>
+                <p>
+                  <%= truncate( @idol[1].teaser, length: 80, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/myidol/#{@idol[1].id}" } %>
+                </p>
               </div>
               <div class="col-md-5 cover no-pad">
                 <%= link_to image_tag(@idol[1].cover.url(:mini)), "/myidol/#{@idol[1].id}" %>
@@ -160,7 +165,7 @@
               </div>
               <div class="col-md-12 content">
                 <h3 style="margin-top: 10px;margin-bottom: 5px;"><%= link_to @idol[2].title, "/myidol/#{@idol[2].id}" %></h3>
-                <p class="last"> <%= @idol[2].teaser %> </p>
+                <p class="last"> <%= truncate( @idol[2].teaser, length: 160, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/myidol/#{@idol[2].id}" } %> </p>
               </div>
             </div>
           </div>

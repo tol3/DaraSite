@@ -11,7 +11,7 @@
     <div class="col-md-7">
 
       <p class="content">
-        <%= news.first.teaser %>
+        <%= truncate( news.first.teaser, length: 135, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/#{@url}/#{news.first.id}" } %>
       </p>
 
       <p class="day"><%= news.first.post_date.strftime("%d, %B %Y") %></p>
@@ -44,7 +44,7 @@
       <div class="col-md-12 sm-news-card-bot">
         <h4 class="title"><%= link_to x.title, "#{url}/#{x.id}" %></h4>
         <p class="sub-title">
-          <%= x.teaser %>
+          <%= truncate( x.teaser, length: 65, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/#{url}/#{x.id}" } %>
         </p>
         <p class="content-p">
           <%= x.post_date.strftime("%d, %B %Y") %>

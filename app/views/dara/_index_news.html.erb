@@ -41,7 +41,7 @@
     </div>
 
     <div class="col-md-12 content no-pad">
-      <div class="col-md-12 sm-news-card-bot">
+      <div class="col-md-12 sm-news-card-bot" style="height: 131px;">
         <h4 class="title"><%= link_to x.title, "#{url}/#{x.id}" %></h4>
         <p class="sub-title">
           <%= truncate( x.teaser, length: 65, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/#{url}/#{x.id}" } %>

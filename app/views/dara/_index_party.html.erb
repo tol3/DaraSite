@@ -10,7 +10,7 @@
             <div class="panel-heading" role="tab" id="<%= "#{index}-#{p.category}" %>">
               <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= "#{url}-#{index}" %>" aria-expanded="true" aria-controls="<%= "#{url}-#{index}" %>">
-                 <%= p.title %>
+                 <%= truncate( p.title, length: 50, separator: ' ', omission: '... ') %>
                  <span class="timecir">
                   <i class="fa fa-circle-o fa-3x"></i>
                   <p class="day"><%= p.day.day %></p>

@@ -43,13 +43,9 @@
   p.content{
     text-indent: 30px;
     margin-left: -15px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5; /* number of lines to show */
-    line-height: 1;        /* fallback */
-    max-height: 1*5;
+    a{
+      text-decoration: underline;
+    }
   }
 
   .party-foot {
@@ -109,7 +105,7 @@
     padding-left : 5px;
     padding-right: 5px;
     margin-bottom: 15px;
-    min-height: 420px;
+    min-height: 385px;
     .box-shadow {
       border-bottom-right-radius: 10px;
       border-bottom-left-radius : 10px;
@@ -167,13 +163,16 @@
         font-size: 1.3em;
         text-indent: 15px;
         color: white;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2; /* number of lines to show */
-        line-height: 1;        /* fallback */
-        max-height: 1*2;
+        a{
+          text-decoration: underline;
+        }
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // display: -webkit-box;
+        // -webkit-box-orient: vertical;
+        // -webkit-line-clamp: 2; /* number of lines to show */
+        // line-height: 1;        /* fallback */
+        // max-height: 1*2;
       }
     }
 

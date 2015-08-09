@@ -120,7 +120,12 @@
                 <div class="col-md-12 party-card-bot">
                   <h4 class="title"><%= link_to x.title, "/#{@url}/#{x.id}" %></h4>
                   <p class="sub-title"><%= x.location %></p>
-                  <p class="content-p"><%= x.description %></p>
+                  <p class="content-p"><%= truncate( x.description,
+                      length: 50,
+                      separator: ' ',
+                      omission: '... ') {
+                        link_to "อ่านต่อ", "/#{@url}/#{x.id}"
+                    } %></p>
                 </div>
               </div>
 

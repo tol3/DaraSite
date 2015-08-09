@@ -206,7 +206,7 @@
     <div class="col-md-12 no-pad">
       <div class="content-head">
         <span class="content">
-          Life Style
+          LifeStyle
         </span>
       </div>
     </div>
@@ -239,7 +239,10 @@
             </div>
             <div class="col-md-7 no-pad">
               <h3><%= link_to @travel.first.title, "/travel/#{@travel.first.id}" %></h3>
-              <p><%= @travel.first.teaser %></p>
+              <p>
+
+                <%= truncate( @travel.first.teaser, length: 80, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/travel/#{@travel.first.id}" } %>
+              </p>
               <p>
                 <span class="social">
                   <div class="ssk-group" data-url="<%= "#{request.original_url}/#{@travel.first.id}" %>" data-text="<%= "#{@travel.first.title}" %>" >
@@ -255,11 +258,13 @@
         <% @travel[1..@travel.count].each do |t| %>
           <div class="col-md-4 sm-pad mini-card">
             <div class="col-md-12 no-pad warp-img">
-              <%= link_to image_tag(@travel.first.cover.url(:mini)), "/travel/#{@travel.first.id}" %>
+              <%= link_to image_tag(t.cover.url(:mini)), "/travel/#{t.id}" %>
             </div>
 
             <div class="col-md-12 no-pad">
-              <p><%= @travel.first.teaser %></p>
+              <p>
+                <%= truncate( t.teaser, length: 40, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/travel/#{t.id}" } %>
+              </p>
             </div>
           </div>
         <% end %>

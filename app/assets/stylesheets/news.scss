@@ -78,13 +78,10 @@ $base-color: #62178A;
 		p{
 			margin-top: 10px;
 			margin-bottom: 15px;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 4; /* number of lines to show */
-			line-height: 1;        /* fallback */
-			max-height: 1*4;
+			a{
+				color: $baseColor;
+				text-decoration: underline;
+			}
 		}
 	}
 
@@ -211,7 +208,7 @@ $base-color: #62178A;
 	-webkit-box-shadow: 1px 1px 11px -1px rgba(94,94,94,1);
 	-moz-box-shadow: 1px 1px 11px -1px rgba(94,94,94,1);
 	box-shadow: 1px 1px 11px -1px rgba(94,94,94,1);
-	min-height: 297px;
+	height: 295px;
 	.head{
 		margin-top: 0;
 		padding-left: 10px;
@@ -270,14 +267,10 @@ $base-color: #62178A;
 		p.content-text{
 			margin: 0;
 			text-indent: 20px;
-			// font-size: .9em;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 2; /* number of lines to show */
-			line-height: 1;        /* fallback */
-			max-height: 1*2;
+			a{
+				color: $baseColor;
+				text-decoration: underline;
+			}
 		}
 	}
 

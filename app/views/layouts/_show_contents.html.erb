@@ -88,7 +88,12 @@
 
             <div class="row content-col">
               <p class="content-text">
-                <%= x.teaser %>
+                <%= truncate( x.teaser,
+                      length: 55,
+                      separator: ' ',
+                      omission: '... ') {
+                        link_to "อ่านต่อ", "/#{@url}/#{x.id}"
+                    } %>
               </p>
             </div>
 

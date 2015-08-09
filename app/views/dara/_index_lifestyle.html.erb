@@ -10,8 +10,7 @@
 			<div class="col-md-7 sm-pad">
 				<h3> <%= link_to( life.first.title, "#{url}/#{life.first.id}") %> </h3>
 				<p>
-					<%= life.first.teaser %>
-					<%= truncate( life.first.teaser, length: 50, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/#{url}/#{life.first.id}" } %>
+					<%= truncate( life.first.teaser, length: 55, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/#{url}/#{life.first.id}" } %>
 				</p>
 				<span class="social">
 	        <div class="ssk-group" data-url="<%= "#{request.original_url}/#{life.first.id}" %>" data-text="<%= "#{life.first.title}" %>" >

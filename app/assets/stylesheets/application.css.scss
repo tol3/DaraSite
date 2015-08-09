@@ -87,10 +87,10 @@ body {
     margin-top: 20px;
     background-color: #751a91;
     color: #efefef;
-    ul{
+    ul {
         list-style: none;
         font-size: 1.5em;
-        li{
+        li {
             float: left;
             margin-right: 15px;
             display: block;
@@ -178,11 +178,14 @@ ul.pagination {
             max-width: 100%;
             height: auto !important;
         }
-        iframe, object, embed {
+        iframe,
+        object,
+        embed {
             max-width: 100%;
             margin: 15px 0;
         }
-        a, a:hover{
+        a,
+        a:hover {
             color: $baseColor;
             opacity: 1;
         }
@@ -193,16 +196,13 @@ ul.pagination {
     margin-bottom: 10px;
 }
 
-
-.last-ads{
+.last-ads {
     margin-bottom: 0 !important;
 }
 
-
-#date_time{
+#date_time {
     position: absolute;
     bottom: -25px;
     right: 5%;
     font-weight: bolder;
-    text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
 }

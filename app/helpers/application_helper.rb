@@ -10,5 +10,14 @@ module ApplicationHelper
   def title(page_title)
 		content_for(:title) { page_title }
 	end
-  
+
+	# def watch_view(num)
+	# 	val = (num.to_i / 1000)
+	# 	if val < 1
+	# 		content_tag val.to_i
+	# 	else
+	# 		content_tag val
+	# 	end
+	# end
+
 end

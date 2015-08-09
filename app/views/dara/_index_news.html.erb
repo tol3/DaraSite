@@ -55,7 +55,7 @@
         <div class="ssk-group" data-url="<%= "#{request.original_url}#{url}/#{x.id}" %>" data-text="<%= "#{x.title}" %>">
           <p>
             <i class="fa fa-eye"></i>
-            <%= number_to_human(x.impressionist_count, :format => '%n%u', :units => { :thousand => 'K' }) %>
+            <%= number_to_human(x.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
           </p>
           <a class="ssk ssk-facebook ssk-xs" href=""></a>
           <a class="ssk ssk-twitter ssk-xs" href=""></a>

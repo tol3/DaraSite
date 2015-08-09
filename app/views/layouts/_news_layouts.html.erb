@@ -79,7 +79,7 @@
                   <a class="ssk ssk-pinterest ssk-xs" href=""></a>
                 </div>
               </span>
-              <p> Watch: <%= x.impressionist_count %></p>
+              <p> Watch: <%= number_to_human(x.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %></p>
             </div>
           </div>
         </div>

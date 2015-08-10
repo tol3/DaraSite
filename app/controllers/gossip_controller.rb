@@ -3,14 +3,14 @@ class GossipController < ApplicationController
   impressionist :actions=>[:index]
 
   def index
-    @head = "Gossip"
+    @head = "Hot Topics"
     @url = "gossip"
     @news = News.gossip.publish.reverse_order.page(params[:page]).per(16)
     @first = News.gossip.publish.reverse_order.first
   end
 
   def show
-    @title = "Gossip"
+    @title = "Hot Topics"
     @url = "gossip"
     @news = News.gossip.find(params[:id])
     @head = @news.title

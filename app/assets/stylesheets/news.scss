@@ -157,6 +157,9 @@ $base-color: #62178A;
 	background-color: #FFFFFF;
 	padding-bottom: 15px;
 	margin-top: 20px;
+	div.col-md-4{
+		margin-bottom: 10px;
+	}
 	.content-title{
 		font-size: 3em;
 		// margin-bottom: 15px;
@@ -208,7 +211,7 @@ $base-color: #62178A;
 	-webkit-box-shadow: 1px 1px 11px -1px rgba(94,94,94,1);
 	-moz-box-shadow: 1px 1px 11px -1px rgba(94,94,94,1);
 	box-shadow: 1px 1px 11px -1px rgba(94,94,94,1);
-	height: 295px;
+	min-height: 295px;
 	.head{
 		margin-top: 0;
 		padding-left: 10px;

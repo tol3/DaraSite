@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="row box-shadow news-card">
+    <div class="row box-shadow first-news-card news-card">
       <div class="col-md-6 no-pad">
         <%= link_to image_tag(@first.cover.url(:mini)), "/#{@url}/#{@first.id}" %>
       </div>
@@ -50,7 +50,7 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
       <% @news[1..@news.count].each do |x| %>
 
-      <div class="col-md-4 col-sm-4 sm-pad">
+      <div class="col-md-4 col-sm-4 col-xs-6 out-news-card sm-pad">
         <div class="col-md-12 box-shadow news-card news-small no-pad">
           <div class="col-md-12">
             <div class="row title">

@@ -29,9 +29,13 @@ $base-color: #62178A;
 }
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-
+.out-news-card{margin-bottom: 20px;}
+.first-news-card{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
 .news-card{
-	margin-top: 20px;
+
 	background-color: #fefefe;
 	img{
 		display: block;

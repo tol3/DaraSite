@@ -19,6 +19,10 @@
     </div>
 
     <div class="col-md-12 news-foot">
+      <span class="watch">
+        <i class="fa fa-user"></i>
+            <%= number_to_human(news.first.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
+      </span>
       <span class="social">
         <div class="ssk-group" data-url="<%= "#{request.original_url}#{url}/#{news.first.id}" %>" data-text="<%= "#{news.first.title}" %>">
           <p>Share it : </p>
@@ -54,7 +58,7 @@
         <span class="social">
         <div class="ssk-group" data-url="<%= "#{request.original_url}#{url}/#{x.id}" %>" data-text="<%= "#{x.title}" %>">
           <p>
-            <i class="fa fa-eye"></i>
+            <i class="fa fa-user"></i>
             <%= number_to_human(x.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
           </p>
           <a class="ssk ssk-facebook ssk-xs" href=""></a>

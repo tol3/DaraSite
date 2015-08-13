@@ -10,30 +10,28 @@ ActiveAdmin.register_page "Dashboard" do
     #   end
     # end
     columns do
-      column do
-        # panel "View Counter" do
+      column span: 2 do
+        panel "This Day" do
           div class: 'blank_slate_container' do
-            h3 'Test visits Chart'
             @impress = Impression.group_by_day(:created_at).count #whatever data you pass to chart
             render partial: 'admin/impression', locals: {impress: @impress}
           end
-        # end
+        end
       end
 
-      column do
-        # panel "View Counter" do
+      column span: 3 do
+        panel "Last 30 days" do
           div class: 'blank_slate_container' do
-            h3 'Test visits Chart'
             @impress = Impression.group_by_day(:created_at).count #whatever data you pass to chart
             render partial: 'admin/impression', locals: {impress: @impress}
           end
-        # end
+        end
       end
     end
     # Here is an example of a simple dashboard with columns and panels.
     #
     columns do
-      column do
+      column span: 6 do
         panel "Recent News" do
           ul do
             News.last(5).map do |news|
@@ -43,7 +41,17 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
 
-      column do
+      column span: 3 do
+        panel "Recent News" do
+          ul do
+            News.last(5).map do |news|
+              li link_to(news.title, admin_news_path(news))
+            end
+          end
+        end
+      end
+
+      column span: 3 do
         panel "Recent Party" do
           ul do
             Party.last(5).map do |news|
@@ -53,11 +61,6 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
 
-      column do
-        panel "Info" do
-          para "Welcome to ActiveAdmin."
-        end
-      end
     end
   end # content
 end

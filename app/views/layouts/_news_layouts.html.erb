@@ -41,7 +41,7 @@
               <a class="ssk ssk-pinterest ssk-xs" href=""></a>
             </div>
           </span>
-          <p> Watch: <%= @first.impressionist_count %> </p>
+          <p> <i class="fa fa-user"></i> <%= number_to_human(@first.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %> </p>
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@
                   <a class="ssk ssk-pinterest ssk-xs" href=""></a>
                 </div>
               </span>
-              <p> Watch: <%= number_to_human(x.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %></p>
+              <p> <i class="fa fa-user"></i> <%= number_to_human(x.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %></p>
             </div>
           </div>
         </div>

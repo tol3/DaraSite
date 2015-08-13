@@ -11,13 +11,14 @@ module ApplicationHelper
 		content_for(:title) { page_title }
 	end
 
-	# def watch_view(num)
-	# 	val = (num.to_i / 1000)
-	# 	if val < 1
-	# 		content_tag val.to_i
-	# 	else
-	# 		content_tag val
-	# 	end
-	# end
+	def facebook_shares(url)
+    data = Net::HTTP.get(URI.parse("http://graph.facebook.com/?ids=#{URI.escape(url)}"))
+    data = JSON.parse(data)
+    if data.kind_of?(Array)
+      return 0
+    else
+      return data[url]['shares']
+    end
+	end
 
 end

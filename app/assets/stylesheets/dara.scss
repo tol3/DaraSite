@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "var";
+
+span.watch{
+    float: left;
+}
+p.shares{
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 30px;
+    i{
+        font-size: 20px;
+    }
+}
 .nav-tabs {
     margin-top: 0px;
     background-color: #fff;

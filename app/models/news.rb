@@ -39,6 +39,7 @@ class News < ActiveRecord::Base
     post_by :string
     post_date :date
     publish :boolean
+    video :boolean
     category_id :integer
 
     timestamps

@@ -4,7 +4,7 @@ ActiveAdmin.register News do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :cover, :title, :content, :post_by, :post_date, :publish, :category_id, :tag_list
+  permit_params :cover, :title, :content, :post_by, :post_date, :publish, :category_id, :tag_list, :video
 #
 # or
 #
@@ -57,12 +57,13 @@ ActiveAdmin.register News do
       f.input :category_id, :as => :select, :collection => Category.where(publish: true).order(:id), :required => true
       f.input :title, :required => true
       f.input :post_date, label: 'Publish Post At', as: :datepicker, datepicker_options: { min_date: 3.days.ago.to_date, max_date: "+1M" }, :required => true
+      f.input :video
     end
     f.inputs 'Content' do
       f.input :teaser, :required => true
-    	f.input :content, :input_html => { :class => "tinymce", :rows => 40, :cols => 120 }
+      f.input :content, :input_html => { :class => "tinymce", :rows => 40, :cols => 120 }
     end
-    f.inputs 'Publish' do
+    f.inputs 'Tags' do
       f.input :tag_list, :input_html => { "data-role" => "tagsinput", "class" => "tags" }, :placeholder => "Add Tags", :label => "Tags"
     end
     f.inputs 'Publish' do
@@ -92,6 +93,7 @@ ActiveAdmin.register News do
 
     panel "Other" do
       attributes_table_for resource do
+        row("video") { resource.video }
         row("Tag") { resource.tag_list }
         row("Publish") { resource.publish }
         row("Created"){ resource.created_at }

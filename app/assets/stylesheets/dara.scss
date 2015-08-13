@@ -16,6 +16,25 @@ p.shares{
         font-size: 20px;
     }
 }
+i.is-video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 10vw;
+    opacity: .7;
+}
+i.is-sm{
+    top: 37%;
+    font-size: 5em;
+}
+
+i.is-inner{
+    top: 40%;
+    font-size: 5em;
+}
+
 .nav-tabs {
     margin-top: 0px;
     background-color: #fff;

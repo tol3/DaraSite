@@ -85,7 +85,12 @@
                 <p><%= x.post_date.strftime("%d") %></p>
                 <p><%= x.post_date.strftime("%b") %></p>
               </div>
-              <%= link_to image_tag(x.cover.url(:mini), :class => "card-img"), "/#{@url}/#{x.id}" %>
+              <%= link_to "/#{@url}/#{x.id}" do %>
+                <%= image_tag(x.cover.url(:mini), :class => "card-img") %>
+                <% if x.video == true %>
+                  <i class="fa fa-play-circle-o is-video is-sm is-inner"></i>
+                <% end %>
+              <% end %>
             </div>
 
             <div class="row content-col">
@@ -109,7 +114,7 @@
                 </div>
               </span>
 
-              <div class="watch"><i class="fa fa-user"></i> <%= x.impressionist_count %></div>
+              <div class="watch"><i class="fa fa-user"></i> <%= number_to_human(x.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %></div>
             </div>
 
           </div>

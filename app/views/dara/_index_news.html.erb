@@ -46,7 +46,12 @@
   <div class="col-md-4 sm-news-card">
 
     <div class="col-md-12 no-pad">
-      <%= link_to image_tag(x.cover.url(:mini)), "#{url}/#{x.id}" %>
+      <%= link_to "#{url}/#{x.id}" do %>
+        <%= image_tag(x.cover.url(:mini)) %>
+        <% if news.first.video == true %>
+          <i class="fa fa-play-circle-o is-video"></i>
+        <% end %>
+      <% end %>
     </div>
 
     <div class="col-md-12 content no-pad">

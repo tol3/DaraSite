@@ -14,10 +14,10 @@ module ApplicationHelper
 	def facebook_shares(url)
     data = Net::HTTP.get(URI.parse("http://graph.facebook.com/?ids=#{URI.escape(url)}"))
     data = JSON.parse(data)
-    if data.kind_of?(Array)
-      return 0
-    else
+    if data.kind_of?(Hash)
       return data[url]['shares']
+    else
+      return 0
     end
 	end
 

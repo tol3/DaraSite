@@ -13,7 +13,7 @@ ActiveAdmin.register_page "Dashboard" do
       column span: 2 do
         panel "This Day" do
           div class: 'blank_slate_container' do
-            @impress = Impression.group_by_day(:created_at).count #whatever data you pass to chart
+            @impress = Impression.where("created_at >= ?", Time.zone.now.beginning_of_day).group_by_hour(:created_at).count #whatever data you pass to chart
             render partial: 'admin/impression', locals: {impress: @impress}
           end
         end
@@ -22,8 +22,8 @@ ActiveAdmin.register_page "Dashboard" do
       column span: 3 do
         panel "Last 30 days" do
           div class: 'blank_slate_container' do
-            @impress = Impression.group_by_day(:created_at).count #whatever data you pass to chart
-            render partial: 'admin/impression', locals: {impress: @impress}
+            @impress = Impression.where("created_at >= ?", Time.zone.now.beginning_of_month).group_by_day(:created_at).limit(30).count #whatever data you pass to chart
+            render partial: 'admin/last', locals: {impress: @impress}
           end
         end
       end
@@ -32,11 +32,16 @@ ActiveAdmin.register_page "Dashboard" do
     #
     columns do
       column span: 6 do
-        panel "Recent News" do
-          ul do
-            News.last(5).map do |news|
-              li link_to(news.title, admin_news_path(news))
-            end
+        panel "Top 3 News" do
+          div class: 'blank_slate_container' do
+            @a = Impression.group(:impressionable_id).count
+            @b = @a.sort {|a,b| b[1]<=>a[1]}
+            @c = @b.first(4)
+            @c.shift
+            @d = @c.map{ |key,value| { News.find(key.to_i).title => value } }.reduce(:merge)
+            # raise @c.inspect
+
+            render partial: 'admin/hot', locals: {impress: @d}
           end
         end
       end

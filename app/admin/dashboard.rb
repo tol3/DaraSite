@@ -34,14 +34,14 @@ ActiveAdmin.register_page "Dashboard" do
       column span: 6 do
         panel "Top 3 News" do
           div class: 'blank_slate_container' do
-            @a = Impression.group(:impressionable_id).count
-            @b = @a.sort {|a,b| b[1]<=>a[1]}
-            @c = @b.first(4)
-            @c.shift
-            @d = @c.map{ |key,value| { News.find(key.to_i).title => value } }.reduce(:merge)
-            # raise @c.inspect
+            # @a = Impression.group(:impressionable_id).count
+            # @b = @a.sort {|a,b| b[1]<=>a[1]}
+            # @c = @b.first(4)
+            # @c.shift
+            # @d = @c.map{ |key,value| { News.find(key.to_i).title => value } }.reduce(:merge)
+            # # raise @c.inspect
 
-            render partial: 'admin/hot', locals: {impress: @d}
+            # render partial: 'admin/hot', locals: {impress: @d}
           end
         end
       end

@@ -15,19 +15,19 @@
 
     <div class="col-md-12 no-pad box-shadow" style="margin-top: 10px; margin-bottom: 15px;">
       <ul class="nav nav-tabs tabs-one" role="tablist">
-        <li class="active" role="presentation">
-          <a aria-controls="gossip" aria-expanded="true" data-toggle="tab" href="#gossip" id="gossip-tab" role="tab"> Gossip </a>
+        <li class="active" role="presentation" style="width: 24%;">
+          <a aria-controls="gossip" aria-expanded="true" data-toggle="tab" href="#gossip" id="gossip-tab" role="tab"> Hot Topics </a>
         </li>
-        <li role="presentation">
+        <li role="presentation" style="width: 20%;">
           <a aria-controls="hotclip" aria-expanded="false" data-toggle="tab" href="#hotclip" id="hotclip-tab" role="tab"> Hot Clip </a>
         </li>
-        <li role="presentation">
+        <li role="presentation" style="width: 18%;">
           <a aria-controls="movie" aria-expanded="false" data-toggle="tab" href="#movie" id="movie-tab" role="tab"> Movie </a>
         </li>
-        <li role="presentation">
+        <li role="presentation" style="width: 19%;">
           <a aria-controls="lakorn" aria-expanded="false" data-toggle="tab" href="#lakorn" id="lakorn-tab" role="tab"> Lakorn </a>
         </li>
-        <li role="presentation">
+        <li role="presentation" style="width: 19%;">
           <a aria-controls="music" aria-expanded="false" data-toggle="tab" href="#music" id="music-tab" role="tab"> Music </a>
         </li>
       </ul>
@@ -127,8 +127,56 @@
         </div>
       </div>
 
-      <div class="col-md-12 no-pad top-idol box-shadow">
-        <% if @idol.count != 0 %>
+      <div class="col-md-12 no-pad top-idol music-cards box-shadow visible-xs">
+        <% if @idol.count >= 3 %>
+          <% @idol.each do |i| %>
+            <div class="col-md-12 music-tab no-pad" style="margin-bottom: 10px;">
+
+              <div class="col-md-12 no-pad index-music-cards">
+                <div class="col-md-12 no-pad index-music-cards-top box-shadow">
+                  <h3><%= link_to i.title, "/myidol/#{i.id}" %></h3>
+                </div>
+
+                <div class="col-md-12 box-shadow index-music-cards-middle">
+                  <p class="watch">
+                    <i class="fa fa-user"></i>
+                    <%= number_to_human(i.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
+                  </p>
+                  <span class="social">
+                    <div class="ssk-group" data-url="<%= "#{request.original_url}/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
+                      <a class="ssk ssk-facebook ssk-xs" href=""></a>
+                      <a class="ssk ssk-twitter ssk-xs" href=""></a>
+                      <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+                      <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+                    </div>
+                  </span>
+                </div>
+
+                <div class="col-md-12 box-shadow no-pad index-music-cards-bot">
+                  <div class="col-md-6 box-shadow no-pad">
+                    <%= link_to image_tag(i.cover.url(:mini)), "/myidol/#{i.id}" %>
+                  </div>
+                  <div class="col-md-6">
+                    <h3> <%= i.title %> </h3>
+                    <p> <%= truncate( i.teaser,
+                              length: 57,
+                              separator: ' ',
+                              omission: '... ') {
+                                link_to "อ่านต่อ",  "/myidol/#{i.id}"
+                            } %> </p>
+                  </div>
+                  <span class="tri"></span>
+                </div>
+
+              </div>
+
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="col-md-12 no-pad top-idol box-shadow hidden-xs">
+        <% if @idol.count >= 3 %>
           <div class="col-md-12 idol-card">
             <div class="row">
               <div class="col-md-7 cover no-pad">
@@ -185,8 +233,56 @@
           </span>
         </div>
 
-        <div class="col-md-12 no-pad beauty-cards box-shadow">
+        <div class="col-md-12 no-pad beauty-cards box-shadow hidden-xs">
           <%= render :partial => 'index_beauty', :locals => { :beauty => @beauty, :url => "beauty" } %>
+        </div>
+
+        <div class="col-md-12 no-pad top-idol music-cards box-shadow visible-xs">
+          <% if @beauty.count >= 3 %>
+            <% @beauty.limit(3).each do |i| %>
+              <div class="col-md-12 music-tab no-pad" style="margin-bottom: 10px;">
+
+                <div class="col-md-12 no-pad index-music-cards">
+                  <div class="col-md-12 no-pad index-music-cards-top box-shadow">
+                    <h3><%= link_to i.title, "/beauty/#{i.id}" %></h3>
+                  </div>
+
+                  <div class="col-md-12 box-shadow index-music-cards-middle">
+                    <p class="watch">
+                      <i class="fa fa-user"></i>
+                      <%= number_to_human(i.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
+                    </p>
+                    <span class="social">
+                      <div class="ssk-group" data-url="<%= "#{request.original_url}/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
+                        <a class="ssk ssk-facebook ssk-xs" href=""></a>
+                        <a class="ssk ssk-twitter ssk-xs" href=""></a>
+                        <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+                        <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+                      </div>
+                    </span>
+                  </div>
+
+                  <div class="col-md-12 box-shadow no-pad index-music-cards-bot">
+                    <div class="col-md-6 box-shadow no-pad">
+                      <%= link_to image_tag(i.cover.url(:mini)), "/beauty/#{i.id}" %>
+                    </div>
+                    <div class="col-md-6">
+                      <h3> <%= i.title %> </h3>
+                      <p> <%= truncate( i.teaser,
+                                length: 57,
+                                separator: ' ',
+                                omission: '... ') {
+                                  link_to "อ่านต่อ",  "/beauty/#{i.id}"
+                              } %> </p>
+                    </div>
+                    <span class="tri"></span>
+                  </div>
+
+                </div>
+
+              </div>
+            <% end %>
+          <% end %>
         </div>
 
       </div>
@@ -211,8 +307,56 @@
       </div>
     </div>
 
-    <div class="col-md-12 no-pad lifestyle-cards box-shadow">
+    <div class="col-md-12 no-pad lifestyle-cards box-shadow hidden-xs">
       <%= render :partial => 'index_lifestyle', :locals => { :life => @life_style, :url => "lifestyle" } %>
+    </div>
+
+    <div class="col-md-12 no-pad top-idol music-cards box-shadow visible-xs">
+      <% if @life_style.count >= 3 %>
+        <% @life_style.limit(3).each do |i| %>
+          <div class="col-md-12 music-tab no-pad" style="margin-bottom: 10px;">
+
+            <div class="col-md-12 no-pad index-music-cards">
+              <div class="col-md-12 no-pad index-music-cards-top box-shadow">
+                <h3><%= link_to i.title, "/lifestyle/#{i.id}" %></h3>
+              </div>
+
+              <div class="col-md-12 box-shadow index-music-cards-middle">
+                <p class="watch">
+                  <i class="fa fa-user"></i>
+                  <%= number_to_human(i.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
+                </p>
+                <span class="social">
+                  <div class="ssk-group" data-url="<%= "#{request.original_url}/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
+                    <a class="ssk ssk-facebook ssk-xs" href=""></a>
+                    <a class="ssk ssk-twitter ssk-xs" href=""></a>
+                    <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+                    <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+                  </div>
+                </span>
+              </div>
+
+              <div class="col-md-12 box-shadow no-pad index-music-cards-bot">
+                <div class="col-md-6 box-shadow no-pad">
+                  <%= link_to image_tag(i.cover.url(:mini)), "/lifestyle/#{i.id}" %>
+                </div>
+                <div class="col-md-6">
+                  <h3> <%= i.title %> </h3>
+                  <p> <%= truncate( i.teaser,
+                            length: 57,
+                            separator: ' ',
+                            omission: '... ') {
+                              link_to "อ่านต่อ",  "/lifestyle/#{i.id}"
+                          } %> </p>
+                </div>
+                <span class="tri"></span>
+              </div>
+
+            </div>
+
+          </div>
+        <% end %>
+      <% end %>
     </div>
 
   </div>
@@ -225,14 +369,68 @@
 
 <!-- ======================================== Travel ===================================================== -->
     <div class="col-md-12 no-pad travel-margin">
-      <div class="content-head">
+      <div class="content-head hidden-xs">
         <span class="content">
           Travel By Sense & Scene
         </span>
       </div>
 
+      <div class="content-head visible-xs">
+        <span class="content" style="padding-right: 0px;">
+          Travel By Sense & Scene
+        </span>
+      </div>
+
+      <div class="col-md-12 no-pad top-idol music-cards box-shadow visible-xs">
+        <% if @travel.count >= 3 %>
+          <% @travel.limit(3).each do |i| %>
+            <div class="col-md-12 music-tab no-pad" style="margin-bottom: 10px;">
+
+              <div class="col-md-12 no-pad index-music-cards">
+                <div class="col-md-12 no-pad index-music-cards-top box-shadow">
+                  <h3><%= link_to i.title, "/travel/#{i.id}" %></h3>
+                </div>
+
+                <div class="col-md-12 box-shadow index-music-cards-middle">
+                  <p class="watch">
+                    <i class="fa fa-user"></i>
+                    <%= number_to_human(i.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
+                  </p>
+                  <span class="social">
+                    <div class="ssk-group" data-url="<%= "#{request.original_url}/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
+                      <a class="ssk ssk-facebook ssk-xs" href=""></a>
+                      <a class="ssk ssk-twitter ssk-xs" href=""></a>
+                      <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+                      <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+                    </div>
+                  </span>
+                </div>
+
+                <div class="col-md-12 box-shadow no-pad index-music-cards-bot">
+                  <div class="col-md-6 box-shadow no-pad">
+                    <%= link_to image_tag(i.cover.url(:mini)), "/travel/#{i.id}" %>
+                  </div>
+                  <div class="col-md-6">
+                    <h3> <%= i.title %> </h3>
+                    <p> <%= truncate( i.teaser,
+                              length: 57,
+                              separator: ' ',
+                              omission: '... ') {
+                                link_to "อ่านต่อ",  "/travel/#{i.id}"
+                            } %> </p>
+                  </div>
+                  <span class="tri"></span>
+                </div>
+
+              </div>
+
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
       <% if @travel.count != 0 %>
-        <div class="col-md-12 no-pad travel-cards box-shadow">
+        <div class="col-md-12 no-pad travel-cards box-shadow hidden-xs">
           <div class="col-md-12 no-pad full-card box-shadow">
             <div class="col-md-5 warp-img no-pad">
               <%= link_to image_tag(@travel.first.cover.url(:mini)), "/travel/#{@travel.first.id}" %>

@@ -1,7 +1,7 @@
 <% if music.count != 0 %>
   <% music.each do |m| %>
 
-    <div class="col-md-12 music-tab no-pad">
+    <div class="col-md-12 music-tab no-pad" style="margin-bottom: 10px;">
 
       <div class="col-md-12 no-pad index-music-cards">
         <div class="col-md-12 no-pad index-music-cards-top box-shadow">
@@ -9,6 +9,10 @@
         </div>
 
         <div class="col-md-12 box-shadow index-music-cards-middle">
+          <p class="watch">
+            <i class="fa fa-user"></i>
+            <%= number_to_human(m.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
+          </p>
           <span class="social">
             <div class="ssk-group" data-url="<%= "#{request.original_url}/#{m.id}" %>" data-text="<%= "#{m.title}" %>" >
               <a class="ssk ssk-facebook ssk-xs" href=""></a>

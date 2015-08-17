@@ -81,10 +81,7 @@
             </div>
 
             <div class="row cover no-pad">
-              <div class="day">
-                <p><%= x.post_date.strftime("%d") %></p>
-                <p><%= x.post_date.strftime("%b") %></p>
-              </div>
+
               <%= link_to "/#{@url}/#{x.id}" do %>
                 <%= image_tag(x.cover.url(:mini), :class => "card-img") %>
                 <% if x.video == true %>

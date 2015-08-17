@@ -1,14 +1,56 @@
 <div class="container-fluid footerbot">
   <div class="row">
 
-    <div class="col-md-4 col-sm-4 col-xs-6 no-pad">
+    <div class="col-md-4 col-sm-4 no-pad hidden-xs">
       <h4 class="footertop">Wow 2 Mouth</h4>
-      <ul>
-        <%= nav_link("Gossip", gossip_path) %>
-        <%= nav_link("Music", music_path) %>
-        <%= nav_link("Party", calendar_path) %>
-        <%= nav_link("Event", event_path) %>
-      </ul>
+      <div class="col-md-4 no-pad">
+        <ul>
+          <%= nav_link("Hot Topics", gossip_path) %>
+          <%= nav_link("Hot Clip", hotclip_path) %>
+          <%= nav_link("Movie", movie_path) %>
+          <%= nav_link("Lakorn", lakorn_path) %>
+        </ul>
+      </div>
+      <div class="col-md-4 no-pad">
+        <ul>
+          <%= nav_link("Variety", myidol_path) %>
+          <%= nav_link("Music", music_path) %>
+          <%= nav_link("Party", calendar_path) %>
+          <%= nav_link("Society", society_path) %>
+        </ul>
+      </div>
+      <div class="col-md-4 no-pad">
+        <ul>
+          <%= nav_link("Beauty", beauty_path) %>
+          <%= nav_link("Lifestyle", lifestyle_path) %>
+          <%= nav_link("Event", event_path) %>
+          <%= nav_link("Travel", travel_path) %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-xs-6 no-pad visible-xs">
+      <h4 class="footertop">Wow 2 Mouth</h4>
+      <div class="col-xs-6 no-pad">
+        <ul>
+          <%= nav_link("Hot Topics", gossip_path) %>
+          <%= nav_link("Hot Clip", hotclip_path) %>
+          <%= nav_link("Movie", movie_path) %>
+          <%= nav_link("Lakorn", lakorn_path) %>
+          <%= nav_link("Music", music_path) %>
+          <%= nav_link("Variety", myidol_path) %>
+        </ul>
+      </div>
+      <div class="col-xs-6 no-pad">
+        <ul>
+          <%= nav_link("Party", calendar_path) %>
+          <%= nav_link("Society", society_path) %>
+          <%= nav_link("Beauty", beauty_path) %>
+          <%= nav_link("Lifestyle", lifestyle_path) %>
+          <%= nav_link("Event", event_path) %>
+          <%= nav_link("Travel", travel_path) %>
+        </ul>
+      </div>
     </div>
 
     <div class="col-md-4 col-sm-4 col-xs-6 no-pad visible-xs">
@@ -19,7 +61,7 @@
         <% end %>
 
         <%= link_to "#" do %>
-          <i class="fa fa-twitter-square fa-2x"></i>
+          <i class="fa fa-instagram fa-2x"></i>
         <% end %>
 
         <%= link_to "#" do %>
@@ -30,12 +72,11 @@
 
     <div class="col-md-4 col-sm-4 col-xs-12 no-pad">
       <h4 class="footertop">Contact</h4>
-      <p style="text-indent: 20px;">
-
+      <p style="text-indent: 20px; margin-bottom: 5px;">
         Paramita Publishing Co., Ltd.
         44 Soi 59 Sukhumvit Rd. Klongton-nua, Bangkok 10110
-        Tel. 02 185 2906 Fax. 02 185 2524
       </p>
+      <center style="margin-bottom: 10px; font-size: 1.5em;">Tel. 02 185 2906 Fax. 02 185 2524</center></p>
     </div>
 
     <div class="col-md-4 col-sm-4 col-xs-4 no-pad hidden-xs">
@@ -46,7 +87,7 @@
         <% end %>
 
         <%= link_to "#" do %>
-          <i class="fa fa-twitter-square fa-2x"></i>
+          <i class="fa fa-instagram fa-2x"></i>
         <% end %>
 
         <%= link_to "#" do %>

@@ -89,12 +89,13 @@ body {
     background-color: #751a91;
     color: #efefef;
     ul {
-        list-style: none;
+        padding-left: 25px;
+        // list-style: none;
         font-size: 1.5em;
         li {
-            float: left;
-            margin-right: 15px;
-            display: block;
+            // float: left;
+            // margin-right: 15px;
+            // display: block;
         }
     }
     h4 {
@@ -211,7 +212,7 @@ ul.pagination {
 
 #date_time {
     position: absolute;
-    bottom: -25px;
-    right: 5%;
+    bottom: -40px;
+    right: 3%;
     font-weight: bolder;
 }

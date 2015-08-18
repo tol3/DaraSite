@@ -40,6 +40,12 @@ ActiveAdmin.register_page "Dashboard" do
               n.column("Created At") { |task| task.created_at? ? l(task.created_at, :format => :long) : '-' }
             end
           end
+        else
+          panel "Facebook Plugins" do
+            div class: 'blank_slate_container' do
+              link_to("Login Facebook", "/auth/facebook")
+            end
+          end
         end
 
       end

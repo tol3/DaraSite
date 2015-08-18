@@ -1,5 +1,47 @@
 <% title "Home" %>
 
+<div class="row visible-xs">
+  <!-- Place somewhere in the <body> of your page -->
+  <div class="flexslider" style="margin-bottom: 15px;">
+    <ul class="slides">
+      <% @sample.each do |s| %>
+        <li>
+          <%= image_tag s.cover.url(:mini) %>
+          <p class="flex-caption"><%= link_to(s.title, "/#{getNewsUrl(s.category.id)}/#{s.id}", :class => "link-slide") %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <style type="text/css">
+  .flex-caption {
+    margin-bottom: 0;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 366px;
+    text-indent: 20px;
+    position: absolute;
+    bottom: 0;
+    background: rgba(100, 51, 148, 0.5);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+    font-size: 24px;
+    line-height: 18px;
+  }
+  .link-slide{
+    width: 100%;
+  }
+  </style>
+  <script>
+    $(window).load(function() {
+    $('.flexslider').flexslider({
+      animation: "slide",
+      controlNav: false
+    });
+  });
+  </script>
+</div>
 
 <div class="row">
 
@@ -61,6 +103,21 @@
         </span>
       </div>
     </div>
+
+    <style>
+      .panel-heading .accordion-toggle:after {
+        /* symbol for "opening" panels */
+        font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+        content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+        float: right;        /* adjust as needed */
+        color: rgba(160, 55, 187, 1);         /* adjust as needed */
+        font-size: 1em;
+      }
+      .panel-heading .accordion-toggle.collapsed:after {
+        /* symbol for "collapsed" panels */
+        content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+      }
+    </style>
 
     <div class="col-md-12 no-pad" style="margin-top: 10px;">
 
@@ -141,9 +198,10 @@
                   <p class="watch">
                     <i class="fa fa-user"></i>
                     <%= number_to_human(i.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
+
                   </p>
                   <span class="social">
-                    <div class="ssk-group" data-url="<%= "#{request.original_url}/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
+                    <div class="ssk-group" data-url="<%= "#{request.original_url}myidol/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
                       <a class="ssk ssk-facebook ssk-xs" href=""></a>
                       <a class="ssk ssk-twitter ssk-xs" href=""></a>
                       <a class="ssk ssk-google-plus ssk-xs" href=""></a>
@@ -177,43 +235,44 @@
 
       <div class="col-md-12 no-pad top-idol box-shadow hidden-xs">
         <% if @idol.count >= 3 %>
-          <div class="col-md-12 idol-card">
-            <div class="row">
-              <div class="col-md-7 cover no-pad">
-                <%= link_to image_tag(@idol[0].cover.url(:mini)), "/myidol/#{@idol[0].id}" %>
-              </div>
-              <div class="col-md-5 content">
-                <h3 class="first"><%= link_to @idol[0].title, "/myidol/#{@idol[0].id}" %></h3>
-                <p class="first">
-                  <%= truncate( @idol[0].teaser, length: 50, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/myidol/#{@idol[0].id}" } %>
-                </p>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12 idol-card">
-            <div class="row">
-              <div class="col-md-7 content">
-                <h3><%= link_to @idol[1].title, "/myidol/#{@idol[1].id}" %></h3>
-                <p>
-                  <%= truncate( @idol[1].teaser, length: 80, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/myidol/#{@idol[1].id}" } %>
-                </p>
-              </div>
-              <div class="col-md-5 cover no-pad">
-                <%= link_to image_tag(@idol[1].cover.url(:mini)), "/myidol/#{@idol[1].id}" %>
-              </div>
-            </div>
-          </div>
 
           <div class="col-md-12 idol-card">
             <div class="row">
               <div class="col-md-12 cover no-pad">
-                <%= link_to image_tag(@idol[2].cover.url(:mini)), "/myidol/#{@idol[2].id}" %>
+                <%= link_to image_tag(@idol[0].cover.url(:mini)), "/myidol/#{@idol[0].id}" %>
               </div>
               <div class="col-md-12 content">
-                <h3 style="margin-top: 10px;margin-bottom: 5px;"><%= link_to @idol[2].title, "/myidol/#{@idol[2].id}" %></h3>
-                <p class="last"> <%= truncate( @idol[2].teaser, length: 160, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/myidol/#{@idol[2].id}" } %> </p>
+                <h3 style="margin-top: 10px;margin-bottom: 5px;"><%= link_to @idol[0].title, "/myidol/#{@idol[0].id}" %></h3>
+                <p class="last"> <%= truncate( @idol[0].teaser, length: 160, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/myidol/#{@idol[0].id}" } %> </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 idol-card" style="padding-bottom: 0;">
+            <div class="row">
+              <div class="col-md-7 cover no-pad">
+                <%= link_to image_tag(@idol[1].cover.url(:mini)), "/myidol/#{@idol[1].id}" %>
+              </div>
+              <div class="col-md-5 content">
+                <h3 class="first"><%= link_to @idol[1].title, "/myidol/#{@idol[1].id}" %></h3>
+                <p class="first">
+                  <%= truncate( @idol[1].teaser, length: 50, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/myidol/#{@idol[1].id}" } %>
+                </p>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 idol-card" style="padding-bottom: 10px;padding-top: 10px;">
+            <div class="row">
+              <div class="col-md-7 content">
+                <h3><%= link_to @idol[2].title, "/myidol/#{@idol[2].id}" %></h3>
+                <p>
+                  <%= truncate( @idol[2].teaser, length: 80, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/myidol/#{@idol[2].id}" } %>
+                </p>
+              </div>
+              <div class="col-md-5 cover no-pad">
+                <%= link_to image_tag(@idol[2].cover.url(:mini)), "/myidol/#{@idol[1].id}" %>
               </div>
             </div>
           </div>
@@ -251,9 +310,10 @@
                     <p class="watch">
                       <i class="fa fa-user"></i>
                       <%= number_to_human(i.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
+
                     </p>
                     <span class="social">
-                      <div class="ssk-group" data-url="<%= "#{request.original_url}/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
+                      <div class="ssk-group" data-url="<%= "#{request.original_url}beauty/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
                         <a class="ssk ssk-facebook ssk-xs" href=""></a>
                         <a class="ssk ssk-twitter ssk-xs" href=""></a>
                         <a class="ssk ssk-google-plus ssk-xs" href=""></a>
@@ -325,9 +385,10 @@
                 <p class="watch">
                   <i class="fa fa-user"></i>
                   <%= number_to_human(i.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
+
                 </p>
                 <span class="social">
-                  <div class="ssk-group" data-url="<%= "#{request.original_url}/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
+                  <div class="ssk-group" data-url="<%= "#{request.original_url}lifestyle/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
                     <a class="ssk ssk-facebook ssk-xs" href=""></a>
                     <a class="ssk ssk-twitter ssk-xs" href=""></a>
                     <a class="ssk ssk-google-plus ssk-xs" href=""></a>
@@ -397,7 +458,7 @@
                     <%= number_to_human(i.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
                   </p>
                   <span class="social">
-                    <div class="ssk-group" data-url="<%= "#{request.original_url}/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
+                    <div class="ssk-group" data-url="<%= "#{request.original_url}travel/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
                       <a class="ssk ssk-facebook ssk-xs" href=""></a>
                       <a class="ssk ssk-twitter ssk-xs" href=""></a>
                       <a class="ssk ssk-google-plus ssk-xs" href=""></a>
@@ -438,7 +499,6 @@
             <div class="col-md-7 no-pad">
               <h3><%= link_to @travel.first.title, "/travel/#{@travel.first.id}" %></h3>
               <p>
-
                 <%= truncate( @travel.first.teaser, length: 80, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/travel/#{@travel.first.id}" } %>
               </p>
               <p>
@@ -517,13 +577,21 @@
 
 <script type="text/javascript">
   $(document).ready(function () {
-  // Init Social Share Kit
+    var li = $('.tabs-one li').length - 1;
+    var cal = 0;
+
+    // Init Social Share Kit
     SocialShareKit.init();
 
-    $('#myTabs a').click(function (e) {
-      e.preventDefault()
-      $(this).tab('show')
-    });
+    // setInterval(function(){
+    //   $('.tabs-one li:eq('+ cal +') a').tab('show')
+    //   if (cal < li ) {
+    //     cal ++;
+    //   }else{
+    //     cal = 0;
+    //   };
+    // }, 8000)
+
   });
 </script>
 

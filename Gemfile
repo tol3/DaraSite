@@ -34,6 +34,7 @@ gem 'active_skin'
 gem 'paperclip'
 gem 'tinymce-rails'
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+gem 'flexslider', :git => 'https://github.com/constantm/Flexslider-2-Rails-Gem.git'
 
 # gem "meta_search"
 

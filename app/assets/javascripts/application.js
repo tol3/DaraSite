@@ -19,6 +19,7 @@
 //= require tinymce_assets
 //= require classie
 //= require uisearch
+//= require jquery.flexslider
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

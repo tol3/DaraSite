@@ -21,4 +21,31 @@ module ApplicationHelper
     end
 	end
 
+  def getNewsUrl(var)
+    case var
+    when 1
+      return "gossip"
+    when 2
+      return "hotclip"
+    when 3
+      return "movie"
+    when 4
+      return "lakorn"
+    when 5
+      return "music"
+    when 6
+      return "socciety"
+    when 7
+      return "myidol"
+    when 8
+      return "beauty"
+    when 9
+      return "lifestyle"
+    when 10
+      return "travel"
+    else
+      return "search"
+    end
+  end
+
 end

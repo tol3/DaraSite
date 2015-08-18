@@ -3,6 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "var";
 
+// .panel-heading .accordion-toggle:before{
+//   content:"-";
+//   float: right;
+//   color: #fff;
+// }
+
+// .panel-heading .accordion-toggle.collapsed:before{
+//   content: "+";
+// }
+
 span.watch{
     float: left;
 }
@@ -563,6 +573,7 @@ i.is-inner{
 
 .idol-card {
     background-color: #fff;
+    border-top: 2px solid $baseColor;
     .cover {
         img {
             display: block;

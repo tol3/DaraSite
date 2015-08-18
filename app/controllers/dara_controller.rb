@@ -2,6 +2,8 @@ class DaraController < ApplicationController
   # impressionist :actions=>[:index]
   def index
 
+    # Sample
+    @sample = News.publish.last(4)
     # News
     @gossip = News.gossip.publish.reverse_order.limit(4)
     @hot_clip = News.hot_clip.publish.reverse_order.limit(4)

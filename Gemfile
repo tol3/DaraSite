@@ -37,6 +37,7 @@ gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'flexslider', :git => 'https://github.com/constantm/Flexslider-2-Rails-Gem.git'
 
 # gem "meta_search"
+gem 'fb_graph2'
 
 gem 'meta-tags'
 gem "carrierwave"

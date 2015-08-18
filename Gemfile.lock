@@ -64,6 +64,7 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
+    addressable (2.3.8)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.0)
@@ -162,9 +163,14 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
+    jwt (1.5.1)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    koala (2.2.0)
+      addressable
+      faraday
+      multi_json
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -186,10 +192,25 @@ GEM
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
     multipart-post (2.0.0)
     mysql2 (0.3.18)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    oauth2 (1.0.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-facebook (2.0.1)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-oauth2 (1.3.1)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
     open4 (1.3.4)
     orm_adapter (0.5.0)
     paperclip (4.3.0)
@@ -271,6 +292,9 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
+    time_diff (0.3.0)
+      activesupport
+      i18n
     tins (1.5.4)
     tinymce-rails (4.1.6)
       railties (>= 3.1.1)
@@ -313,12 +337,14 @@ DEPENDENCIES
   impressionist
   jbuilder (~> 2.0)
   jquery-rails
+  koala (~> 2.2)
   meta-tags
   migrant
   mina
   mina-puma
   mini_magick
   mysql2
+  omniauth-facebook
   paperclip
   puma
   rails (= 4.2.0)
@@ -326,6 +352,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   searchkick
   spring
+  time_diff
   tinymce-rails
   tinymce-rails-imageupload (~> 4.0.0.beta)
   turbolinks

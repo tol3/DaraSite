@@ -4,7 +4,7 @@ ActiveAdmin.register News do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :cover, :title, :content, :post_by, :post_date, :publish, :category_id, :tag_list, :video
+  permit_params :cover, :title, :content, :post_by, :post_date, :publish, :category_id, :tag_list, :video, :post_facebook
 #
 # or
 #
@@ -19,6 +19,11 @@ ActiveAdmin.register News do
   # scope :Other_Product do |task|
   #   task.where('product_type = ?', "Other Product")
   # end
+
+  member_action :put_wall, method: :get do
+    # resource.put_wall!
+    # redirect_to admin_news_path, notice: "Facebook has Posted!"
+  end
 
   index do
     selectable_column
@@ -42,6 +47,10 @@ ActiveAdmin.register News do
 
     column "Publish", :publish do |p|
       status_tag (p.publish ? "Publish" : "Not Publish"), (p.publish ? :ok : :error)
+    end
+
+    column "Post", :post_facebook do |p|
+      status_tag (p.post_facebook ? "Post" : "Unpost"), (p.post_facebook ? :ok : :error)
     end
 
     actions
@@ -69,6 +78,7 @@ ActiveAdmin.register News do
     f.inputs 'Publish' do
       f.input :post_by, :required => true
       f.input :publish
+      f.input :post_facebook, :as => :hidden
     end
     para "Press cancel to return to the list without saving."
     actions
@@ -80,6 +90,13 @@ ActiveAdmin.register News do
         row("Cover") { image_tag(resource.cover.url(:mini)) }
         row("Category") { resource.category }
         row("Date") { resource.post_date }
+        row("Post") do
+          if resource.post_facebook == true
+            link_to('Post to Facebook again...', put_wall_admin_news_path)
+          else
+            link_to('Post to Facebook', put_wall_admin_news_path)
+          end
+        end
       end
     end
 
@@ -107,7 +124,32 @@ ActiveAdmin.register News do
       # params.permit(:blog => [:name, :description])
       params.permit! # allow all parameters
     end
-  end
 
+    def put_wall
+      # raise params.inspect
+      news = News.find(params[:id])
+
+      user = FacebookUser.first
+      page_graph = Koala::Facebook::API.new(user.page_token)
+
+      link = "http://www.wow2mouth.com/#{news.getNewsUrl(news.category.id)}/#{news.id}"
+      article = news.teaser + "\nอัพเดทข่าวดาราได้ที่ >> http://www.wow2mouth.com\n" + news.tag_hash
+
+      page_graph.put_wall_post( article,
+        {
+          name: news.title,
+          link: link,
+          caption: "WOW2MOUTH.COM",
+          description: news.teaser,
+          picture: "http://www.wow2mouth.com"+news.cover.url
+        }
+      )
+
+      news.post_facebook = true
+      news.save
+
+      redirect_to admin_news_path, notice: "Facebook has Posted!"
+    end
+  end
 
 end

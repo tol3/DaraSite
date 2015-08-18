@@ -31,6 +31,37 @@ class News < ActiveRecord::Base
         end
     end
 
+    def tag_hash
+        tags.map {|model| '#'+model.name }.join(" ")
+    end
+
+    def getNewsUrl(var)
+        case var
+            when 1
+                return "gossip"
+            when 2
+                return "hotclip"
+            when 3
+                return "movie"
+            when 4
+                return "lakorn"
+            when 5
+                return "music"
+            when 6
+                return "socciety"
+            when 7
+                return "myidol"
+            when 8
+                return "beauty"
+            when 9
+                return "lifestyle"
+            when 10
+                return "travel"
+            else
+                return "search"
+        end
+    end
+
   structure do
     cover   :string
     title   :string
@@ -40,6 +71,7 @@ class News < ActiveRecord::Base
     post_date :date
     publish :boolean
     video :boolean
+    post_facebook :boolean
     category_id :integer
 
     timestamps

@@ -1,3 +1,7 @@
-<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-
-<%= pie_chart impress %>
+<div>
+	<ul>
+		<% News.where(post_facebook: nil).publish.limit(10).each do |n| %>
+			<li><%= link_to n.title, admin_news_path(n) %></li>
+		<% end %>
+	</ul>
+</div>

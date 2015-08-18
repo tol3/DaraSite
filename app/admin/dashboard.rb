@@ -3,12 +3,7 @@ ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
-    # div class: "blank_slate_container", id: "dashboard_default_message" do
-    #   span class: "blank_slate" do
-    #     span I18n.t("active_admin.dashboard_welcome.welcome")
-    #     small I18n.t("active_admin.dashboard_welcome.call_to_action")
-    #   end
-    # end
+
     columns do
       column span: 2 do
         panel "This Day" do
@@ -32,18 +27,21 @@ ActiveAdmin.register_page "Dashboard" do
     #
     columns do
       column span: 6 do
-        panel "Top 3 News" do
-          div class: 'blank_slate_container' do
-            # @a = Impression.group(:impressionable_id).count
-            # @b = @a.sort {|a,b| b[1]<=>a[1]}
-            # @c = @b.first(4)
-            # @c.shift
-            # @d = @c.map{ |key,value| { News.find(key.to_i).title => value } }.reduce(:merge)
-            # # raise @c.inspect
-
-            # render partial: 'admin/hot', locals: {impress: @d}
+        if FacebookUser.all.count > 0
+          exp = Time.diff(FacebookUser.first.exp, Time.now , '%y, %M, %w, %d and %h:%m:%s' )
+          facebook = FacebookUser.first
+          panel "Facebook Plugins <span class='text-r'> #{exp[:diff]} </span>".html_safe do
+            # div class: 'blank_slate_container' do
+            #   render partial: 'admin/hot', locals: {face: facebook}
+            # end
+            table_for News.where(post_facebook: nil).publish.reverse_order.limit(10).each do |n|
+              n.column("Status") { |task| status_tag (task.post_facebook ? "Posted" : "Unpost"), (task.post_facebook ? :ok : :error) }
+              n.column("Title") { |task| link_to task.title, admin_news_path(task) }
+              n.column("Created At") { |task| task.created_at? ? l(task.created_at, :format => :long) : '-' }
+            end
           end
         end
+
       end
 
       column span: 3 do

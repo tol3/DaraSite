@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/create'
+
   get 'travel' => 'travel_by_sense#index'
   get 'travel/:id' => 'travel_by_sense#show'
 
@@ -52,8 +54,11 @@ Rails.application.routes.draw do
   get 'about' => 'dara#about'
   post 'search' => 'dara#search'
 
+  get '/auth/:provider/callback' => 'sessions#create'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  # get '/admin/news/:id/put_wall' => 'admin#news#put_wall'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813180340) do
+ActiveRecord::Schema.define(version: 20150818174506) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(version: 20150813180340) do
     t.datetime "created_at"
   end
 
+  create_table "facebook_users", force: :cascade do |t|
+    t.string   "email",       limit: 255
+    t.string   "oauth_token", limit: 255
+    t.string   "uid",         limit: 255
+    t.string   "name",        limit: 255
+    t.datetime "updated_at"
+    t.datetime "created_at"
+    t.datetime "exp"
+    t.string   "page_token",  limit: 255
+  end
+
   create_table "images", force: :cascade do |t|
     t.string   "alt",               limit: 255
     t.string   "hint",              limit: 255
@@ -110,17 +121,18 @@ ActiveRecord::Schema.define(version: 20150813180340) do
   add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
   create_table "news", force: :cascade do |t|
-    t.string   "cover",       limit: 255
-    t.string   "title",       limit: 255
-    t.text     "content",     limit: 65535
-    t.boolean  "publish",     limit: 1
+    t.string   "cover",         limit: 255
+    t.string   "title",         limit: 255
+    t.text     "content",       limit: 65535
+    t.boolean  "publish",       limit: 1
     t.datetime "updated_at"
     t.datetime "created_at"
-    t.integer  "category_id", limit: 4
-    t.string   "post_by",     limit: 255
+    t.integer  "category_id",   limit: 4
+    t.string   "post_by",       limit: 255
     t.date     "post_date"
-    t.string   "teaser",      limit: 255
-    t.boolean  "video",       limit: 1
+    t.string   "teaser",        limit: 255
+    t.boolean  "video",         limit: 1
+    t.boolean  "post_facebook", limit: 1
   end
 
   add_index "news", ["category_id"], name: "index_news_on_category_id", using: :btree

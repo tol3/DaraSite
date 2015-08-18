@@ -62,6 +62,18 @@ class News < ActiveRecord::Base
         end
     end
 
+    # Fix searchkick "immense term":
+  class << self
+    alias_method :old_searchkick_index_options, :searchkick_index_options
+
+    def searchkick_index_options
+      o = old_searchkick_index_options
+      # remove index: "not_analyzed"
+      o[:mappings][:_default_][:properties]['contents'][:fields].delete('contents')
+      o
+    end
+  end
+
   structure do
     cover   :string
     title   :string

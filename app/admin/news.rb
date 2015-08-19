@@ -133,14 +133,14 @@ ActiveAdmin.register News do
       page_graph = Koala::Facebook::API.new(user.page_token)
 
       link = "http://www.wow2mouth.com/#{news.getNewsUrl(news.category.id)}/#{news.id}"
-      article = news.teaser + "\nอัพเดทข่าวดาราได้ที่ >> http://www.wow2mouth.com\n" + news.tag_hash
+      article = news.teaser.first(200) + "... \nอัพเดทข่าวดาราได้ที่ >> http://www.wow2mouth.com\n" + news.tag_hash
 
       page_graph.put_wall_post( article,
         {
           name: news.title,
           link: link,
           caption: "WOW2MOUTH.COM",
-          description: news.teaser,
+          description: news.teaser.first(120),
           picture: "http://www.wow2mouth.com"+news.cover.url
         }
       )

@@ -52,7 +52,7 @@ body iframe,object,embed{
 }
 
 body a,a:hover {
-  color: $skinActiveColor;
+  color: #87329d;
   opacity: 1;
 }
 

@@ -1,7 +1,13 @@
 class DaraController < ApplicationController
   # impressionist :actions=>[:index]
   def index
-
+    #ads
+    index_head = Adsense.index.head.publish.sample(2) #header
+    @ads_head = index_head[0]
+    @ads_bottom = index_head[1]
+    @ads_box = Adsense.index.box.publish.sample(2) #box
+    @ads_side = Adsense.index.side.publish.sample(1) #side
+    # @ads_box = Adsense.index.box.publish.sample(2) #box
     # Sample
     @sample = News.publish.last(4)
     # News

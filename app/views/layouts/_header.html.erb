@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12" style="margin-top: 10px;">
-      <%= link_to image_tag("1500_s.png", :class => "ads") , "#" %>
+    <div id="slideshow" class="col-md-12" style="margin-top: 10px;">
+      <% if @ads_head %>
+        <%= link_to image_tag(@ads_head.image.url(:s1), :class => "ads") , @ads_head.link %>
+      <% else %>
+        <%= link_to image_tag("1500_s.png", :class => "ads") , "#" %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -95,6 +99,37 @@
 <script type="text/javascript">window.onload = date_time('date_time');</script>
 <script>
   new UISearch(document.getElementById('sb-search'));
+
+  // var cc = 0;
+  // var adsLoop = {
+  //   start: function(){
+  //     var ads = $('#slideshow a').length;
+  //     if( cc == 0 ){
+  //       console.log("Ads", "= "+cc)
+  //       $('#slideshow a.ad-' + cc).fadeIn(500);
+  //       cc++;
+  //     }else if (cc <= ads) {
+  //       console.log("Ads", "< " + cc)
+  //       $('#slideshow a.ad-' + cc).fadeOut(500);
+  //       cc = 0;
+  //       $('#slideshow a.ad-' + cc).fadeIn(500);
+  //     }else if (cc > ads) {
+  //       console.log("Ads", "> " + cc)
+  //       x = cc - 1;
+  //       $('#slideshow a.ad-' + x).fadeOut(500);
+  //       cc = 0;
+  //       $('#slideshow a.ad-' + cc).fadeIn(500);
+  //     }else{
+  //       console.log("Ads", "?? "+cc)
+  //       $('#slideshow a.ad-' + cc).fadeIn(500);
+  //       cc = 0;
+  //     }
+  //   }
+  // }
+
+  // $(function() {
+  //   setInterval( "adsLoop.start()", 3000 );
+  // });
 </script>
 
 

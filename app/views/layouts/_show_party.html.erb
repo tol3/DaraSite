@@ -142,13 +142,31 @@
   <div class="col-md-3 col-sm-3">
     <div class="col-md-12">
       <div class="row">
-        <%= link_to image_tag("450.png", :class => "ads") , "#" %>
+        <div class="col-md-12">
+          <% if @ads_box[0] != nil %>
+            <%= link_to image_tag(@ads_box[0].image.url(:s2), :class => "ads") , @ads_box[0].link %>
+          <% else %>
+            <%= link_to image_tag("450.png", :class => "ads") , "#" %>
+          <% end %>
+        </div>
       </div>
       <div class="row">
-        <%= link_to image_tag("450_l.png", :class => "ads") , "#" %>
+        <div class="col-md-12 hidden-xs">
+          <% if @ads_lg != nil %>
+            <%= link_to image_tag(@ads_lg.image.url(:s4), :class => "ads") , @ads_lg.link %>
+          <% else %>
+            <%= link_to image_tag("450_l.png", :class => "ads") , "#" %>
+          <% end %>
+        </div>
       </div>
       <div class="row">
-        <%= link_to image_tag("450.png", :class => "ads") , "#" %>
+        <div class="col-md-12">
+          <% if @ads_box[1] != nil %>
+            <%= link_to image_tag(@ads_box[1].image.url(:s2), :class => "ads") , @ads_box[1].link %>
+          <% else %>
+            <%= link_to image_tag("450.png", :class => "ads") , "#" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -156,7 +174,11 @@
 </div>
 
 <div class="row">
-  <%= link_to image_tag("1500_s.png", :class => "ads") , "#" %>
+  <% if @ads_bottom != nil %>
+    <%= link_to image_tag(@ads_bottom.image.url(:s1), :class => "ads") , @ads_bottom.link %>
+  <% else %>
+    <%= link_to image_tag("1500_s.png", :class => "ads") , "#" %>
+  <% end %>
 </div>
 
 </div>

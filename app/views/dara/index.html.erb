@@ -112,6 +112,10 @@
         float: right;        /* adjust as needed */
         color: rgba(160, 55, 187, 1);         /* adjust as needed */
         font-size: 1em;
+        position: absolute;
+        background-color: #fff;
+        right: 10px;
+        padding-left: 10px;
       }
       .panel-heading .accordion-toggle.collapsed:after {
         /* symbol for "collapsed" panels */
@@ -150,7 +154,11 @@
   </div>
 
   <div class="col-md-2 sm-pad hidden-xs">
-    <%= link_to image_tag("200.png", :class => "ads") , "#" %>
+    <% if @ads_side[0] != [] %>
+      <%= link_to image_tag(@ads_side[0].image.url(:s3), :class => "ads") , @ads_side[0].link %>
+    <% else %>
+      <%= link_to image_tag("200.png", :class => "ads") , "#" %>
+    <% end %>
   </div>
 
 </div>
@@ -352,7 +360,11 @@
 
 
   <div class="row">
-    <%= link_to image_tag("1500_s.png", :class => "ads") , "#" %>
+    <% if @ads_bottom %>
+      <%= link_to image_tag(@ads_bottom.image.url(:s3), :class => "ads") , @ads_bottom.link %>
+    <% else %>
+      <%= link_to image_tag("1500_s.png", :class => "ads") , "#" %>
+    <% end %>
   </div>
 
 <div class="row">
@@ -425,7 +437,11 @@
   <div class="col-md-4 sm-pad">
 <!-- ======================================== Ads ===================================================== -->
     <div>
-      <%= link_to image_tag("450.png", :class => "ads") , "#" %>
+      <% if @ads_box[0] != nil %>
+        <%= link_to image_tag(@ads_box[0].image.url(:s2), :class => "ads") , @ads_box[0].link %>
+      <% else %>
+        <%= link_to image_tag("450.png", :class => "ads") , "#" %>
+      <% end %>
     </div>
 
 <!-- ======================================== Travel ===================================================== -->
@@ -566,7 +582,11 @@
       </div>
 
       <div class="col-md-12">
-        <%= link_to image_tag("450.png", :class => "ads last-ads") , "#" %>
+        <% if @ads_box[1] != nil %>
+          <%= link_to image_tag(@ads_box[1].image.url(:s2), :class => "ads") , @ads_box[1].link %>
+        <% else %>
+          <%= link_to image_tag("450.png", :class => "ads last-ads") , "#" %>
+        <% end %>
       </div>
     </div>
   </div>

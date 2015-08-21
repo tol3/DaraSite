@@ -121,12 +121,11 @@ ActiveAdmin.register News do
 
   controller do
     def permitted_params
-      # params.permit(:blog => [:name, :description])
+
       params.permit! # allow all parameters
     end
 
     def put_wall
-      # raise params.inspect
       news = News.find(params[:id])
 
       user = FacebookUser.first
@@ -134,7 +133,7 @@ ActiveAdmin.register News do
 
       link = "http://www.wow2mouth.com/#{news.getNewsUrl(news.category.id)}/#{news.id}"
       article = limit_bytesize(news.teaser, 120) + "... \nอัพเดทข่าวได้ที่ http://www.wow2mouth.com\n" + limit_bytesize(news.tag_hash, 50)
-      # raise article.inspect
+
       page_graph.put_wall_post( article,
         {
           name: news.title,
@@ -154,20 +153,13 @@ ActiveAdmin.register News do
     def limit_bytesize(str, size)
       str.encoding.name == 'UTF-8' or raise ArgumentError, "str must have UTF-8 encoding"
 
-      # Change to canonical unicode form (compose any decomposed characters).
-      # Works only if you're using active_support
       str = str.mb_chars.compose.to_s if str.respond_to?(:mb_chars)
-
-      # Start with a string of the correct byte size, but
-      # with a possibly incomplete char at the end.
       new_str = str.byteslice(0, size)
 
-      # We need to force_encoding from utf-8 to utf-8 so ruby will re-validate
-      # (idea from halfelf).
       until new_str[-1].force_encoding('utf-8').valid_encoding?
-        # remove the invalid char
         new_str = new_str.slice(0..-2)
       end
+
       new_str
     end
   end

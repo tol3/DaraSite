@@ -32,11 +32,11 @@ ActiveAdmin.register Adsense do
 
 		column :ads_size do |p|
 			if p.ads_size == 1
-				"1500x300"
+				"1500x200"
 			elsif p.ads_size == 2
 				"450x400"
 			elsif p.ads_size == 3
-				"200x700"
+				"200x800"
 			elsif p.ads_size == 4
 				"450x900"
 			end
@@ -62,7 +62,7 @@ ActiveAdmin.register Adsense do
     end
 
     f.inputs 'Details' do
-      f.input :ads_size, :as => :select, :collection => {"1500x300" => 1, "450x400" => 2, "200x700" => 3, "450x900" => 4 }, :required => true
+      f.input :ads_size, :as => :select, :collection => {"1500x200" => 1, "450x400" => 2, "200x800" => 3, "450x900" => 4 }, :required => true
       f.input :name, :required => true
       f.input :link, :as => :url, :required => true
     end

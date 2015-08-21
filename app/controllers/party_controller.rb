@@ -8,6 +8,13 @@ class PartyController < ApplicationController
     @party = Party.party.publish.reverse_order.page(params[:page]).per(9)
     @first = Party.party.publish.reverse_order.first
     @last = Party.party.prev.publish.reverse_order.page(params[:page]).per(6)
+
+    #ads
+    ads_heads = Adsense.party.head.publish.sample(2) #header
+    @ads_head = ads_heads[0] #header
+    @ads_box = Adsense.party.box.publish.sample(2) #box
+    @ads_lg = Adsense.party.box.publish.sample(1)[0] #lg
+    @ads_bottom = ads_heads[1] #bottom
   end
 
   def chill_2_night
@@ -16,6 +23,13 @@ class PartyController < ApplicationController
     @party = Party.party.prev.publish.reverse_order.page(params[:page]).per(9)
     @first = Party.party.publish.reverse_order.first
     @last = Party.party.prev.publish.reverse_order.page(params[:page]).per(6)
+
+    #ads
+    ads_heads = Adsense.party.head.publish.sample(2) #header
+    @ads_head = ads_heads[0] #header
+    @ads_box = Adsense.party.box.publish.sample(2) #box
+    @ads_lg = Adsense.party.box.publish.sample(1)[0] #lg
+    @ads_bottom = ads_heads[1] #bottom
   end
 
   def after_party
@@ -24,6 +38,13 @@ class PartyController < ApplicationController
     @party = Party.party.prev.publish.reverse_order.page(params[:page]).per(9)
     @first = Party.party.prev.publish.reverse_order.first
     @last = nil
+
+    #ads
+    ads_heads = Adsense.party.head.publish.sample(2) #header
+    @ads_head = ads_heads[0] #header
+    @ads_box = Adsense.party.box.publish.sample(2) #box
+    @ads_lg = Adsense.party.box.publish.sample(1)[0] #lg
+    @ads_bottom = ads_heads[1] #bottom
   end
 
   def show
@@ -34,5 +55,12 @@ class PartyController < ApplicationController
     @like_this = Party.party.publish.reverse_order.sample(8)
 
     impressionist(@party, "show page")
+
+    #ads
+    ads_heads = Adsense.party.head.publish.sample(2) #header
+    @ads_head = ads_heads[0] #header
+    @ads_box = Adsense.party.box.publish.sample(2) #box
+    @ads_lg = Adsense.party.box.publish.sample(1)[0] #lg
+    @ads_bottom = ads_heads[1] #bottom
   end
 end

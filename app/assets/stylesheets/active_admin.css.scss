@@ -105,5 +105,16 @@ span.text-r{
 #img_prev{ width: 100px; }
 #poster_prev{ width: 100px; }
 
+form fieldset > ol > li.boolean {
+    height: 1.1em;
+    width: 20%;
+    float: left;
+}
 
+.inline-hints{
+  img{
+    margin-right: 10px;
+    width: 100px;
+  }
+}
 

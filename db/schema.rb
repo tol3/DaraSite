@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818174506) do
+ActiveRecord::Schema.define(version: 20150820185207) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -45,6 +45,29 @@ ActiveRecord::Schema.define(version: 20150818174506) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "adsenses", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "link",       limit: 255
+    t.string   "image",      limit: 255
+    t.boolean  "index",      limit: 1
+    t.boolean  "publish",    limit: 1
+    t.datetime "updated_at"
+    t.datetime "created_at"
+    t.integer  "ads_size",   limit: 4
+    t.boolean  "beauty",     limit: 1
+    t.boolean  "event",      limit: 1
+    t.boolean  "gossip",     limit: 1
+    t.boolean  "hotclip",    limit: 1
+    t.boolean  "lakorn",     limit: 1
+    t.boolean  "lifestyle",  limit: 1
+    t.boolean  "movie",      limit: 1
+    t.boolean  "music",      limit: 1
+    t.boolean  "myidol",     limit: 1
+    t.boolean  "party",      limit: 1
+    t.boolean  "socciety",   limit: 1
+    t.boolean  "travel",     limit: 1
+  end
 
   create_table "ahoy_events", force: :cascade do |t|
     t.binary   "visit_id",   limit: 16

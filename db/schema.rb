@@ -46,8 +46,6 @@ ActiveRecord::Schema.define(version: 20150820185207) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-<<<<<<< HEAD
-=======
   create_table "adsenses", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "link",       limit: 255
@@ -71,26 +69,6 @@ ActiveRecord::Schema.define(version: 20150820185207) do
     t.boolean  "travel",     limit: 1
   end
 
-  create_table "ahoy_events", force: :cascade do |t|
-    t.binary   "visit_id",   limit: 16
-    t.integer  "user_id",    limit: 4
-    t.string   "name",       limit: 255
-    t.text     "properties", limit: 65535
-    t.datetime "time"
-  end
-
-  add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time", using: :btree
-  add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
-  add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
-
-  create_table "catagories", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.boolean  "publish",    limit: 1
-    t.datetime "updated_at"
-    t.datetime "created_at"
-  end
-
->>>>>>> 6845359277a368e3a77331344f98b01b7d9d76b9
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.boolean  "publish",    limit: 1

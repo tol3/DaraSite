@@ -2,31 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "var";
-
 // .panel-heading .accordion-toggle:before{
 //   content:"-";
 //   float: right;
 //   color: #fff;
 // }
-
 // .panel-heading .accordion-toggle.collapsed:before{
 //   content: "+";
 // }
-
-span.watch{
+span.watch {
     float: left;
 }
-p.shares{
+
+p.shares {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
     margin-bottom: 0;
     font-size: 30px;
-    i{
+    i {
         font-size: 20px;
     }
 }
-i.is-video{
+
+i.is-video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,12 +34,13 @@ i.is-video{
     font-size: 10vw;
     opacity: .7;
 }
-i.is-sm{
+
+i.is-sm {
     top: 37%;
     font-size: 5em;
 }
 
-i.is-inner{
+i.is-inner {
     top: 40%;
     font-size: 5em;
 }
@@ -142,8 +142,8 @@ i.is-inner{
         line-height: 1;
         /* fallback */
         max-height: 1*4;
-        a{
-          text-decoration: underline;
+        a {
+            text-decoration: underline;
         }
     }
     p.day {
@@ -250,7 +250,6 @@ i.is-inner{
                     line-height: 1;
                     /* fallback */
                     max-height: 1*1;
-
                     a {
                         display: inline-block;
                         // color: $baseColor;
@@ -274,12 +273,11 @@ i.is-inner{
                 color: #333;
                 font-size: 1.2em;
                 padding-top: 1px;
-                span.social{
+                span.social {
                     display: inline;
                     float: right;
                 }
-
-                p.watch{
+                p.watch {
                     display: inline;
                     color: $baseColor;
                 }
@@ -305,15 +303,15 @@ i.is-inner{
                     /* fallback */
                     max-height: 1*1;
                 }
-                p{
-                  margin-bottom: 7px;
-                  font-size: 1.5em;
-                  display: inline-block;
-                  color: black;
-                  a{
-                    color: $baseColor;
-                    text-decoration: underline;
-                  }
+                p {
+                    margin-bottom: 7px;
+                    font-size: 1.5em;
+                    display: inline-block;
+                    color: black;
+                    a {
+                        color: $baseColor;
+                        text-decoration: underline;
+                    }
                 }
                 .tri {
                     background: url(tri.png) no-repeat bottom right;
@@ -357,9 +355,9 @@ i.is-inner{
             text-indent: 20px;
             font-size: 1.3em;
             margin-bottom: 10px;
-            a{
-              display: inline;
-              text-decoration: underline;
+            a {
+                display: inline;
+                text-decoration: underline;
             }
         }
         p.content-p {
@@ -388,8 +386,7 @@ i.is-inner{
             -webkit-box-shadow: 0 -1px 5px 0 rgba(50, 50, 50, 1);
             -moz-box-shadow: 0 -1px 5px 0 rgba(50, 50, 50, 1);
             box-shadow: 0 -1px 5px 0 rgba(50, 50, 50, 1);
-
-            .ssk{
+            .ssk {
                 float: right;
             }
         }
@@ -461,7 +458,6 @@ i.is-inner{
     .panel-heading {
         border-radius: 0;
         color: $baseColor;
-
         background-color: #fff;
         border-color: #fff;
         padding: 0;
@@ -610,9 +606,9 @@ i.is-inner{
             margin: 0;
             font-size: 1.3em;
             text-indent: 20px;
-            a{
-              color: $baseColor;
-              text-decoration: underline;
+            a {
+                color: $baseColor;
+                text-decoration: underline;
             }
         }
         p.first {
@@ -664,9 +660,9 @@ i.is-inner{
             margin-bottom: 10px;
             font-size: 1.3em;
             text-indent: 20px;
-           a{
-              color: $baseColor;
-              text-decoration: underline;
+            a {
+                color: $baseColor;
+                text-decoration: underline;
             }
         }
         .tri {
@@ -808,9 +804,9 @@ i.is-inner{
             padding-left: 5px;
             text-indent: 15px;
             font-size: 1.5em;
-            a{
-              text-decoration: underline;
-              color: $baseColor;
+            a {
+                text-decoration: underline;
+                color: $baseColor;
             }
         }
         .ssk-group {
@@ -829,9 +825,9 @@ i.is-inner{
             text-indent: 15px;
             font-size: 1.5em;
             margin-bottom: 15px;
-            a{
-              text-decoration: underline;
-              color: $baseColor;
+            a {
+                text-decoration: underline;
+                color: $baseColor;
             }
         }
     }

@@ -181,7 +181,7 @@
 
   </div>
 
-<!-- ======================================== My Idol ===================================================== -->
+<!-- ======================================== Variety ===================================================== -->
   <div class="col-md-4 sm-pad">
 
       <div class="col-md-12 no-pad">
@@ -246,7 +246,8 @@
 
           <div class="col-md-12 idol-card">
             <div class="row">
-              <div class="col-md-12 cover no-pad">
+              <div class="col-md-12 cover no-pad style="
+    border-right: 1px solid #87329d;">
                 <%= link_to image_tag(@idol[0].cover.url(:mini)), "/myidol/#{@idol[0].id}" %>
               </div>
               <div class="col-md-12 content">
@@ -271,7 +272,7 @@
             </div>
           </div>
 
-          <div class="col-md-12 idol-card" style="padding-bottom: 10px;padding-top: 10px;">
+          <div class="col-md-12 idol-card">
             <div class="row">
               <div class="col-md-7 content">
                 <h3><%= link_to @idol[2].title, "/myidol/#{@idol[2].id}" %></h3>
@@ -279,7 +280,7 @@
                   <%= truncate( @idol[2].teaser, length: 80, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/myidol/#{@idol[2].id}" } %>
                 </p>
               </div>
-              <div class="col-md-5 cover no-pad">
+              <div class="col-md-5 cover no-pad" style="border-left: 1px solid #87329d;">
                 <%= link_to image_tag(@idol[2].cover.url(:mini)), "/myidol/#{@idol[1].id}" %>
               </div>
             </div>

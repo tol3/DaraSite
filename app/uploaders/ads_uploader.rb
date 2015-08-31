@@ -24,23 +24,49 @@ class AdsUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
+  # def remove_animation
+  #   manipulate! do |img|
+  #     if img.mime_type.match /gif/
+  #       img.collapse!
+  #     end
+  #     img
+  #   end
+  # end
+
+  # def resize_with_animate(width, height)
+  #   manipulate! do |img|
+  #     if img[:format].downcase == 'gif'
+  #       #coalesce animated gifs before resize.
+  #       img.coalesce
+  #     end
+  #     img.resize "#{width}x#{height}>"
+  #     img = yield(img) if block_given?
+  #     img
+  #   end
+  # end
+
   version :thumb do
+    # process :resize_with_animate => [100, 100]
     process :resize_to_fit => [100, 100]
   end
 
   version :s1 do
+    # process :resize_with_animate =>[1500,200]
     process :resize_and_pad => [1500, 200, "#efefef"]
   end
 
   version :s2 do
+    # process :resize_with_animate =>[450,400]
     process :resize_and_pad => [450, 400, "#efefef"]
   end
 
   version :s3 do
+    # process :resize_with_animate =>[200,700]
     process :resize_and_pad => [200, 700, "#efefef"]
   end
 
   version :s4 do
+    # process :resize_with_animate =>[450,900]
     process :resize_and_pad => [450, 900, "#efefef"]
   end
 

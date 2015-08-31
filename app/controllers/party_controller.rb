@@ -48,7 +48,7 @@ class PartyController < ApplicationController
   end
 
   def show
-		@head = "Party"
+	@head = "Party"
     @url = "party"
     @party = Party.party.find(params[:id])
     @title = @party.title
@@ -62,5 +62,7 @@ class PartyController < ApplicationController
     @ads_box = Adsense.party.box.publish.sample(2) #box
     @ads_lg = Adsense.party.box.publish.sample(1)[0] #lg
     @ads_bottom = ads_heads[1] #bottom
+
+    # raise ads_heads.inspect
   end
 end

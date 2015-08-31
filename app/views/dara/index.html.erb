@@ -154,8 +154,8 @@
   </div>
 
   <div class="col-md-2 sm-pad hidden-xs">
-    <% if @ads_side[0] != [] %>
-      <%= link_to image_tag(@ads_side[0].image.url(:s3), :class => "ads") , @ads_side[0].link %>
+    <% if @ads_side != nil %>
+      <%= link_to image_tag(@ads_side.image.url(:s3), :class => "ads") , @ads_side.link %>
     <% else %>
       <%= link_to image_tag("200.png", :class => "ads") , "#" %>
     <% end %>

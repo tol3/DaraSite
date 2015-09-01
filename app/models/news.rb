@@ -83,6 +83,7 @@ class News < ActiveRecord::Base
     post_date :date
     publish :boolean
     video :boolean
+    hascover :boolean
     post_facebook :boolean
     category_id :integer
 

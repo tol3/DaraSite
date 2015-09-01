@@ -13,6 +13,61 @@
 span.watch {
     float: left;
 }
+.width-full-party{
+    background: #fff;
+    .warp {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        a {
+            img {
+                display: block;
+                width: 100%;
+                // padding: 5px;
+                overflow: hidden;
+            }
+            span.text-content {
+                background: rgba(160, 55, 187, 0.8);
+                color: white;
+                cursor: pointer;
+                display: table;
+                position: absolute;
+                bottom: 5px;
+                left: 5px;
+                right: 0;
+                opacity: 0;
+                width: 97%;
+                -webkit-transition: opacity 500ms;
+                -moz-transition: opacity 500ms;
+                -o-transition: opacity 500ms;
+                transition: opacity 500ms;
+                span {
+                    display: table-cell;
+                    text-align: center;
+                    vertical-align: middle;
+                    font-size: 1.8em;
+                    padding: 10px;
+                }
+            }
+            &:hover {
+                span.text-content {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+div.more{
+    background: #efefef;
+    height: 24px;
+    a{
+        float: right;
+        color: $baseColor;
+        font-size: 1.3em;
+        padding: 3px 15px;
+    }
+}
 
 p.shares {
     float: left;

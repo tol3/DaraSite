@@ -8,8 +8,10 @@ class DaraController < ApplicationController
     @ads_box = Adsense.index.box.publish.sample(2) #box
     @ads_side = Adsense.index.side.publish.sample(1)[0] #side
     # @ads_box = Adsense.index.box.publish.sample(2) #box
+
     # Sample
     @sample = News.publish.last(4)
+
     # News
     @gossip = News.gossip.publish.reverse_order.limit(4)
     @hot_clip = News.hot_clip.publish.reverse_order.limit(4)
@@ -19,7 +21,7 @@ class DaraController < ApplicationController
     @society = News.socciety.publish.reverse_order.limit(3)
     @idol = News.idol.publish.reverse_order.limit(3)
     @beauty = News.beauty.publish.reverse_order.limit(10)
-    @life_style = News.life_style.publish.reverse_order.limit(9)
+    @life_style = News.life_style.publish.reverse_order.limit(7)
     @travel = News.travel.publish.reverse_order.limit(4)
 
     # Party

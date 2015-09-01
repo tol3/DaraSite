@@ -28,6 +28,9 @@
 
           <span class="social">
             <div class="ssk-group" data-url="<%= "#{request.original_url}" %>" >
+            <p class="shares">
+                <i class="fa fa-share-alt"></i> <%= number_to_human(facebook_shares(request.original_url), :format => '%n%u', :units => { :thousand => 'k' }) %>
+              </p>
               <a class="ssk ssk-facebook" href=""></a>
               <a class="ssk ssk-twitter" href=""></a>
               <a class="ssk ssk-google-plus" href=""></a>

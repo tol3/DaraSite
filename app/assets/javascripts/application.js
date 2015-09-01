@@ -60,45 +60,50 @@ function date_time(id) {
 }
 
 
-// $(document).ready(function() {
-//   function allcoder_ppopup()  {
-//     var sec = 15
-//     var timer = setInterval(function() {
-//       $("#acfooter span").text(sec--);
+$(document).ready(function() {
+  function allcoder_ppopup()  {
+    $("#backdrop").fadeIn("slow");
+    $("#allcoderpopup").fadeIn("slow");
 
-//       if (sec == 0) {
-//         $("#allcoderpopup").fadeOut("slow");
-//         clearInterval(timer);
-//       }
-//     },1000);
+    var sec = 10;
+    var timer = setInterval(function() {
+      $("#acfooter span").text(sec--);
 
-//     var acwh = $(window).height();
-//     var acpph = $("#allcoderpopup").height();
-//     var acfromTop = $(window).scrollTop()+50;
+      if (sec == 0) {
+        $("#allcoderpopup").fadeOut("slow");
+        $("#backdrop").fadeOut("slow");
+        clearInterval(timer);
+      }
+    },1000);
 
-//     $("#allcoderpopup").css({"top": acfromTop});
-//   }
+    // var acwh = $(window).height();
+    // var acpph = $("#allcoderpopup").height();
+    // var acfromTop = $(window).scrollTop()+50;
 
-//   $(window).fadeIn(allcoder_ppopup).resize(allcoder_ppopup)
+    // $("#allcoderpopup").css({"top": acfromTop});
+  }
 
-//    //alert($.cookie('sreqshown'));
-//    //var acww = $(window).width();
-//    //var acppw = $("#allcoderpopup").width();
-//    //var acleftm = (acww-acppw)/2;
-//    var acleftm = 500;
-//    //var acwh = $(window).height();
-//    //var acpph = $("#allcoderpopup").height();
-//    //var acfromTop = ($(window).scrollTop()+acwh-acpph) / 2;
+  $(window).fadeIn(allcoder_ppopup)
 
-//   $("#allcoderpopup").animate({opacity: "1", left: "0" , left:  acleftm}, 0).show();
+   //alert($.cookie('sreqshown'));
+   // var acww = $(window).width();
+   // var acppw = $("#allcoderpopup").width();
+   // var acleftm = (acww-acppw)/2;
+   // var acleftm = 50;
+   //var acwh = $(window).height();
+   //var acpph = $("#allcoderpopup").height();
+   //var acfromTop = ($(window).scrollTop()+acwh-acpph) / 2;
 
-//   $("#acclose").click(function() {
-//     $("#allcoderpopup").animate({
-//       opacity: "0",
-//       left: "-5000000"}
-//     , 1000).show();
-//   });
+  // $("#allcoderpopup").animate({opacity: "1", left: "0" , left:  acleftm}, 0).show();
 
-// });
+  $("#acclose").click(function() {
+    $("#allcoderpopup").animate({
+      opacity: "0",
+      left: "-5000000"}
+    , 1000).show();
+    $("#backdrop").fadeOut("slow");
+  });
+
+});
 
 

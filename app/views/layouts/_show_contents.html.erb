@@ -22,7 +22,7 @@
         </h1>
 
         <p class="sub-title">
-          BY <span class="by"><%= @news.post_by %></span> on <span class="by"><%= @news.post_date.strftime("%d %B %Y") %></span>
+          BY <span class="by"><%= @news.post_by %></span> on <span class="by"><%= @news.created_at.strftime("%d %B %Y") %></span>
 
           <span class="social">
             <div class="ssk-group" data-url="<%= "#{request.original_url}" %>">
@@ -39,7 +39,9 @@
       </div>
 
       <div class="col-md-12 cover no-pad">
-        <%= image_tag( @news.cover.url ) %>
+        <% if @news.hascover != true %>
+          <%= image_tag( @news.cover.url ) %>
+        <% end %>
       </div>
 
       <div class="col-md-12 show-content">

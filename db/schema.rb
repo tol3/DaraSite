@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820185207) do
+ActiveRecord::Schema.define(version: 20150901013601) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -156,6 +156,7 @@ ActiveRecord::Schema.define(version: 20150820185207) do
     t.string   "teaser",        limit: 255
     t.boolean  "video",         limit: 1
     t.boolean  "post_facebook", limit: 1
+    t.boolean  "hascover",      limit: 1
   end
 
   add_index "news", ["category_id"], name: "index_news_on_category_id", using: :btree

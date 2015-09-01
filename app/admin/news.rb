@@ -4,7 +4,7 @@ ActiveAdmin.register News do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :cover, :title, :content, :post_by, :post_date, :publish, :category_id, :tag_list, :video, :post_facebook
+  permit_params :cover, :title, :content, :post_by, :post_date, :publish, :category_id, :tag_list, :video, :post_facebook, :hascover
 #
 # or
 #
@@ -67,6 +67,7 @@ ActiveAdmin.register News do
       f.input :title, :required => true
       f.input :post_date, label: 'Publish Post At', as: :datepicker, datepicker_options: { min_date: 3.days.ago.to_date, max_date: "+1M" }, :required => true
       f.input :video
+      f.input :hascover, :label => "No cover"
     end
     f.inputs 'Content' do
       f.input :teaser, :required => true

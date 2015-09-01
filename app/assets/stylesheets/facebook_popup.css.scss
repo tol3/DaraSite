@@ -1,40 +1,43 @@
 #allcoderpopup{
-position: fixed;
-top:100px;
-z-index:9999;
-display:none;
-padding:0px;
-right:600px;
-border:10px solid rgba(82, 82, 82, 0.7);
--webkit-background-clip: padding-box; /* for Safari */
-background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
--webkit-border-radius:8px 8px 8px 8px;
--moz-border-radius:8px 8px 8px 8px;
-border-radius:8px 8px 8px 8px;
-width:400px;
-height:285px;
-overflow:hidden;
-background-color: #eaeaea;
+	position: fixed;
+	// top:100px;
+	// right:600px;
+	top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+	z-index:9999;
+	display:none;
+	padding:0px;
+	border:10px solid rgba(82, 82, 82, 0.7);
+	-webkit-background-clip: padding-box; /* for Safari */
+	background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+	-webkit-border-radius:8px 8px 8px 8px;
+	-moz-border-radius:8px 8px 8px 8px;
+	border-radius:8px 8px 8px 8px;
+	width:400px;
+	height:320px;
+	overflow:hidden;
+	background-color: #eaeaea;
 }
 #allcoderpopup span{
-font-size:20px !important;
-font-weight:bold !important;
+	font-size:20px !important;
+	font-weight:bold !important;
 }
 #allcoderpopup h1{
-background:#6d84b4 url(http://4.bp.blogspot.com/-rNUTIpDQ21s/T0NqE_vv6GI/AAAAAAAACps/GSoWE2n9Oy8/s1600/%255Bwww.gj37765.blogspot.com%255Dh1.png) 98% no-repeat;
-border:1px solid #3b5998 !important;
-color:#FFFFFF !important;
-font-size:20px !important;
-font-weight:700 !important;
-padding:5px !important;
-margin:0 !important;
-font-family:'"lucida grande",tahoma,verdana,arial,sans-serif !important;
-overflow:hidden !important;
+	background:#6d84b4 url(http://4.bp.blogspot.com/-rNUTIpDQ21s/T0NqE_vv6GI/AAAAAAAACps/GSoWE2n9Oy8/s1600/%255Bwww.gj37765.blogspot.com%255Dh1.png) 98% no-repeat;
+	border:1px solid #3b5998 !important;
+	color:#FFFFFF !important;
+	font-size:20px !important;
+	font-weight:700 !important;
+	padding:5px !important;
+	margin:0 !important;
+	overflow:hidden !important;
 }
 .htmlarea{
 font-size:12px !important;
 font-weight:normal !important;
-height:265px !important;
+height:215px !important;
 padding:1px !important;
 background:#fff !important;
 border-bottom:2px solid #ddd;
@@ -51,35 +54,34 @@ overflow:hidden !important;
 	}
 }
 #acclose{
-float:right;
-background-color:#eee !important;
-border:1px solid #ccc !important;
-font-weight:bold !important;
-padding:5px 8px 5px 8px !important;
-text-decoration:none !important;
-display:inline-block !important;
-font-family:'"lucida grande",tahoma,verdana,arial,sans-serif !important;
-outline:none !important;
-position:relative !important;
-font-size:18px !important;
-margin:1px !important;
-color: #333;
+	float:right;
+	background-color:#eee !important;
+	border:1px solid #ccc !important;
+	font-weight:bold !important;
+	padding:5px 8px 5px 8px !important;
+	text-decoration:none !important;
+	display:inline-block !important;
+	outline:none !important;
+	position:relative !important;
+	font-size:18px !important;
+	margin:1px !important;
+	color: #333;
 }
 #acclose{
-color: #333;
+	color: #333;
 }
 #acclose:active{
-top:1px;
-left:1px;
-color: #333;
+	top:1px;
+	left:1px;
+	color: #333;
 }
 .grabthis{
-bottom:80px;
-font:8px "lucida grande",tahoma,verdana,arial,sans-serif;
-position:absolute;
-right:6px;
-text-align:right;
-z-index: 99999;
+	bottom:80px;
+	font:8px "lucida grande",tahoma,verdana,arial,sans-serif;
+	position:absolute;
+	right:6px;
+	text-align:right;
+	z-index: 99999;
 }
 .grabthis a{
 color: #000;
@@ -88,3 +90,17 @@ text-decoration:none;
 .grabthis a:hover{
 text-decoration:underline;
 }
+
+
+#backdrop{
+	background-color: #333;
+	opacity: .7;
+	z-index: 9998;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+
+

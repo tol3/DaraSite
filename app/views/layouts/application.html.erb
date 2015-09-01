@@ -21,12 +21,24 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-      <div class="container">
-        <%= yield %>
+    <div id="backdrop"></div>
+    <div id="allcoderpopup">
+      <h1>Join us on Facebook</h1>
+      <div class="htmlarea">
+        <div class="fb-page" data-href="https://www.facebook.com/736301666482034" data-width="380" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/736301666482034"><a href="https://www.facebook.com/736301666482034">Wow2mouth</a></blockquote></div></div>
       </div>
-      <%= render 'layouts/footer' %>
-<div id="fb-root"></div>
+      <div id="acfooter">
+        Please wait..<span>15</span> Seconds
+        <a href="#" id="acclose" onclick="return false;">Cancel</a>
+      </div>
+    </div>
+
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
+    <div id="fb-root"></div>
   </body>
 
 <script type="text/javascript">

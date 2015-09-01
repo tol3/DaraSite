@@ -44,45 +44,46 @@
 
   <div class="row">
     <% news[1..news.count].each do |x| %>
-  <div class="col-md-4 sm-news-card">
+    <div class="col-md-4 sm-news-card">
 
-    <div class="col-md-12 no-pad">
-      <%= link_to "#{url}/#{x.id}" do %>
-        <%= image_tag(x.cover.url(:mini)) %>
-        <% if news.first.video == true %>
-          <i class="fa fa-play-circle-o is-video"></i>
+      <div class="col-md-12 no-pad">
+        <%= link_to "#{url}/#{x.id}" do %>
+          <%= image_tag(x.cover.url(:mini)) %>
+          <% if news.first.video == true %>
+            <i class="fa fa-play-circle-o is-video"></i>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-
-    <div class="col-md-12 content no-pad">
-      <div class="col-md-12 sm-news-card-bot" style="height: 131px;">
-        <h4 class="title"><%= link_to x.title, "#{url}/#{x.id}" %></h4>
-        <p class="sub-title">
-          <%= truncate( x.teaser, length: 65, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/#{url}/#{x.id}" } %>
-        </p>
-        <p class="content-p">
-          <%= x.post_date.strftime("%d, %B %Y") %>
-        </p>
       </div>
-      <div class="col-md-12 sm-news-card-box no-pad">
-        <span class="social">
-        <div class="ssk-group" data-url="<%= "#{request.original_url}#{url}/#{x.id}" %>" data-text="<%= "#{x.title}" %>">
-          <p>
-            <i class="fa fa-user"></i>
-            <%= number_to_human(x.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
 
+      <div class="col-md-12 content no-pad">
+        <div class="col-md-12 sm-news-card-bot" style="height: 131px;">
+          <h4 class="title"><%= link_to x.title, "#{url}/#{x.id}" %></h4>
+          <p class="sub-title">
+            <%= truncate( x.teaser, length: 65, separator: ' ', omission: '... ') { link_to "อ่านต่อ", "/#{url}/#{x.id}" } %>
           </p>
-          <a class="ssk ssk-pinterest ssk-xs" href=""></a>
-          <a class="ssk ssk-google-plus ssk-xs" href=""></a>
-          <a class="ssk ssk-twitter ssk-xs" href=""></a>
-          <a class="ssk ssk-facebook ssk-xs" href=""></a>
+          <p class="content-p">
+            <%= x.post_date.strftime("%d, %B %Y") %>
+          </p>
         </div>
-      </span>
+        <div class="col-md-12 sm-news-card-box no-pad">
+          <span class="social">
+          <div class="ssk-group" data-url="<%= "#{request.original_url}#{url}/#{x.id}" %>" data-text="<%= "#{x.title}" %>">
+            <p>
+              <i class="fa fa-user"></i>
+              <%= number_to_human(x.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
+
+            </p>
+            <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+            <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+            <a class="ssk ssk-twitter ssk-xs" href=""></a>
+            <a class="ssk ssk-facebook ssk-xs" href=""></a>
+          </div>
+        </span>
+        </div>
       </div>
     </div>
-  </div>
   <% end %>
+
   </div>
 
 </div>

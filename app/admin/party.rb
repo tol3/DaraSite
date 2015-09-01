@@ -17,6 +17,7 @@ ActiveAdmin.register Party do
   scope :all, default: true
 
   scope :party do |task| task.where(category: "party") end
+  scope :chill2night do |task| task.where(category: "chill") end
   scope :event do |task| task.where(category: "event") end
 
   scope :Publish do |task| task.where(publish: true) end
@@ -60,7 +61,7 @@ ActiveAdmin.register Party do
       f.input :poster, :as => :file, :input_html => { :onchange => "readURLs(this);" }, :required => true,  :hint => f.object.cover.present? \
                                                   ? image_tag(f.object.cover.url(:thumb),  :id => "poster_prev")
                                                   : image_tag("poster.png", :id => "poster_prev")
-    	f.input :category, :as => :select, :collection => {"Party" => "party", "Event" => "event"}, :required => true
+    	f.input :category, :as => :select, :collection => {"Party" => "party","Chill2Night" => "chill", "Event" => "event"}, :required => true
     end
 
     f.inputs 'Details' do

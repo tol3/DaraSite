@@ -2,6 +2,7 @@ class TinymceAssetsController < ApplicationController
   respond_to :json
 
   def create
+    # raise params.inspect
     geometry = Paperclip::Geometry.from_file params[:file]
     image    = Image.create params.permit(:file, :alt, :hint)
 

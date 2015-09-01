@@ -77,33 +77,18 @@
       <div class="tab-content">
         <div aria-labelledby="gossip-tab" class="tab-pane fade active in" id="gossip" role="tabpanel">
           <%= render :partial => 'index_news', :locals => { :news => @gossip, :url => "gossip" } %>
-          <div class="more">
-            <%= link_to("More News...", gossip_path) %>
-          </div>
         </div>
         <div aria-labelledby="hotclip-tab" class="tab-pane fade" id="hotclip" role="tabpanel">
           <%= render :partial => 'index_news', :locals => { :news => @hot_clip, :url => "hotclip" } %>
-          <div class="more">
-            <%= link_to("More News...", hotclip_path) %>
-          </div>
         </div>
         <div aria-labelledby="movie-tab" class="tab-pane fade" id="movie" role="tabpanel">
           <%= render :partial => 'index_news', :locals => { :news => @movie, :url => "movie" } %>
-          <div class="more">
-            <%= link_to("More News...", movie_path) %>
-          </div>
         </div>
         <div aria-labelledby="lakorn-tab" class="tab-pane fade" id="lakorn" role="tabpanel">
           <%= render :partial => 'index_news', :locals => { :news => @lakorn, :url => "lakorn" } %>
-          <div class="more">
-            <%= link_to("More News...", lakorn_path) %>
-          </div>
         </div>
         <div aria-labelledby="music-tab" class="tab-pane fade" id="music" role="tabpanel">
           <%= render :partial => 'index_news', :locals => { :news => @music, :url => "music" } %>
-          <div class="more">
-            <%= link_to("More News...", music_path) %>
-          </div>
         </div>
       </div>
     </div>

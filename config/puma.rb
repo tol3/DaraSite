@@ -9,7 +9,7 @@ rackup      DefaultRackup
 port        ENV['PORT']     || 5000
 environment ENV['RACK_ENV'] || 'production'
 
-worker_timeout 300
+worker_timeout 60
 
 pidfile 'tmp/pids/puma.pid'
 

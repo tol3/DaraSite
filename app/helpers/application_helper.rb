@@ -15,8 +15,11 @@ module ApplicationHelper
     data = Net::HTTP.get(URI.parse("http://graph.facebook.com/?ids=#{URI.escape(url)}"))
     data = JSON.parse(data)
     if data.kind_of?(Hash)
-      # return data[url]['shares']
-      return 0
+      if data[url]['shares'] == nil || data[url]['shares'] == []
+        return 0
+      else
+        return data[url]['shares']
+      end
     else
       return 0
     end

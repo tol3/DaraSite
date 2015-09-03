@@ -31,13 +31,13 @@ ActiveAdmin.register News do
 
     column "Category", :category
 
-    column "Cover", :cover do |p|
-      if p.cover.url == nil
-        "No Picture"
-      else
-        link_to image_tag(p.cover.url(:thumb)), admin_news_path(p)
-      end
-    end
+    # column "Cover", :cover do |p|
+    #   if p.cover.url == nil
+    #     "No Picture"
+    #   else
+    #     link_to image_tag(p.cover.url(:thumb)), admin_news_path(p)
+    #   end
+    # end
 
     column "Title", :title do |p|
       link_to p.title, admin_news_path(p)

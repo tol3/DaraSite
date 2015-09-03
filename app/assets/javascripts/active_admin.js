@@ -12,9 +12,9 @@ $(document).ready(function() {
   	theme : 'modern',
     skin: 'light',
     mode: 'textareas',
-    plugins: "example1 fullscreen, image, link, print, charmap, colorpicker, uploadimage, media, code, preview, lists, textcolor",
+    plugins: "fullscreen, image, link, print, charmap, colorpicker, uploadimage, media, code, preview, lists, textcolor",
     toolbar: [
-      "undo redo | styleselect fontsizeselect forecolor backcolor | bold italic bullist numlist | link media image uploadimage example1 | alignleft aligncenter alignright | code preview fullscreen "
+      "undo redo | styleselect fontsizeselect forecolor backcolor | bold italic bullist numlist | link media image uploadimage | alignleft aligncenter alignright | code preview fullscreen "
     ],
     menubar: false,
     statusbar: true,

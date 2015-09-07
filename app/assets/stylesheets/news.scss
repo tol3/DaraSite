@@ -136,18 +136,19 @@ $base-color: #62178A;
 	color: #fff;
 	display: table;
 	line-height: 59px;
-	padding-right: 49px;
+	padding-right: 10px;
 	font-size: 20px;
 	background-color: #2A2A2A;
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
 	span.content{
 		display: inherit;
-		background: url(title.png) no-repeat center right;
+		background: url(title.png) no-repeat center left;
 		line-height: 59px;
 		font-size: 1.5em;
 		font-weight: bolder;
 		padding-left: 15px;
-		padding-right: 85px;
+    background-size: 100% 100%;
+    padding-right: 65px;
 	}
 }
 

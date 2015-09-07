@@ -50,7 +50,7 @@
 
   .party-foot {
     text-align        : right;
-    margin-top        : -20px;
+    margin-top        : 0px;
     padding-top       : 5px;
     padding-bottom    : 5px;
     -webkit-box-shadow: 0 -1px 5px 0 rgba(50, 50, 50, 1);
@@ -123,8 +123,8 @@
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 1; /* number of lines to show */
           line-height: 1;        /* fallback */
-          max-height: 1*1;
           border-bottom: 2px #efefef solid;
+          max-height: 25px;
         }
       }
     }

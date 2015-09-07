@@ -453,7 +453,7 @@
       </div>
 
       <div class="content-head visible-xs">
-        <span class="content" style="padding-right: 0px;">
+        <span class="content" style="padding-right: 0px; ">
           Travel By Sense & Scene
         </span>
       </div>
@@ -562,7 +562,7 @@
           </span>
         </div>
 
-        <div class="col-md-12 event-cards box-shadow">
+        <div class="col-md-12 event-cards box-shadow hidden-xs">
           <div class="col-md-12 sm-pad">
             <% @event.each do |e| %>
               <div class="col-md-12 card box-shadow">
@@ -578,6 +578,55 @@
             <% end %>
           </div>
         </div>
+
+        <div class="col-md-12 no-pad top-idol music-cards box-shadow visible-xs">
+          <% if @event.count >= 1 %>
+            <% @event.each do |i| %>
+              <div class="col-md-12 music-tab no-pad" style="margin-bottom: 10px;">
+                <div class="col-md-12 no-pad index-music-cards">
+                  <div class="col-md-12 no-pad index-music-cards-top box-shadow">
+                    <h3><%= link_to i.title, "/event/#{i.id}" %></h3>
+                  </div>
+
+                  <div class="col-md-12 box-shadow index-music-cards-middle">
+                    <p class="watch">
+                      <i class="fa fa-user"></i>
+                      <%= number_to_human(i.impressionist_count, :format => '%n%u', :units => { :thousand => 'k' }) %>
+
+                    </p>
+                    <span class="social">
+                      <div class="ssk-group" data-url="<%= "#{request.original_url}event/#{i.id}" %>" data-text="<%= "#{i.title}" %>" >
+                        <a class="ssk ssk-facebook ssk-xs" href=""></a>
+                        <a class="ssk ssk-twitter ssk-xs" href=""></a>
+                        <a class="ssk ssk-google-plus ssk-xs" href=""></a>
+                        <a class="ssk ssk-pinterest ssk-xs" href=""></a>
+                      </div>
+                    </span>
+                  </div>
+
+                  <div class="col-md-12 box-shadow no-pad index-music-cards-bot">
+                    <div class="col-md-6 box-shadow no-pad">
+                      <%= link_to image_tag(i.cover.url(:mini)), "/event/#{i.id}" %>
+                    </div>
+                    <div class="col-md-6">
+                      <h3> <%= i.title %> </h3>
+                      <p> <%= truncate( i.description,
+                                length: 57,
+                                separator: ' ',
+                                omission: '... ') {
+                                  link_to "อ่านต่อ",  "/event/#{i.id}"
+                              } %> </p>
+                    </div>
+                    <span class="tri"></span>
+                  </div>
+
+                </div>
+
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
 
       </div>
 

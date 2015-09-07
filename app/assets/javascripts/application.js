@@ -61,6 +61,7 @@ function date_time(id) {
 
 
 $(document).ready(function() {
+  $('#allcoderpopup').css("zoom", 0.9);
   function allcoder_ppopup()  {
     $("#backdrop").fadeIn("slow");
     $("#allcoderpopup").fadeIn("slow");

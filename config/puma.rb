@@ -6,7 +6,7 @@ preload_app!
 tag 'Wow2Mouth'
 
 rackup      DefaultRackup
-port        ENV['PORT']     || 5000
+port        ENV['PORT']     || 5555
 environment ENV['RACK_ENV'] || 'production'
 
 worker_timeout 60

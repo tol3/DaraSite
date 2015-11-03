@@ -12,11 +12,9 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-<<<<<<< HEAD
+
   pool: 20
-=======
-  pool: 10
->>>>>>> 9cd22814fe488c5c934ddb88f85c5ba0793ea9aa
+
   username: root
   password: root
   socket: /tmp/mysql.sock

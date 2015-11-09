@@ -30,34 +30,37 @@ $screen-tablet: $screen-sm-min !default;
 @import "font-awesome";
 @import "var";
 @font-face {
-    font-family: 'KittithadaLight45P';
-    font-size: 18px;
-    src: url("KittithadaLight45P.eot?") format('eot'), url("KittithadaLight45P.woff") format('woff'), url("KittithadaLight45P.ttf") format('truetype'), url("KittithadaLight45P.svg#KittithadaLight45P") format('svg');
+    font-family: 'rsu_light';
+    font-size: 16px;
+    src: url("rsu_light-webfont.eot?") format('eot'),
+    url("rsu_light-webfont.woff") format('woff'),
+    url("rsu_light-webfont.ttf") format('truetype'),
+    url("rsu_light-webfont.svg#rsu_light-webfont") format('svg');
 }
 
 body {
     background: url("background.jpg");
-    font-family: 'KittithadaLight45P';
+    font-family: 'rsu_light';
     line-height: 1;
     width: 100%;
     overflow-x: hidden;
     h1 {
-        font-size: 64px;
+        font-size: 56px;
     }
     h2 {
-        font-size: 54px;
+        font-size: 48px;
     }
     h3 {
-        font-size: 44px;
+        font-size: 38px;
     }
     h4 {
-        font-size: 34px;
-    }
-    h5 {
         font-size: 28px;
     }
-    p {
+    h5 {
         font-size: 24px;
+    }
+    p {
+        font-size: 18px;
     }
     a {
         color: #efefef;
@@ -82,7 +85,7 @@ body {
     background-color: #691783;
     color: #efefef;
     text-align: center;
-    font-size: 2.3em;
+    font-size: 2em;
 }
 
 .footerbot {

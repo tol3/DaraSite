@@ -8,7 +8,7 @@ ActiveAdmin.register_page "Dashboard" do
       column span: 2 do
         panel "This Day" do
           div class: 'blank_slate_container' do
-            @impress = Impression.where("created_at >= ?", Time.zone.now.beginning_of_day).group_by_hour(:created_at).count #whatever data you pass to chart
+            #@impress = Impression.where("created_at >= ?", Time.zone.now.beginning_of_day).group_by_hour(:created_at).count #whatever data you pass to chart
             render partial: 'admin/impression', locals: {impress: @impress}
           end
         end
@@ -17,7 +17,7 @@ ActiveAdmin.register_page "Dashboard" do
       column span: 3 do
         panel "Last 30 days" do
           div class: 'blank_slate_container' do
-            @impress = Impression.where("created_at >= ?", Time.zone.now.beginning_of_month).group_by_day(:created_at).limit(30).count #whatever data you pass to chart
+            #@impress = Impression.where("created_at >= ?", Time.zone.now.beginning_of_month).group_by_day(:created_at).limit(30).count #whatever data you pass to chart
             render partial: 'admin/last', locals: {impress: @impress}
           end
         end

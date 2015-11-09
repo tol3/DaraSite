@@ -30,7 +30,7 @@ $screen-tablet: $screen-sm-min !default;
 @import "font-awesome";
 @import "var";
 @font-face {
-    font-family: 'KittithadaLight45P';
+    font-family: 'rsu_light';
     font-size: 16px;
     src: url("rsu_light-webfont.eot?") format('eot'),
     url("rsu_light-webfont.woff") format('woff'),
@@ -40,7 +40,7 @@ $screen-tablet: $screen-sm-min !default;
 
 body {
     background: url("background.jpg");
-    font-family: 'KittithadaLight45P';
+    font-family: 'rsu_light';
     line-height: 1;
     width: 100%;
     overflow-x: hidden;

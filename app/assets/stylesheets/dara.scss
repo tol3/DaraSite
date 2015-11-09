@@ -13,7 +13,8 @@
 span.watch {
     float: left;
 }
-.width-full-party{
+
+.width-full-party {
     background: #fff;
     .warp {
         margin-top: 5px;
@@ -58,10 +59,10 @@ span.watch {
     }
 }
 
-div.more{
+div.more {
     background: #efefef;
     height: 24px;
-    a{
+    a {
         float: right;
         color: $baseColor;
         font-size: 1.3em;
@@ -186,7 +187,7 @@ i.is-inner {
     }
     p.content {
         margin-top: 5px;
-        font-size: 1.6em;
+        font-size: 1.3em;
         text-indent: 20px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -202,7 +203,7 @@ i.is-inner {
         }
     }
     p.day {
-        font-size: 1.6em;
+        font-size: 1.3em;
     }
     .news-foot {
         p {
@@ -345,7 +346,7 @@ i.is-inner {
                 }
                 h3 {
                     margin: 5px 0;
-                    font-size: 1.8em;
+                    font-size: 1.5em;
                     display: inline-block;
                     color: $baseColor;
                     overflow: hidden;
@@ -360,7 +361,7 @@ i.is-inner {
                 }
                 p {
                     margin-bottom: 7px;
-                    font-size: 1.5em;
+                    font-size: 1.2em;
                     display: inline-block;
                     color: black;
                     a {
